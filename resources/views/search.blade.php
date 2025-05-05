@@ -2,7 +2,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 @section('content')
-
     <style type="text/css">
         .wishlist-selected i {
             color: purple !important;
@@ -180,10 +179,10 @@
 
 
 
-            
+
         </div>
     </div>
-    
+
     <section class="py-5 bg-white">
         <div class="container">
             <!-- Search and Filter -->
@@ -204,175 +203,104 @@
                     </select>
                 </div>
             </div>
-    
+
             <!-- Property List -->
             <div class="row">
                 <!-- Property Item 1 -->
-                <div class="col-12 mb-4">
-                    <div class="property-list-item card border-0 shadow-sm">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <div class="position-relative h-100">
-                                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
-                                         class="img-fluid rounded-start h-100 w-100 object-fit-cover" alt="Property">
-                                    <div class="position-absolute top-0 start-0 m-2">
-                                        <span class="badge bg-primary">Verified</span>
-                                    </div>
-                                    <div class="position-absolute top-0 end-0 m-2">
-                                        <button class="btn btn-sm btn-light rounded-circle">
-                                            <i class="far fa-heart"></i>
-                                        </button>
+
+                @forelse ($property as $item)
+                    <div class="col-12 mb-4">
+                        <div class="property-list-item card border-0 shadow-sm">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <div class="position-relative h-100">
+                                        <img src="{{ $item->thumbnail ? asset('storage/' . $item->thumbnail) : 'https://via.placeholder.com/500x300?text=No+Image' }}"
+                                            class="img-fluid rounded-start h-100 w-100 object-fit-cover" alt="Property">
+                                        @if ($item->verified)
+                                            <div class="position-absolute top-0 start-0 m-2">
+                                                <span class="badge bg-primary">Verified</span>
+                                            </div>
+                                        @endif
+                                        <div class="position-absolute top-0 end-0 m-2">
+                                            <button class="btn btn-sm btn-light rounded-circle">
+                                                <i class="far fa-heart"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body h-100 d-flex flex-column">
-                                    <div class="d-flex justify-content-between">
-                                        <h4 class="card-title text-primary">Luxury Villa</h4>
-                                        <span class="badge bg-success">IBC Auction</span>
-                                    </div>
-                                    <p class="text-muted mb-2">
-                                        <i class="fas fa-map-marker-alt text-primary me-1"></i> Bandra West, Mumbai
-                                    </p>
-                                    
-                                    <div class="property-features mb-3">
-                                        <div class="row g-2">
-                                            <div class="col-4">
-                                                <div class="bg-light p-2 rounded text-center">
-                                                    <small class="d-block text-muted">Area</small>
-                                                    <span class="fw-bold">2,500 sqft</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <div class="bg-light p-2 rounded text-center">
-                                                    <small class="d-block text-muted">EMD</small>
-                                                    <span class="fw-bold">₹50,000</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <div class="bg-light p-2 rounded text-center">
-                                                    <small class="d-block text-muted">Possession</small>
-                                                    <span class="fw-bold">Physical</span>
-                                                </div>
-                                            </div>
+                                <div class="col-md-8">
+                                    <div class="card-body h-100 d-flex flex-column">
+                                        <div class="d-flex justify-content-between">
+                                            <h4 class="card-title text-primary">{{ $item->property_type_one ?? 'Property' }}</h4>
+                                            <span class="badge bg-success">{{ $item->category->name ?? 'Auction' }}</span>
                                         </div>
-                                    </div>
-                                    
-                                    <div class="mt-auto d-flex justify-content-between align-items-center">
-                                        <div class="d-flex align-items-center">
-                                            <img src="https://logo.clearbit.com/sbi.co.in" alt="Bank" width="24" class="me-2">
-                                            <span>SBI Bank</span>
-                                        </div>
-                                        <div>
-                                            <h4 class="text-primary mb-0">₹2.5 Cr</h4>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="d-flex justify-content-end mt-3">
-                                        <a href="#" class="btn btn-primary px-4">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Property Item 2 -->
-                <div class="col-12 mb-4">
-                    <div class="property-list-item card border-0 shadow-sm">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <div class="position-relative h-100">
-                                    <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
-                                         class="img-fluid rounded-start h-100 w-100 object-fit-cover" alt="Property">
-                                    <div class="position-absolute top-0 end-0 m-2">
-                                        <button class="btn btn-sm btn-light rounded-circle">
-                                            <i class="fas fa-heart text-danger"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body h-100 d-flex flex-column">
-                                    <div class="d-flex justify-content-between">
-                                        <h4 class="card-title text-primary">Commercial Space</h4>
-                                        <span class="badge bg-warning text-dark">DRT Auction</span>
-                                    </div>
-                                    <p class="text-muted mb-2">
-                                        <i class="fas fa-map-marker-alt text-primary me-1"></i> Connaught Place, Delhi
-                                    </p>
-                                    
-                                    <div class="property-features mb-3">
-                                        <div class="row g-2">
-                                            <div class="col-4">
-                                                <div class="bg-light p-2 rounded text-center">
-                                                    <small class="d-block text-muted">Area</small>
-                                                    <span class="fw-bold">1,800 sqft</span>
+                                        <p class="text-muted mb-2">
+                                            <i class="fas fa-map-marker-alt text-primary me-1"></i> {{ $item->locality }}, {{ $item->district }}
+                                        </p>
+
+                                        <div class="property-features mb-3">
+                                            <div class="row g-2">
+                                                <div class="col-4">
+                                                    <div class="bg-light p-2 rounded text-center">
+                                                        <small class="d-block text-muted">Area</small>
+                                                        <span class="fw-bold">{{ $item->area ?? '-' }}</span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <div class="bg-light p-2 rounded text-center">
-                                                    <small class="d-block text-muted">EMD</small>
-                                                    <span class="fw-bold">₹75,000</span>
+                                                <div class="col-4">
+                                                    <div class="bg-light p-2 rounded text-center">
+                                                        <small class="d-block text-muted">EMD</small>
+                                                        <span class="fw-bold">₹{{ number_format($item->emd_amount) }}</span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <div class="bg-light p-2 rounded text-center">
-                                                    <small class="d-block text-muted">Possession</small>
-                                                    <span class="fw-bold">Symbolic</span>
+                                                <div class="col-4">
+                                                    <div class="bg-light p-2 rounded text-center">
+                                                        <small class="d-block text-muted">Possession</small>
+                                                        <span class="fw-bold">{{ $item->possession }}</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    
-                                    <div class="mt-auto d-flex justify-content-between align-items-center">
-                                        <div class="d-flex align-items-center">
-                                            <img src="https://logo.clearbit.com/hdfcbank.com" alt="Bank" width="24" class="me-2">
-                                            <span>HDFC Bank</span>
+
+                                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                                            <div class="d-flex align-items-center">
+                                                <img src="{{ $item->bank->logo_url ?? 'https://via.placeholder.com/24' }}" alt="Bank" width="24"
+                                                    class="me-2">
+                                                <span>{{ $item->bank->name ?? $item->bank_name }}</span>
+                                            </div>
+                                            <div>
+                                                <h4 class="text-primary mb-0">₹{{ number_format($item->property_price) }}</h4>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <h4 class="text-primary mb-0">₹4.2 Cr</h4>
+
+                                        <div class="d-flex justify-content-end mt-3">
+                                            <a href="#" class="btn btn-primary px-4">View Details</a>
                                         </div>
-                                    </div>
-                                    
-                                    <div class="d-flex justify-content-end mt-3">
-                                        <a href="#" class="btn btn-primary px-4">View Details</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                    @empty
+                        <p>No verified properties found.</p>
+                    @endforelse
+
+                    {{-- Add pagination links --}}
+                    <div class="d-flex justify-content-center mt-4">
+                        {{ $property->links() }}
+                    </div>
             </div>
-            
-            <!-- Pagination -->
-            <nav aria-label="Page navigation" class="mt-5">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1">
-                            <i class="fas fa-angle-left"></i>
-                        </a>
-                    </li>
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">
-                            <i class="fas fa-angle-right"></i>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
         </div>
     </section>
-    
+
     <style>
         .property-list-item {
             transition: transform 0.3s ease;
         }
+
         .property-list-item:hover {
             transform: translateY(-5px);
         }
+
         .object-fit-cover {
             object-fit: cover;
         }
@@ -416,10 +344,10 @@
                     if (response.status === 'success') {
                         if (isSelected) {
                             toastr.success(
-                            'Property removed from wishlist'); // Toastr success alert for removal
+                                'Property removed from wishlist'); // Toastr success alert for removal
                         } else {
                             toastr.success(
-                            'Property added to wishlist'); // Toastr success alert for addition
+                                'Property added to wishlist'); // Toastr success alert for addition
                         }
                     } else {
                         toastr.error('Failed to update wishlist'); // Toastr error alert
@@ -451,6 +379,4 @@
             "hideMethod": "fadeOut"
         };
     </script>
-
-
 @endsection
