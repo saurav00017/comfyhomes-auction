@@ -2,7 +2,7 @@
 @section('content')
     <script src="{{ asset('admin-assets/js/jquery.min.js') }}"></script>
     <!-- <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-         -->
+             -->
     <style type="text/css">
         .col-sm-12 {
             margin-top: 100px;
@@ -11,12 +11,12 @@
         }
 
         /*.col-sm-5{
-                margin-top: 364px;
-          }
+                    margin-top: 364px;
+              }
 
-          .col-sm-7{
-                margin-top: 374px;
-          }*/
+              .col-sm-7{
+                    margin-top: 374px;
+              }*/
 
         .dataTables_scroll {
             margin-right: 15px;
@@ -40,9 +40,9 @@
         }
 
         /*.row{
-            margin-right: -163px;
-          }
-        */
+                margin-right: -163px;
+              }
+            */
         label {
             margin-top: 19px;
 
@@ -122,39 +122,39 @@
 
 
     <!-- <style type="text/css">
-          
-        .my-custom-scrollbar {
-        position: relative;
-        height: 200px;
-        overflow: auto;
-        }
-        .table-wrapper-scroll-y {
-        display: block;
+              
+            .my-custom-scrollbar {
+            position: relative;
+            height: 200px;
+            overflow: auto;
+            }
+            .table-wrapper-scroll-y {
+            display: block;
 
-        }
+            }
 
-        .scrollbar-primary::-webkit-scrollbar {
-        width: 12px;
-        background-color: #262C49; }
+            .scrollbar-primary::-webkit-scrollbar {
+            width: 12px;
+            background-color: #262C49; }
 
-        .scrollbar-primary::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-        background-color: #F5F5F5; }
+            .scrollbar-primary::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+            background-color: #F5F5F5; }
 
-        .scrollbar-primary {
-        scrollbar-color: #F5F5F5 #F5F5F5;
+            .scrollbar-primary {
+            scrollbar-color: #F5F5F5 #F5F5F5;
 
-        }
+            }
 
-        .scroll {
-          overflow-x: auto;
-          text-align: center;
-          padding: 2px;
-        }
+            .scroll {
+              overflow-x: auto;
+              text-align: center;
+              padding: 2px;
+            }
 
-        }
-        </style> -->
+            }
+            </style> -->
 
     <body>
 
@@ -552,25 +552,25 @@
                         "filter": false,
                         "mRender": function(data, type, row) {
                             return `
-            <div class="btn-group" role="group">
-                <a href="{{ config('app.baseURL') }}/admin/view-auction/${row.id}" 
-                   class="btn btn-info btn-sm mr-1" 
-                   title="View">
-                    <i class="fas fa-eye"></i>
-                </a>
-                <a href="{{ config('app.baseURL') }}/admin/update-auction/${row.id}" 
-                   class="btn btn-primary btn-sm mr-1" 
-                   title="Edit">
-                    <i class="fas fa-edit"></i>
-                </a>
-                <a href="{{ config('app.baseURL') }}/admin/delete-auction/${row.id}" 
-                   class="btn btn-danger btn-sm" 
-                   title="Delete"
-                   onclick="return confirm('Are you sure you want to delete this auction?')">
-                    <i class="fas fa-trash"></i>
-                </a>
-            </div>
-        `;
+                              <div class="btn-group" role="group">
+                                  <a href="{{ config('app.baseURL') }}/admin/view-auction/${row.id}" 
+                                    class="btn btn-info btn-sm mr-1" 
+                                    title="View">
+                                      <i class="fas fa-eye"></i>
+                                  </a>
+                                  <a href="{{ config('app.baseURL') }}/admin/update-auction/${row.id}" 
+                                    class="btn btn-primary btn-sm mr-1" 
+                                    title="Edit">
+                                      <i class="fas fa-edit"></i>
+                                  </a>
+                                  <a href="{{ config('app.baseURL') }}/admin/delete-auction/${row.id}" 
+                                    class="btn btn-danger btn-sm" 
+                                    title="Delete"
+                                    onclick="return confirm('Are you sure you want to delete this auction?')">
+                                      <i class="fas fa-trash"></i>
+                                  </a>
+                              </div>
+                          `;
                         }
                     }
 
@@ -656,5 +656,5 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <!-- <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
-         -->
+             -->
 @endsection
