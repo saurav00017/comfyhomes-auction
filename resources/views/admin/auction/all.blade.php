@@ -581,17 +581,24 @@
                         "targets": -1,
                         "mData": "Action",
                         "bSortable": false,
-                        "ilter": false,
+                        "filter": false,
                         "mRender": function(data, type, row) {
                             if (row.is_active == 0) {
-                                return "<a class=datatable-left-link href={{ config('app.baseURL') }}/admin/active-auction/" +
-                                    row.id +
-                                    "><span><button type='submit' class='btn btn-success'>Active</button></span></a>";
-
+                                return `
+                                  <label class="switch">
+                                      <input type="checkbox" data-id="${row.id}" class="status-toggle">
+                                      <span class="slider round"></span>
+                                  </label>
+                                  <span class="status-text">Inactive</span>
+                              `;
                             } else {
-                                return "<a class=datatable-left-link href={{ config('app.baseURL') }}/admin/inactive-auction/" +
-                                    row.id +
-                                    "><span><button type='submit' class='btn btn-danger'>InActive</button></span></a>";
+                                return `
+                                  <label class="switch">
+                                      <input type="checkbox" data-id="${row.id}" class="status-toggle" checked>
+                                      <span class="slider round"></span>
+                                  </label>
+                                  <span class="status-text">Active</span>
+                              `;
                             }
                         },
                     },
