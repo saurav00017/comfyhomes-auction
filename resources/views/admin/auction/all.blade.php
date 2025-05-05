@@ -4,6 +4,58 @@
     <!-- <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
          -->
     <style type="text/css">
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+            vertical-align: middle;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #dc3545;
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked+.slider {
+            background-color: #28a745;
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(26px);
+        }
+
+        .status-text {
+            margin-left: 10px;
+            font-weight: 500;
+            vertical-align: middle;
+        }
+
         .col-sm-12 {
             margin-top: 100px;
             "
@@ -236,7 +288,6 @@
                         </div>
                     </div>
             </div>
-        </div>
     </body>
 
 
@@ -529,17 +580,24 @@
                         "targets": -1,
                         "mData": "Action",
                         "bSortable": false,
-                        "ilter": false,
+                        "filter": false,
                         "mRender": function(data, type, row) {
                             if (row.is_active == 0) {
-                                return "<a class=datatable-left-link href={{ config('app.baseURL') }}/admin/active-auction/" +
-                                    row.id +
-                                    "><span><button type='submit' class='btn btn-success'>Active</button></span></a>";
-
+                                return `
+                                  <label class="switch">
+                                      <input type="checkbox" data-id="${row.id}" class="status-toggle">
+                                      <span class="slider round"></span>
+                                  </label>
+                                  <span class="status-text">Inactive</span>
+                              `;
                             } else {
-                                return "<a class=datatable-left-link href={{ config('app.baseURL') }}/admin/inactive-auction/" +
-                                    row.id +
-                                    "><span><button type='submit' class='btn btn-danger'>InActive</button></span></a>";
+                                return `
+                                  <label class="switch">
+                                      <input type="checkbox" data-id="${row.id}" class="status-toggle" checked>
+                                      <span class="slider round"></span>
+                                  </label>
+                                  <span class="status-text">Active</span>
+                              `;
                             }
                         },
                     },
@@ -549,28 +607,28 @@
                         "targets": -1,
                         "mData": "Action",
                         "bSortable": false,
-                        "filter": false,
+                        "ilter": false,
                         "mRender": function(data, type, row) {
                             return `
-            <div class="btn-group" role="group">
-                <a href="{{ config('app.baseURL') }}/admin/view-auction/${row.id}" 
-                   class="btn btn-info btn-sm mr-1" 
-                   title="View">
-                    <i class="fas fa-eye"></i>
-                </a>
-                <a href="{{ config('app.baseURL') }}/admin/update-auction/${row.id}" 
-                   class="btn btn-primary btn-sm mr-1" 
-                   title="Edit">
-                    <i class="fas fa-edit"></i>
-                </a>
-                <a href="{{ config('app.baseURL') }}/admin/delete-auction/${row.id}" 
-                   class="btn btn-danger btn-sm" 
-                   title="Delete"
-                   onclick="return confirm('Are you sure you want to delete this auction?')">
-                    <i class="fas fa-trash"></i>
-                </a>
-            </div>
-        `;
+                              <div class="btn-group" role="group">
+                                  <a href="{{ config('app.baseURL') }}/admin/view-auction/${row.id}" 
+                                    class="btn btn-info btn-sm mr-1" 
+                                    title="View">
+                                      <i class="fas fa-eye"></i>
+                                  </a>
+                                  <a href="{{ config('app.baseURL') }}/admin/update-auction/${row.id}" 
+                                    class="btn btn-primary btn-sm mr-1" 
+                                    title="Edit">
+                                      <i class="fas fa-edit"></i>
+                                  </a>
+                                  <a href="{{ config('app.baseURL') }}/admin/delete-auction/${row.id}" 
+                                    class="btn btn-danger btn-sm" 
+                                    title="Delete"
+                                    onclick="return confirm('Are you sure you want to delete this auction?')">
+                                      <i class="fas fa-trash"></i>
+                                  </a>
+                              </div>
+                          `;
                         }
                     }
 
@@ -646,6 +704,39 @@
         $('#l23').removeClass('nav-item');
         $('#l24').removeClass('nav-item');
         $('#l25').removeClass('nav-item');
+    </script>
+
+    <script>
+        $(document).on('change', '.status-toggle', function() {
+            var id = $(this).data('id');
+            var isActive = $(this).is(':checked');
+            var $row = $(this).closest('tr');
+            var $statusText = $row.find('.status-text');
+
+            // Show loading state
+            $statusText.text('Updating...');
+
+            // Determine which endpoint to call based on the toggle state
+            var endpoint = isActive ?
+                "{{ config('app.baseURL') }}/admin/active-auction/" + id :
+                "{{ config('app.baseURL') }}/admin/inactive-auction/" + id;
+
+            $.ajax({
+                url: endpoint,
+                type: 'GET',
+                success: function(response) {
+                    // Update the status text based on new state
+                    $statusText.text(isActive ? 'Active' : 'Inactive');
+                    toastr.success('Status updated successfully');
+                },
+                error: function() {
+                    // Revert the toggle if failed
+                    $(this).prop('checked', !isActive);
+                    $statusText.text(isActive ? 'Inactive' : 'Active');
+                    toastr.error('Error updating status');
+                }
+            });
+        });
     </script>
 
     </html>
