@@ -187,6 +187,8 @@ Route::post('admin/update-auction/{id}', ['middleware' => 'auth', 'uses' =>'App\
 Route::get('admin/active-auction/{id}', ['middleware' => 'auth', 'uses' =>'App\Http\Controllers\AuctionController@activeAuction']);
 Route::get('admin/inactive-auction/{id}', ['middleware' => 'auth', 'uses' =>'App\Http\Controllers\AuctionController@inactiveAuction']);
 
+Route::get('admin/view-auction/{id}', ['middleware' => 'auth', 'uses' =>'App\Http\Controllers\AuctionController@view']);
+
 Route::get('admin/delete-auction/{id}', ['middleware' => 'auth', 'uses' =>'App\Http\Controllers\AuctionController@delete']);
 
 //Blog
