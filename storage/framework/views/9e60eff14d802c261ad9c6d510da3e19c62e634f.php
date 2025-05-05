@@ -268,7 +268,7 @@
 
                     {
                         'mRender': function(data, type, row) {
-                            return "<img src=<?php echo e(config('app.baseURL')); ?>/storage/app/" + row.icon +
+                            return "<img src=<?php echo e(url('storage')); ?>/" + row.icon +
                                 " style=width:50%>";
                         }
                     },

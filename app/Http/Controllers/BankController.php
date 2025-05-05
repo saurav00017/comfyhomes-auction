@@ -27,7 +27,7 @@ class BankController extends Controller
         $bank->bank_name=$input['bank_name'];
         if(Input::hasFile('icon')){
                   $image = $request->icon;
-                  $path = $image->store('bank');
+                  $path = $image->store('bank', 'public');
                   $bank->icon=$path;
                  } 
         $bank->save(); 
@@ -60,7 +60,7 @@ class BankController extends Controller
         $bank->bank_name=$input['bank_name'];
         if(Input::hasFile('icon')){
                   $image = $request->icon;
-                  $path = $image->store('bank');
+                  $path = $image->store('bank', 'public');
                   $bank->icon=$path;
                  } 
         $bank->save(); 

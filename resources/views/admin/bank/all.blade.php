@@ -268,7 +268,7 @@
 
                     {
                         'mRender': function(data, type, row) {
-                            return "<img src={{ config('app.baseURL') }}/storage/app/" + row.icon +
+                            return "<img src={{ url('storage') }}/" + row.icon +
                                 " style=width:50%>";
                         }
                     },
