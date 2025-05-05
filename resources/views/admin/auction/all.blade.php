@@ -2,10 +2,9 @@
 @section('content')
     <script src="{{ asset('admin-assets/js/jquery.min.js') }}"></script>
     <!-- <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-         -->
+             -->
     <style type="text/css">
-
-.switch {
+        .switch {
             position: relative;
             display: inline-block;
             width: 50px;
@@ -56,6 +55,7 @@
             font-weight: 500;
             vertical-align: middle;
         }
+
         .col-sm-12 {
             margin-top: 100px;
             "
@@ -63,12 +63,12 @@
         }
 
         /*.col-sm-5{
-                margin-top: 364px;
-          }
+                    margin-top: 364px;
+              }
 
-          .col-sm-7{
-                margin-top: 374px;
-          }*/
+              .col-sm-7{
+                    margin-top: 374px;
+              }*/
 
         .dataTables_scroll {
             margin-right: 15px;
@@ -92,9 +92,9 @@
         }
 
         /*.row{
-            margin-right: -163px;
-          }
-        */
+                margin-right: -163px;
+              }
+            */
         label {
             margin-top: 19px;
 
@@ -174,39 +174,39 @@
 
 
     <!-- <style type="text/css">
-          
-        .my-custom-scrollbar {
-        position: relative;
-        height: 200px;
-        overflow: auto;
-        }
-        .table-wrapper-scroll-y {
-        display: block;
+              
+            .my-custom-scrollbar {
+            position: relative;
+            height: 200px;
+            overflow: auto;
+            }
+            .table-wrapper-scroll-y {
+            display: block;
 
-        }
+            }
 
-        .scrollbar-primary::-webkit-scrollbar {
-        width: 12px;
-        background-color: #262C49; }
+            .scrollbar-primary::-webkit-scrollbar {
+            width: 12px;
+            background-color: #262C49; }
 
-        .scrollbar-primary::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-        background-color: #F5F5F5; }
+            .scrollbar-primary::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+            background-color: #F5F5F5; }
 
-        .scrollbar-primary {
-        scrollbar-color: #F5F5F5 #F5F5F5;
+            .scrollbar-primary {
+            scrollbar-color: #F5F5F5 #F5F5F5;
 
-        }
+            }
 
-        .scroll {
-          overflow-x: auto;
-          text-align: center;
-          padding: 2px;
-        }
+            .scroll {
+              overflow-x: auto;
+              text-align: center;
+              padding: 2px;
+            }
 
-        }
-        </style> -->
+            }
+            </style> -->
 
     <body>
 
@@ -707,6 +707,39 @@
         $('#l25').removeClass('nav-item');
     </script>
 
+    <script>
+        $(document).on('change', '.status-toggle', function() {
+            var id = $(this).data('id');
+            var isActive = $(this).is(':checked');
+            var $row = $(this).closest('tr');
+            var $statusText = $row.find('.status-text');
+
+            // Show loading state
+            $statusText.text('Updating...');
+
+            // Determine which endpoint to call based on the toggle state
+            var endpoint = isActive ?
+                "{{ config('app.baseURL') }}/admin/active-auction/" + id :
+                "{{ config('app.baseURL') }}/admin/inactive-auction/" + id;
+
+            $.ajax({
+                url: endpoint,
+                type: 'GET',
+                success: function(response) {
+                    // Update the status text based on new state
+                    $statusText.text(isActive ? 'Active' : 'Inactive');
+                    toastr.success('Status updated successfully');
+                },
+                error: function() {
+                    // Revert the toggle if failed
+                    $(this).prop('checked', !isActive);
+                    $statusText.text(isActive ? 'Inactive' : 'Active');
+                    toastr.error('Error updating status');
+                }
+            });
+        });
+    </script>
+
     </html>
 
 
@@ -715,5 +748,5 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <!-- <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
-         -->
+             -->
 @endsection
