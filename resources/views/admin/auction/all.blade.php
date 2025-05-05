@@ -77,16 +77,6 @@
 
 
 
-        .dataTables_length {
-
-            margin-left: 10px;
-        }
-
-        .dataTables_filter {
-            margin-top: -55px !important;
-            margin-left: 999px !important;
-        }
-
         .dataTables_info {
             margin-left: 10px;
         }
@@ -110,33 +100,8 @@
 
         }
 
-        .add-btn {
-
-            margin-top: 10px;
-            margin-left: 1111px;
-            background: : #5ce1e6;
-
-        }
-
-        .dataTables_wrapper .dataTables_filter input {
-            margin-left: 2px;
-            border: 1px solid #e1e6f1;
-        }
-        }
-
-        .dataTables_wrapper .dataTables_filter input {
-            margin-left: 2px;
-            border: 1px solid black;
-
-        }
-
         .form-control {
             border-radius: 43px;
-        }
-
-        .form-control {
-            border: 1px solid black;
-
         }
 
         input,
@@ -157,56 +122,7 @@
 
 
         }
-
-        @media screen and (max-width: 1400px) {
-
-            .dataTables_filter {
-                margin-top: -55px !important;
-                margin-left: 850px !important;
-            }
-
-            .add-btn {
-                margin-top: 10px;
-                margin-left: 950px;
-            }
-        }
     </style>
-
-
-    <!-- <style type="text/css">
-              
-            .my-custom-scrollbar {
-            position: relative;
-            height: 200px;
-            overflow: auto;
-            }
-            .table-wrapper-scroll-y {
-            display: block;
-
-            }
-
-            .scrollbar-primary::-webkit-scrollbar {
-            width: 12px;
-            background-color: #262C49; }
-
-            .scrollbar-primary::-webkit-scrollbar-thumb {
-            border-radius: 10px;
-            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-            background-color: #F5F5F5; }
-
-            .scrollbar-primary {
-            scrollbar-color: #F5F5F5 #F5F5F5;
-
-            }
-
-            .scroll {
-              overflow-x: auto;
-              text-align: center;
-              padding: 2px;
-            }
-
-            }
-            </style> -->
 
     <body>
 
@@ -239,24 +155,19 @@
 
             <div class="content-body">
                 <section id="basic-datatable">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-
-                                <a href="{{ config('app.baseURL') }}/admin/create-auction"> <button type="submit"
-                                        class="btn pull-right btn btn-primary panel-button add-btn">Create
-                                        Auction</button></a><br>
-
-
-                                <div class="card-header col-md-3">
-                                    <h4 class="card-title" style="color:  #880808;">All Auction</h4>
-
+                    <div class="container-fluid py-4">
+                        <div class="card shadow-sm border-0">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <h4 class="text-danger mb-0">All Auctions</h4>
+                                    <a href="{{ config('app.baseURL') }}/admin/create-auction" class="btn btn-primary">
+                                        <i class="fas fa-plus me-2"></i> Create Auction
+                                    </a>
                                 </div>
-
-                                <body>
-
-                                    <table class="table zero-configuration-resposive scroll" id="data-table" width="100%">
-                                        <thead>
+            
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover align-middle text-nowrap" id="data-table" width="100%">
+                                        <thead class="table-light">
                                             <tr>
                                                 <th>Sr.no</th>
                                                 <th>State</th>
@@ -264,30 +175,26 @@
                                                 <th>Locality</th>
                                                 <th>Bank Name</th>
                                                 <th>Property Type</th>
-                                                <th>Property price</th>
-                                                <th>Reserve price</th>
-                                                <th>Emd Amount</th>
+                                                <th>Property Price</th>
+                                                <th>Reserve Price</th>
+                                                <th>EMD Amount</th>
                                                 <th>Bid Increment</th>
-                                                <th>Emd Submission</th>
-                                                <th>Auction Start Date & Time</th>
-                                                <th>Auction End Date & Time</th>
+                                                <th>EMD Submission</th>
+                                                <th>Auction Start</th>
+                                                <th>Auction End</th>
                                                 <th>Status</th>
-
                                                 <th>Action</th>
-
-
-
-
                                             </tr>
                                         </thead>
-
-
                                     </table>
+                                </div>
+            
                             </div>
-
                         </div>
                     </div>
+                </section>
             </div>
+            
         </div>
     </body>
 
