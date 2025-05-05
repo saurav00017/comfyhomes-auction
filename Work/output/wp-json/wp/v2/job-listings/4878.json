@@ -1,0 +1,73 @@
+{
+  "id": 4878,
+  "date": "2024-09-12T10:40:48",
+  "date_gmt": "2024-09-12T17:40:48",
+  "guid": {
+    "rendered": "https://www.himjobs.com/?post_type=job_listing&#038;p=4878"
+  },
+  "modified": "2024-09-12T10:40:48",
+  "modified_gmt": "2024-09-12T17:40:48",
+  "slug": "him-operations-privacy-director",
+  "status": "publish",
+  "type": "job_listing",
+  "link": "https://www.himjobs.com/job/him-operations-privacy-director/",
+  "title": { "rendered": "HIM Operations/Privacy Director" },
+  "content": {
+    "rendered": "<p><strong>Salary</strong>: $90-110k+</p>\n<p><strong>Location:</strong> Onsite in Alabama</p>\n<p><strong>Job Description:</strong><br />\n&#8211; An exciting opportunity for an HIM Supervisor/Manager/Assistant Director/Director to work in an important HIM Operations/Privacy Director role directly for a 300+ bed acute care hospital leading a team of about 15 FTE\u2019s<br />\n&#8211; Hands-on coding knowledge isn\u2019t required in this position as coding reports to Finance however previous experience working with coding department leadership, coding teams and general coding knowledge is desired<br />\n&#8211; The current HIM Director is retiring but will be staying onboard to ensure a smooth transition</p>\n<p><strong>Requirements:</strong><br />\n&#8211; RHIA Credential (It\u2019s possible an RHIT Credential with exceptional experience would be considered)<br />\n&#8211; At least 3 years of previous HIM Supervisory/Management/Director experience in a similarly sized acute care facility<br />\n&#8211; Prior experience going through JCAHO reviews is very important as this facility is scheduled for a Joint Commission review in early 2025<br />\n&#8211; Must be willing to work onsite at the facility</p>\n<p><strong>Benefits:</strong><br />\n&#8211; This is a unique HIM Operations/Privacy Director position that doesn\u2019t require coding oversight which isn\u2019t something I see often<br />\n&#8211; It\u2019s a full-time, full-benefit (which are excellent), stable, long-term opportunity working directly for a facility<br />\n&#8211; $90-110k+<br />\n&#8211; Relocation assistance potentially available for ideal candidate</p>\n",
+    "protected": false
+  },
+  "author": 2,
+  "featured_media": 0,
+  "template": "",
+  "meta": {
+    "_et_pb_use_builder": "",
+    "_et_pb_old_content": "",
+    "_et_gb_content_width": "",
+    "_job_location": "Onsite in Alabama",
+    "_application": "career@himjobs.com",
+    "_company_name": "$90-110k+",
+    "_company_website": "",
+    "_company_tagline": "",
+    "_company_twitter": "",
+    "_company_video": "",
+    "_filled": 0,
+    "_featured": 0
+  },
+  "job-categories": [13],
+  "job-types": [3],
+  "_links": {
+    "self": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/job-listings/4878" }
+    ],
+    "collection": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/job-listings" }
+    ],
+    "about": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/types/job_listing" }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/users/2"
+      }
+    ],
+    "wp:attachment": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/media?parent=4878" }
+    ],
+    "wp:term": [
+      {
+        "taxonomy": "job_listing_category",
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/job-categories?post=4878"
+      },
+      {
+        "taxonomy": "job_listing_type",
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/job-types?post=4878"
+      }
+    ],
+    "curies": [
+      { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+    ]
+  }
+}

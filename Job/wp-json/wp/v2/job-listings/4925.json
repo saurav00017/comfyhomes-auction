@@ -1,0 +1,73 @@
+{
+  "id": 4925,
+  "date": "2024-10-17T12:57:11",
+  "date_gmt": "2024-10-17T19:57:11",
+  "guid": {
+    "rendered": "https://www.himjobs.com/?post_type=job_listing&#038;p=4925"
+  },
+  "modified": "2024-10-17T12:57:11",
+  "modified_gmt": "2024-10-17T19:57:11",
+  "slug": "outpatient-coder-2",
+  "status": "publish",
+  "type": "job_listing",
+  "link": "https://www.himjobs.com/job/outpatient-coder-2/",
+  "title": { "rendered": "Outpatient Coder" },
+  "content": {
+    "rendered": "<p><strong>Salary:</strong> $25-30/hr+</p>\n<p><strong>Location:</strong> 100% Remote but must have residency in CT, GA, MA, NM or RI</p>\n<p><strong>Job Description:</strong><br />\n&#8211; Seeking an acute care Outpatient Coder with at least 2 years of relevant experience<br />\n&#8211; Responsible for collecting, coding and recording accurate and complete patient care data from Outpatient facility records<br />\n&#8211; Working knowledge of and ability to resolve NCCI, MUE &amp; Medical Necessity Edits<br />\n&#8211; Employer desires a self-starter with a strong sense of ownership and the ability to work independently<br />\n&#8211; Position will report to the HIM Manager</p>\n<p><strong>Requirements:</strong><br />\n&#8211; RHIA, RHIT, CCS, COC or CCA required<br />\n&#8211; Experience in Meditech and Cerner a plus<br />\n&#8211; 3M experience desired<br />\n&#8211; Must live in Connecticut, Georgia, Massachusetts, New Mexico or Rhode Island</p>\n<p><strong>Benefits:</strong><br />\n&#8211; Employer desires to move quickly in making a hiring decision once the right candidate is identified!<br />\n&#8211; Full-time, full-benefit, long-term and stable opportunity working directly for a health system<br />\n&#8211; 100% Remote<br />\n&#8211; $25-30/hr+</p>\n",
+    "protected": false
+  },
+  "author": 2,
+  "featured_media": 0,
+  "template": "",
+  "meta": {
+    "_et_pb_use_builder": "",
+    "_et_pb_old_content": "",
+    "_et_gb_content_width": "",
+    "_job_location": "100% Remote; must live in CT, GA, MA, NM or RI",
+    "_application": "careersenq@gmail.com",
+    "_company_name": "$25-30/hr+",
+    "_company_website": "",
+    "_company_tagline": "",
+    "_company_twitter": "",
+    "_company_video": "",
+    "_filled": 0,
+    "_featured": 0
+  },
+  "job-categories": [8, 40],
+  "job-types": [3],
+  "_links": {
+    "self": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/job-listings/4925" }
+    ],
+    "collection": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/job-listings" }
+    ],
+    "about": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/types/job_listing" }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/users/2"
+      }
+    ],
+    "wp:attachment": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/media?parent=4925" }
+    ],
+    "wp:term": [
+      {
+        "taxonomy": "job_listing_category",
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/job-categories?post=4925"
+      },
+      {
+        "taxonomy": "job_listing_type",
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/job-types?post=4925"
+      }
+    ],
+    "curies": [
+      { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+    ]
+  }
+}

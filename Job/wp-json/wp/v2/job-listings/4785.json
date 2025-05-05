@@ -1,0 +1,73 @@
+{
+  "id": 4785,
+  "date": "2024-06-18T10:37:50",
+  "date_gmt": "2024-06-18T17:37:50",
+  "guid": {
+    "rendered": "https://www.himjobs.com/?post_type=job_listing&#038;p=4785"
+  },
+  "modified": "2024-07-20T15:07:36",
+  "modified_gmt": "2024-07-20T22:07:36",
+  "slug": "50-remote-drg-auditor-validator-tn-tx",
+  "status": "publish",
+  "type": "job_listing",
+  "link": "https://www.himjobs.com/job/50-remote-drg-auditor-validator-tn-tx/",
+  "title": { "rendered": "50% Remote DRG Auditor/Validator: TN/TX" },
+  "content": {
+    "rendered": "<p><strong>Salary:</strong> up to $140k in Total Compensation</p>\n<p><strong>Location:</strong> 50% Remote with 50% travel to Nashville, TN &amp; San Antonio, TX</p>\n<p><strong>Job Description:</strong><br />\n&#8211; Seeking Consultant level DRG Auditors/Validators, \u201cthe best of the best\u201d who are extremely confident in their skillset!<br />\n&#8211; Do you desire or maybe even miss traveling onsite to hospitals to conduct DRG Validation Audits? This could be the opportunity you\u2019ve been looking for!<br />\n&#8211; Perform DRG reviews by validating the accuracy of the assigned DRG to determine if a discrepancy exists<br />\n&#8211; Write professional notes to document your findings<br />\n&#8211; Motivated, independent workers will do well in this position<br />\n&#8211; Open to traveling about 50% of your time to Nashville, TN &amp; San Antonio, TX. Plan on 6 weeks of travel per quarter split between Nashville, TN &amp; San Antonio, TX. Travel will be scheduled in advance and towards the second half of each quarter.</p>\n<p><strong>Requirements:</strong><br />\n&#8211; Consultant level DRG Auditing/Validation experience<br />\n&#8211; CCS Credential required, unfortunately no exceptions<br />\n&#8211; Willingness to complete an assessment to confirm skillset<br />\n&#8211; <strong>Open to 50% travel with costs covered by employer</strong></p>\n<p><strong>Benefits:</strong><br />\n&#8211; These aren\u2019t contract or temp to hire positions, H.I.M. Recruiters only represents what we feel are HIM Career opportunities and have been doing so for over 30 years!<br />\n&#8211; This is a permanent position working directly for a large corporation continuing to grow its DRG division<br />\n&#8211; All traveling costs covered by employer<br />\n&#8211; Full benefit package offered<br />\n&#8211; $110k &#8211; $140k in total compensation</p>\n",
+    "protected": false
+  },
+  "author": 2,
+  "featured_media": 0,
+  "template": "",
+  "meta": {
+    "_et_pb_use_builder": "",
+    "_et_pb_old_content": "",
+    "_et_gb_content_width": "",
+    "_job_location": "up to $140k in Total Compensation",
+    "_application": "careersenq@gmail.com",
+    "_company_name": "",
+    "_company_website": "",
+    "_company_tagline": "",
+    "_company_twitter": "",
+    "_company_video": "",
+    "_filled": 0,
+    "_featured": 0
+  },
+  "job-categories": [17, 14],
+  "job-types": [],
+  "_links": {
+    "self": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/job-listings/4785" }
+    ],
+    "collection": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/job-listings" }
+    ],
+    "about": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/types/job_listing" }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/users/2"
+      }
+    ],
+    "wp:attachment": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/media?parent=4785" }
+    ],
+    "wp:term": [
+      {
+        "taxonomy": "job_listing_category",
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/job-categories?post=4785"
+      },
+      {
+        "taxonomy": "job_listing_type",
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/job-types?post=4785"
+      }
+    ],
+    "curies": [
+      { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+    ]
+  }
+}

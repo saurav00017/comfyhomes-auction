@@ -1,0 +1,74 @@
+{
+  "id": 159,
+  "date": "2019-12-13T10:58:16",
+  "date_gmt": "2019-12-13T18:58:16",
+  "guid": { "rendered": "https://www.himjobs.com/?page_id=159" },
+  "modified": "2020-11-18T12:38:47",
+  "modified_gmt": "2020-11-18T20:38:47",
+  "slug": "upload-a-job-opening",
+  "status": "publish",
+  "type": "page",
+  "link": "https://www.himjobs.com/employers/upload-a-job-opening/",
+  "title": { "rendered": "Upload a Job Opening" },
+  "content": {
+    "rendered": "<p>[et_pb_section fb_built=&#8221;1&#8243; admin_label=&#8221;Section&#8221; _builder_version=&#8221;4.0.6&#8243; background_color=&#8221;#eeeeee&#8221; background_image=&#8221;https://www.himjobs.com/wp-content/uploads/2020/02/bkgd-hrd-blue.jpg&#8221; global_module=&#8221;492&#8243; saved_tabs=&#8221;all&#8221;][et_pb_row _builder_version=&#8221;4.0.6&#8243;][et_pb_column type=&#8221;4_4&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_text admin_label=&#8221;Employers&#8221; _builder_version=&#8221;4.0.6&#8243; text_font=&#8221;|300||on|||||&#8221; text_font_size=&#8221;40px&#8221; background_layout=&#8221;dark&#8221;]</p>\n<p>Employers</p>\n<p>[/et_pb_text][/et_pb_column][/et_pb_row][/et_pb_section][et_pb_section fb_built=&#8221;1&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_row _builder_version=&#8221;4.0.6&#8243;][et_pb_column type=&#8221;4_4&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_text _builder_version=&#8221;4.4.1&#8243;]</p>\n<h1>Upload a Job Opening</h1>\n<p>[/et_pb_text][/et_pb_column][/et_pb_row][et_pb_row column_structure=&#8221;1_3,2_3&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_column type=&#8221;1_3&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_text _builder_version=&#8221;4.4.1&#8243;]</p>\n<p>If you would like H.I.M. Recruiters to assist you in filling your job opening(s), on either a contingency or retained basis, please complete the fields below. We will call you back shortly to discuss your requirements and our Fee Policy Agreement in detail.</p>\n<p>[/et_pb_text][/et_pb_column][et_pb_column type=&#8221;2_3&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_text _builder_version=&#8221;4.7.1&#8243; _module_preset=&#8221;default&#8221; hover_enabled=&#8221;0&#8243; sticky_enabled=&#8221;0&#8243; admin_label=&#8221;Caldera Form Shortcode&#8221;]<div class=\"caldera-grid\" id=\"caldera_form_1\" data-cf-ver=\"1.9.3\" data-cf-form-id=\"CF5fb585c9588df\"><div id=\"caldera_notices_1\" data-spinner=\"https://www.himjobs.com/wp-admin/images/spinner.gif\"></div><form data-instance=\"1\" class=\"CF5fb585c9588df caldera_forms_form cfajax-trigger\" method=\"POST\" enctype=\"multipart/form-data\" id=\"CF5fb585c9588df_1\" data-form-id=\"CF5fb585c9588df\" aria-label=\"Upload a Job Opening\" data-target=\"#caldera_notices_1\" data-template=\"#cfajax_CF5fb585c9588df-tmpl\" data-cfajax=\"CF5fb585c9588df\" data-load-element=\"_parent\" data-load-class=\"cf_processing\" data-post-disable=\"0\" data-action=\"cf_process_ajax_submit\" data-request=\"https://www.himjobs.com/cf-api/CF5fb585c9588df\" data-hiderows=\"true\">\r\n<input type=\"hidden\" id=\"_cf_verify_CF5fb585c9588df\" name=\"_cf_verify\" value=\"50d9ef440c\"  data-nonce-time=\"1730317590\" /><input type=\"hidden\" name=\"_wp_http_referer\" value=\"/wp-json/wp/v2/pages/159\" /><div id=\"cf2-CF5fb585c9588df_1\"></div><input type=\"hidden\" name=\"_cf_frm_id\" value=\"CF5fb585c9588df\">\r\n<input type=\"hidden\" name=\"_cf_frm_ct\" value=\"1\">\r\n<input type=\"hidden\" name=\"cfajax\" value=\"CF5fb585c9588df\">\r\n<input type=\"hidden\" name=\"_cf_cr_pst\" value=\"159\">\r\n<div class=\"hide\" style=\"display:none; overflow:hidden;height:0;width:0;\">\r\n<label>Name</label><input type=\"text\" name=\"name\" value=\"\" autocomplete=\"off\">\r\n</div><div id=\"CF5fb585c9588df_1-row-1\"  class=\"row  first_row\"><div  class=\"col-sm-12  single\"><div data-field-wrapper=\"fld_8768091\" class=\"form-group\" id=\"fld_8768091_1-wrap\">\r\n\t<label id=\"fld_8768091Label\" for=\"fld_8768091_1\" class=\"control-label\">Full Name <span aria-hidden=\"true\" role=\"presentation\" class=\"field_required\" style=\"color:#ee0000;\">*</span></label>\r\n\t<div class=\"\">\r\n\t\t<input   required type=\"text\" data-field=\"fld_8768091\" class=\" form-control\" id=\"fld_8768091_1\" name=\"fld_8768091\" value=\"\" data-type=\"text\" aria-required=\"true\"   aria-labelledby=\"fld_8768091Label\" >\t\t\t</div>\r\n</div>\r\n<div data-field-wrapper=\"fld_6009157\" class=\"form-group\" id=\"fld_6009157_1-wrap\">\r\n\t<label id=\"fld_6009157Label\" for=\"fld_6009157_1\" class=\"control-label\">Email Address <span aria-hidden=\"true\" role=\"presentation\" class=\"field_required\" style=\"color:#ee0000;\">*</span></label>\r\n\t<div class=\"\">\r\n\t\t<input   required type=\"email\" data-field=\"fld_6009157\" class=\" form-control\" id=\"fld_6009157_1\" name=\"fld_6009157\" value=\"\" data-type=\"email\" aria-required=\"true\"   aria-labelledby=\"fld_6009157Label\" >\t\t\t</div>\r\n</div>\r\n<div data-field-wrapper=\"fld_793398\" class=\"form-group\" id=\"fld_793398_1-wrap\">\r\n\t<label id=\"fld_793398Label\" for=\"fld_793398_1\" class=\"control-label\">Phone <span aria-hidden=\"true\" role=\"presentation\" class=\"field_required\" style=\"color:#ee0000;\">*</span></label>\r\n\t<div class=\"\">\r\n\t\t<input   required type=\"text\" data-field=\"fld_793398\" class=\" form-control\" id=\"fld_793398_1\" name=\"fld_793398\" value=\"\" data-type=\"text\" aria-required=\"true\"   aria-labelledby=\"fld_793398Label\" >\t\t\t</div>\r\n</div>\r\n<div data-field-wrapper=\"fld_7114647\" class=\"form-group\" id=\"fld_7114647_1-wrap\">\r\n\t<label id=\"fld_7114647Label\" for=\"fld_7114647_1\" class=\"control-label\">Title</label>\r\n\t<div class=\"\">\r\n\t\t<input    type=\"text\" data-field=\"fld_7114647\" class=\" form-control\" id=\"fld_7114647_1\" name=\"fld_7114647\" value=\"\" data-type=\"text\"   aria-labelledby=\"fld_7114647Label\" >\t\t\t</div>\r\n</div>\r\n<div data-field-wrapper=\"fld_8528270\" class=\"form-group\" id=\"fld_8528270_1-wrap\">\r\n\t<label id=\"fld_8528270Label\" for=\"fld_8528270_1\" class=\"control-label\">Company <span aria-hidden=\"true\" role=\"presentation\" class=\"field_required\" style=\"color:#ee0000;\">*</span></label>\r\n\t<div class=\"\">\r\n\t\t<input   required type=\"text\" data-field=\"fld_8528270\" class=\" form-control\" id=\"fld_8528270_1\" name=\"fld_8528270\" value=\"\" data-type=\"text\" aria-required=\"true\"   aria-labelledby=\"fld_8528270Label\" >\t\t\t</div>\r\n</div>\r\n<div data-field-wrapper=\"fld_5928581\" class=\"form-group\" id=\"fld_5928581_1-wrap\">\r\n\t<label id=\"fld_5928581Label\" for=\"fld_5928581_1\" class=\"control-label\">Website Address <span aria-hidden=\"true\" role=\"presentation\" class=\"field_required\" style=\"color:#ee0000;\">*</span></label>\r\n\t<div class=\"\">\r\n\t\t<input   required type=\"text\" data-field=\"fld_5928581\" class=\" form-control\" id=\"fld_5928581_1\" name=\"fld_5928581\" value=\"\" data-type=\"text\" aria-required=\"true\"   aria-labelledby=\"fld_5928581Label\" >\t\t\t</div>\r\n</div>\r\n</div></div><div id=\"CF5fb585c9588df_1-row-2\"  class=\"row \"><div  class=\"col-sm-12  single\"><div id=\"cf2-fld_8244493_1\" class=\"cf2-field-wrapper\" data-field-id=\"fld_8244493_1\"></div><div id=\"cf2-fld_2113823_1\" class=\"cf2-field-wrapper\" data-field-id=\"fld_2113823_1\"></div><div id=\"cf2-fld_3806890_1\" class=\"cf2-field-wrapper\" data-field-id=\"fld_3806890_1\"></div></div></div><div id=\"CF5fb585c9588df_1-row-3\"  class=\"row \"><div  class=\"col-sm-12  single\"><div data-field-wrapper=\"fld_7683514\" class=\"form-group\" id=\"fld_7683514_1-wrap\">\r\n\t<label id=\"fld_7683514Label\" for=\"fld_7683514_1\" class=\"control-label\">Additional Comments (Salary Range, Requirements, Selling Features, etc.)</label>\r\n\t<div class=\"\">\r\n\t\t<textarea name=\"fld_7683514\" value=\"\" data-field=\"fld_7683514\" class=\"form-control\" id=\"fld_7683514_1\" rows=\"7\"    aria-labelledby=\"fld_7683514Label\" ></textarea>\n\t\t\t</div>\r\n</div>\r\n</div></div><div id=\"CF5fb585c9588df_1-row-4\"  class=\"row \"><div  class=\"col-sm-12  single\"><div data-field-wrapper=\"fld_7908577\" class=\"form-group\" id=\"fld_7908577_1-wrap\">\r\n<div class=\"\">\r\n\t<input  class=\"btn btn-default\" type=\"submit\" name=\"fld_7908577\" id=\"fld_7908577_1\" value=\"Send Message\" data-field=\"fld_7908577\"  >\n</div>\r\n</div>\r\n\t<input class=\"button_trigger_1\" type=\"hidden\" name=\"fld_7908577\" id=\"fld_7908577_1_btn\" value=\"\" data-field=\"fld_7908577\"  />\n</div></div><div id=\"CF5fb585c9588df_1-row-5\"  class=\"row  last_row\"><div  class=\"col-sm-12  single\"><div data-field-wrapper=\"fld_6494165\" class=\"form-group\" id=\"fld_6494165_1-wrap\">\r\n<label id=\"fld_6494165Label\" for=\"fld_6494165_1\" class=\"control-label\">I am human <span aria-hidden=\"true\" role=\"presentation\" class=\"field_required\" style=\"color:#ee0000;\">*</span></label>\r\n\n\n<div class=\"\">\r\n\n<input   required type=\"hidden\" data-field=\"fld_6494165\" class=\" form-control\" id=\"fld_6494165_1\" name=\"fld_6494165\" value=\"\" data-type=\"recaptcha\" aria-required=\"true\"   aria-labelledby=\"fld_6494165Label\" >\n\t<div id=\"capfld_6494165_1\" class=\"g-recaptcha\" data-sitekey=\"6LfbQt4ZAAAAABavNao62UXz7vdqWOvx-UpkAeay\" ></div>\n\n\n</div>\r\n\n</div>\r\n</div></div></form>\r\n</div>\r\n[/et_pb_text][/et_pb_column][/et_pb_row][/et_pb_section][et_pb_section fb_built=&#8221;1&#8243; _builder_version=&#8221;4.3.2&#8243; background_color=&#8221;#82be5a&#8221; background_image=&#8221;https://www.himjobs.com/wp-content/uploads/2020/02/cta-bkgd.jpg&#8221; custom_padding=&#8221;0px||0px||false|false&#8221; global_module=&#8221;572&#8243; collapsed=&#8221;off&#8221;][et_pb_row _builder_version=&#8221;4.0.6&#8243; collapsed=&#8221;off&#8221;][et_pb_column type=&#8221;4_4&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_cta title=&#8221;Start Your Job Search&#8221; button_url=&#8221;https://www.himjobs.com/jobs/&#8221; button_text=&#8221;Search All Jobs&#8221; _builder_version=&#8221;4.6.6&#8243; background_enable_color=&#8221;off&#8221;]</p>\n<p>View all of the HIM job opportunities available now.</p>\n<p>[/et_pb_cta][/et_pb_column][/et_pb_row][/et_pb_section]</p>\n",
+    "protected": false
+  },
+  "excerpt": {
+    "rendered": "<p>[et_pb_section fb_built=&#8221;1&#8243; admin_label=&#8221;Section&#8221; _builder_version=&#8221;4.0.6&#8243; background_color=&#8221;#eeeeee&#8221; background_image=&#8221;https://www.himjobs.com/wp-content/uploads/2020/02/bkgd-hrd-blue.jpg&#8221; global_module=&#8221;492&#8243; saved_tabs=&#8221;all&#8221;][et_pb_row _builder_version=&#8221;4.0.6&#8243;][et_pb_column type=&#8221;4_4&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_text admin_label=&#8221;Employers&#8221; _builder_version=&#8221;4.0.6&#8243; text_font=&#8221;|300||on|||||&#8221; text_font_size=&#8221;40px&#8221; background_layout=&#8221;dark&#8221;] Employers [/et_pb_text][/et_pb_column][/et_pb_row][/et_pb_section][et_pb_section fb_built=&#8221;1&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_row _builder_version=&#8221;4.0.6&#8243;][et_pb_column type=&#8221;4_4&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_text _builder_version=&#8221;4.4.1&#8243;] Upload a Job Opening [/et_pb_text][/et_pb_column][/et_pb_row][et_pb_row column_structure=&#8221;1_3,2_3&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_column type=&#8221;1_3&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_text _builder_version=&#8221;4.4.1&#8243;] If you would like H.I.M. Recruiters to assist you in filling your job opening(s), on either a contingency or retained basis, [&hellip;]</p>\n",
+    "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "parent": 32,
+  "menu_order": 0,
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "template": "",
+  "meta": {
+    "_et_pb_use_builder": "on",
+    "_et_pb_old_content": "",
+    "_et_gb_content_width": ""
+  },
+  "_links": {
+    "self": [{ "href": "https://www.himjobs.com/wp-json/wp/v2/pages/159" }],
+    "collection": [{ "href": "https://www.himjobs.com/wp-json/wp/v2/pages" }],
+    "about": [{ "href": "https://www.himjobs.com/wp-json/wp/v2/types/page" }],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/users/1"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/comments?post=159"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 10,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/pages/159/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 1409,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/pages/159/revisions/1409"
+      }
+    ],
+    "up": [
+      {
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/pages/32"
+      }
+    ],
+    "wp:attachment": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/media?parent=159" }
+    ],
+    "curies": [
+      { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+    ]
+  }
+}

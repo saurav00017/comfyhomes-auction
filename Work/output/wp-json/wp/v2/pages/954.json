@@ -1,0 +1,74 @@
+{
+  "id": 954,
+  "date": "2020-03-19T11:58:04",
+  "date_gmt": "2020-03-19T18:58:04",
+  "guid": { "rendered": "https://www.himjobs.com/?page_id=954" },
+  "modified": "2020-03-19T11:58:07",
+  "modified_gmt": "2020-03-19T18:58:07",
+  "slug": "consultants-him-all-types",
+  "status": "publish",
+  "type": "page",
+  "link": "https://www.himjobs.com/specialties/consultants-him-all-types/",
+  "title": { "rendered": "Consultants (HIM) \u2013 All Types" },
+  "content": {
+    "rendered": "<p>[et_pb_section fb_built=&#8221;1&#8243; admin_label=&#8221;Section&#8221; _builder_version=&#8221;4.0.6&#8243; background_color=&#8221;#eeeeee&#8221; background_image=&#8221;https://www.himjobs.com/wp-content/uploads/2020/02/bkgd-hrd-blue.jpg&#8221; global_module=&#8221;894&#8243; saved_tabs=&#8221;all&#8221;][et_pb_row _builder_version=&#8221;4.0.6&#8243;][et_pb_column type=&#8221;4_4&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_text admin_label=&#8221;Specialties&#8221; _builder_version=&#8221;4.3.2&#8243; text_font=&#8221;|300||on|||||&#8221; text_font_size=&#8221;40px&#8221; background_layout=&#8221;dark&#8221;]</p>\n<p>Specialties</p>\n<p>[/et_pb_text][/et_pb_column][/et_pb_row][/et_pb_section][et_pb_section fb_built=&#8221;1&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_row _builder_version=&#8221;4.0.6&#8243;][et_pb_column type=&#8221;4_4&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_text _builder_version=&#8221;4.3.2&#8243; hover_enabled=&#8221;0&#8243;]</p>\n<h1>Consultants (HIM) \u2013 All Types</h1>\n<p><div class=\"job_listings\" data-location=\"\" data-keywords=\"\" data-show_filters=\"true\" data-show_pagination=\"false\" data-per_page=\"10\" data-orderby=\"featured\" data-order=\"DESC\" data-categories=\"consultants-him-all-types\" data-disable-form-state-storage=\"\" data-post_id=\"954\" >\n<form class=\"job_filters\">\n\t\n\t<div class=\"search_jobs\">\n\t\t\n\t\t<div class=\"search_keywords\">\n\t\t\t<label for=\"search_keywords\">Keywords</label>\n\t\t\t<input type=\"text\" name=\"search_keywords\" id=\"search_keywords\" placeholder=\"Keywords\" value=\"\" />\n\t\t</div>\n\n\t\t<div class=\"search_location\">\n\t\t\t<label for=\"search_location\">Location</label>\n\t\t\t<input type=\"text\" name=\"search_location\" id=\"search_location\" placeholder=\"Location\" value=\"\" />\n\t\t</div>\n\n\t\t<div style=\"clear: both\"></div>\n\n\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"search_categories[]\" value=\"consultants-him-all-types\" />\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"search_submit\">\n\t\t\t\t<input type=\"submit\" value=\"Search Jobs\">\n\t\t\t</div>\n\t\t\n\t\t\t</div>\n\n\t\t<ul class=\"job_types\">\n\t\t\t\t\t<li><label for=\"job_type_freelance\" class=\"freelance\"><input type=\"checkbox\" name=\"filter_job_type[]\" value=\"freelance\"  checked='checked' id=\"job_type_freelance\" /> Freelance</label></li>\n\t\t\t\t\t<li><label for=\"job_type_full-time\" class=\"full-time\"><input type=\"checkbox\" name=\"filter_job_type[]\" value=\"full-time\"  checked='checked' id=\"job_type_full-time\" /> Full Time</label></li>\n\t\t\t\t\t<li><label for=\"job_type_internship\" class=\"internship\"><input type=\"checkbox\" name=\"filter_job_type[]\" value=\"internship\"  checked='checked' id=\"job_type_internship\" /> Internship</label></li>\n\t\t\t\t\t<li><label for=\"job_type_part-time\" class=\"part-time\"><input type=\"checkbox\" name=\"filter_job_type[]\" value=\"part-time\"  checked='checked' id=\"job_type_part-time\" /> Part Time</label></li>\n\t\t\t\t\t<li><label for=\"job_type_temporary\" class=\"temporary\"><input type=\"checkbox\" name=\"filter_job_type[]\" value=\"temporary\"  checked='checked' id=\"job_type_temporary\" /> Temporary</label></li>\n\t\t\t</ul>\n\t<input type=\"hidden\" name=\"filter_job_type[]\" value=\"\" />\n<div class=\"showing_jobs\"></div></form>\n\n\n<noscript>Your browser does not support JavaScript, or it is disabled. JavaScript must be enabled in order to view listings.</noscript>\n<ul class=\"job_listings\">\n</ul>\n<a class=\"load_more_jobs\" href=\"#\" style=\"display:none;\"><strong>Load more listings</strong></a></div>[/et_pb_text][/et_pb_column][/et_pb_row][/et_pb_section][et_pb_section fb_built=&#8221;1&#8243; _builder_version=&#8221;4.3.2&#8243; background_color=&#8221;#82be5a&#8221; background_image=&#8221;https://www.himjobs.com/wp-content/uploads/2020/02/cta-bkgd.jpg&#8221; custom_padding=&#8221;0px||0px||false|false&#8221; global_module=&#8221;572&#8243;][et_pb_row _builder_version=&#8221;4.0.6&#8243;][et_pb_column type=&#8221;4_4&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_cta title=&#8221;Start Your Job Search&#8221; button_url=&#8221;https://www.himjobs.com/search-jobs/&#8221; button_text=&#8221;Search Jobs&#8221; _builder_version=&#8221;4.0.6&#8243; background_enable_color=&#8221;off&#8221;]</p>\n<p>View all of the HIM job opportunities available now.</p>\n<p>[/et_pb_cta][/et_pb_column][/et_pb_row][/et_pb_section]</p>\n",
+    "protected": false
+  },
+  "excerpt": {
+    "rendered": "<p>[et_pb_section fb_built=&#8221;1&#8243; admin_label=&#8221;Section&#8221; _builder_version=&#8221;4.0.6&#8243; background_color=&#8221;#eeeeee&#8221; background_image=&#8221;https://www.himjobs.com/wp-content/uploads/2020/02/bkgd-hrd-blue.jpg&#8221; global_module=&#8221;894&#8243; saved_tabs=&#8221;all&#8221;][et_pb_row _builder_version=&#8221;4.0.6&#8243;][et_pb_column type=&#8221;4_4&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_text admin_label=&#8221;Specialties&#8221; _builder_version=&#8221;4.3.2&#8243; text_font=&#8221;|300||on|||||&#8221; text_font_size=&#8221;40px&#8221; background_layout=&#8221;dark&#8221;] Specialties [/et_pb_text][/et_pb_column][/et_pb_row][/et_pb_section][et_pb_section fb_built=&#8221;1&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_row _builder_version=&#8221;4.0.6&#8243;][et_pb_column type=&#8221;4_4&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_text _builder_version=&#8221;4.3.2&#8243; hover_enabled=&#8221;0&#8243;] Consultants (HIM) \u2013 All Types [/et_pb_text][/et_pb_column][/et_pb_row][/et_pb_section][et_pb_section fb_built=&#8221;1&#8243; _builder_version=&#8221;4.3.2&#8243; background_color=&#8221;#82be5a&#8221; background_image=&#8221;https://www.himjobs.com/wp-content/uploads/2020/02/cta-bkgd.jpg&#8221; custom_padding=&#8221;0px||0px||false|false&#8221; global_module=&#8221;572&#8243;][et_pb_row _builder_version=&#8221;4.0.6&#8243;][et_pb_column type=&#8221;4_4&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_cta title=&#8221;Start Your Job Search&#8221; button_url=&#8221;https://www.himjobs.com/search-jobs/&#8221; button_text=&#8221;Search Jobs&#8221; _builder_version=&#8221;4.0.6&#8243; background_enable_color=&#8221;off&#8221;] View all of the HIM job [&hellip;]</p>\n",
+    "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "parent": 23,
+  "menu_order": 0,
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "template": "",
+  "meta": {
+    "_et_pb_use_builder": "on",
+    "_et_pb_old_content": "",
+    "_et_gb_content_width": ""
+  },
+  "_links": {
+    "self": [{ "href": "https://www.himjobs.com/wp-json/wp/v2/pages/954" }],
+    "collection": [{ "href": "https://www.himjobs.com/wp-json/wp/v2/pages" }],
+    "about": [{ "href": "https://www.himjobs.com/wp-json/wp/v2/types/page" }],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/users/1"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/comments?post=954"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 2,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/pages/954/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 957,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/pages/954/revisions/957"
+      }
+    ],
+    "up": [
+      {
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/pages/23"
+      }
+    ],
+    "wp:attachment": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/media?parent=954" }
+    ],
+    "curies": [
+      { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+    ]
+  }
+}

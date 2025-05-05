@@ -1,0 +1,18 @@
+{
+  "id": 2,
+  "name": "Administrator HIMJobs",
+  "url": "http://himjobs.com/",
+  "description": "",
+  "link": "https://www.himjobs.com/posts/author/wp-editor/",
+  "slug": "wp-editor",
+  "avatar_urls": {
+    "24": "https://secure.gravatar.com/avatar/1ba588cc4d56eab9f27663a92c64b0af?s=24&d=mm&r=g",
+    "48": "https://secure.gravatar.com/avatar/1ba588cc4d56eab9f27663a92c64b0af?s=48&d=mm&r=g",
+    "96": "https://secure.gravatar.com/avatar/1ba588cc4d56eab9f27663a92c64b0af?s=96&d=mm&r=g"
+  },
+  "meta": [],
+  "_links": {
+    "self": [{ "href": "https://www.himjobs.com/wp-json/wp/v2/users/2" }],
+    "collection": [{ "href": "https://www.himjobs.com/wp-json/wp/v2/users" }]
+  }
+}

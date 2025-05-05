@@ -1,0 +1,68 @@
+{
+  "id": 32,
+  "date": "2019-12-12T12:26:30",
+  "date_gmt": "2019-12-12T20:26:30",
+  "guid": { "rendered": "https://www.himjobs.com/?page_id=32" },
+  "modified": "2019-12-12T12:26:33",
+  "modified_gmt": "2019-12-12T20:26:33",
+  "slug": "employers",
+  "status": "publish",
+  "type": "page",
+  "link": "https://www.himjobs.com/employers/",
+  "title": { "rendered": "Employers" },
+  "content": {
+    "rendered": "<p>[et_pb_section fb_built=&#8221;1&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_row _builder_version=&#8221;4.0.6&#8243;][et_pb_column type=&#8221;4_4&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_text _builder_version=&#8221;4.0.6&#8243;][/et_pb_text][/et_pb_column][/et_pb_row][/et_pb_section]</p>\n",
+    "protected": false
+  },
+  "excerpt": {
+    "rendered": "<p>[et_pb_section fb_built=&#8221;1&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_row _builder_version=&#8221;4.0.6&#8243;][et_pb_column type=&#8221;4_4&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_text _builder_version=&#8221;4.0.6&#8243;][/et_pb_text][/et_pb_column][/et_pb_row][/et_pb_section]</p>\n",
+    "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "parent": 0,
+  "menu_order": 0,
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "template": "",
+  "meta": {
+    "_et_pb_use_builder": "on",
+    "_et_pb_old_content": "",
+    "_et_gb_content_width": ""
+  },
+  "_links": {
+    "self": [{ "href": "https://www.himjobs.com/wp-json/wp/v2/pages/32" }],
+    "collection": [{ "href": "https://www.himjobs.com/wp-json/wp/v2/pages" }],
+    "about": [{ "href": "https://www.himjobs.com/wp-json/wp/v2/types/page" }],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/users/1"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/comments?post=32"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 2,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/pages/32/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 34,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/pages/32/revisions/34"
+      }
+    ],
+    "wp:attachment": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/media?parent=32" }
+    ],
+    "curies": [
+      { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+    ]
+  }
+}

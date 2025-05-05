@@ -1,0 +1,73 @@
+{
+  "id": 4505,
+  "date": "2024-06-10T11:45:20",
+  "date_gmt": "2024-06-10T18:45:20",
+  "guid": {
+    "rendered": "https://www.himjobs.com/?post_type=job_listing&#038;p=4505"
+  },
+  "modified": "2024-06-18T13:34:29",
+  "modified_gmt": "2024-06-18T20:34:29",
+  "slug": "senior-inpatient-coder-union",
+  "status": "publish",
+  "type": "job_listing",
+  "link": "https://www.himjobs.com/job/senior-inpatient-coder-union/",
+  "title": { "rendered": "Senior Inpatient Coder (Union)" },
+  "content": {
+    "rendered": "<p><strong>Salary:</strong> up to $47/hr based on experience and location</p>\n<p><strong>Location:</strong> 100% Remote but must live in <strong>AK, CA, MT, NM, OR, TX or WA</strong></p>\n<p><strong>Job Description:</strong><br />\n&#8211; An exciting Inpatient Coding opportunity responsible for ensuring accurate and compliant coding of acute care services<br />\n&#8211; Seeking candidates with a \u201ccan-do\u201d attitude, passionate about HIM/Coding and interested in continuing to learn/grow as a Coder<br />\n&#8211; Communicate effectively and professionally with all levels of staff within the facility and health system</p>\n<p><strong>Requirements:</strong><br />\n&#8211; At least 1 year of Inpatient Coding experience for a hospital with at least 300 beds<br />\n&#8211; Must live in one of the following States:<br />\n\u2022 Alaska, California, Montana, New Mexico, Oregon, Texas or Washington<br />\n&#8211; RHIA, RHIT and/or CCS<br />\n&#8211; Consistent work history, not seeking candidates who make frequent employer changes<br />\n&#8211; EPIC/3M 360 CAC experience desired<br />\n&#8211; Open to working in a Union environment</p>\n<p><strong>Benefits:</strong><br />\n&#8211; This is a wonderful Inpatient Coding opportunity working for a large and well-respected Health System<br />\n&#8211; Flexible schedule, Monday-Friday<br />\n&#8211; up to $47/hr dependent on geographical location (cost of living) and years of experience<br />\n&#8211; A great opportunity for an Inpatient Coder interested in being a part of one of the best Coding/Auditing teams in the world!<br />\n&#8211; Full-time, stable, permanent opportunity working for a large health system<br />\n&#8211; Great benefits!<br />\n&#8211; Laptop, docking station and dual monitors provided by employer<br />\n&#8211; No COVID Vaccine required</p>\n",
+    "protected": false
+  },
+  "author": 2,
+  "featured_media": 0,
+  "template": "",
+  "meta": {
+    "_et_pb_use_builder": "",
+    "_et_pb_old_content": "",
+    "_et_gb_content_width": "",
+    "_job_location": "100% Remote; must live in AK, CA, MT, NM, OR, TX or WA",
+    "_application": "careersenq@gmail.com",
+    "_company_name": "up to $47/hr",
+    "_company_website": "",
+    "_company_tagline": "",
+    "_company_twitter": "",
+    "_company_video": "",
+    "_filled": 0,
+    "_featured": 0
+  },
+  "job-categories": [8, 39],
+  "job-types": [3],
+  "_links": {
+    "self": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/job-listings/4505" }
+    ],
+    "collection": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/job-listings" }
+    ],
+    "about": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/types/job_listing" }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/users/2"
+      }
+    ],
+    "wp:attachment": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/media?parent=4505" }
+    ],
+    "wp:term": [
+      {
+        "taxonomy": "job_listing_category",
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/job-categories?post=4505"
+      },
+      {
+        "taxonomy": "job_listing_type",
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/job-types?post=4505"
+      }
+    ],
+    "curies": [
+      { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+    ]
+  }
+}

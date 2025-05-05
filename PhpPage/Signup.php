@@ -1,0 +1,170 @@
+<?php
+include("database.php");
+
+// Initialize variables
+$message = "";
+
+// Check if form data is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get the form data safely using POST
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $email = $_POST["email"];
+
+    // Sanitize inputs to prevent SQL injection
+    $username = mysqli_real_escape_string($connection, $username);
+    $email = mysqli_real_escape_string($connection, $email);
+    $password = mysqli_real_escape_string($connection, $password);
+
+    // Check if the email or username already exists
+    $query = "SELECT email FROM users WHERE email='$email'";
+    $results2 = mysqli_query($connection, "SELECT username FROM users WHERE username = '$username'");
+
+    if (mysqli_num_rows(mysqli_query($connection, $query)) > 0 || mysqli_num_rows($results2) > 0) {
+        // Email or username already exists
+        $message = "Email or Username already exists.";
+    } else {
+        // Hash the password for security
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+
+        // Insert new user
+        $insertQuery = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$hashedPassword')";
+        if (mysqli_query($connection, $insertQuery)) {
+            $message = "Sign up successful! You can now log in.";
+        } else {
+            $message = "Error: Could not sign up.";
+        }
+    }
+
+    // Free result set
+    if ($results2) {
+        mysqli_free_result($results2);
+    }
+}
+
+// Close the database connection
+mysqli_close($connection);
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up - D0NU55Ef</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #0d0d0d;
+            color: #00ff00; /* Classic hacker green */
+            font-family: 'VT323', monospace; /* Retro terminal font */
+            margin: 0;
+        }
+
+        .login {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid #00ff00;
+            width: 90%;
+            max-width: 400px;
+            height: auto;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #1a1a1a;
+            box-shadow: 0 0 15px #00ff00;
+        }
+
+        b {
+            color: #00ff00;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #00ff00;
+        }
+
+        input {
+            margin-bottom: 15px;
+            padding: 10px;
+            width: 94%;
+            background-color: #000;
+            color: #00ff00;
+            border: 2px solid #00ff00;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        input::placeholder {
+            color: #00ff00;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #0d0d0d;
+            color: #00ff00;
+            width: 100%;
+            font-size: 18px;
+            border: 2px solid #00ff00;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #00ff00;
+            color: #0d0d0d;
+        }
+
+        a {
+            color: #ff0000;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 5px #ff0000;
+        }
+
+        .message {
+            color: #ff0000;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 480px) {
+            .login {
+                width: 95%;
+                padding: 15px;
+            }
+            b {
+                font-size: 24px;
+            }
+            input, button {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <b>D0NU55EF - Signup</b>
+
+        <!-- Display message if exists -->
+        <?php if (!empty($message)) { ?>
+            <div class="message"><?php echo $message; ?></div>
+        <?php } ?>
+
+        <form method="POST" action="">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <input type="text" name="username" placeholder="Enter your username" required>
+            <input type="password" name="password" placeholder="Enter your password" required>
+            <button type="submit">Sign Up</button>
+            <a href="login.php">Login</a> | <a href="#">Reset Password</a>
+        </form>
+    </div>
+</body>
+</html>

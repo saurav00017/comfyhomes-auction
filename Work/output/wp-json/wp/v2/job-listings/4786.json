@@ -1,0 +1,73 @@
+{
+  "id": 4786,
+  "date": "2024-06-18T13:32:34",
+  "date_gmt": "2024-06-18T20:32:34",
+  "guid": {
+    "rendered": "https://www.himjobs.com/?post_type=job_listing&#038;p=4786"
+  },
+  "modified": "2024-06-18T13:32:34",
+  "modified_gmt": "2024-06-18T20:32:34",
+  "slug": "senior-inpatient-coder-union-2",
+  "status": "publish",
+  "type": "job_listing",
+  "link": "https://www.himjobs.com/job/senior-inpatient-coder-union-2/",
+  "title": { "rendered": "Senior Inpatient Coder (Union)" },
+  "content": {
+    "rendered": "<p><strong>Salary:</strong> $39-45/hr based on experience</p>\n<p><strong>Location:</strong> 100% Remote, must live in California</p>\n<p><strong>Job Description:</strong><br />\n&#8211; An exciting Inpatient Coding opportunity responsible for ensuring accurate and compliant coding of acute care services<br />\n&#8211; Seeking candidates with a \u201ccan-do\u201d attitude, passionate about HIM/Coding and interested in continuing to learn/grow as a Coder<br />\n&#8211; Communicate effectively and professionally with all levels of staff within the facility and health system</p>\n<p><strong>Requirements:</strong><br />\n&#8211; At least 2 years of Inpatient Coding experience<br />\n&#8211; Must have residence in California<br />\n&#8211; RHIA, RHIT and/or CCS<br />\n&#8211; Consistent work history, not seeking candidates who make frequent employer changes<br />\n&#8211; Open to working in a Union environment<br />\n&#8211; Outpatient, Emergency Department and/or Same Day Surgery Coding experience a plus</p>\n<p><strong>Benefits:</strong><br />\n&#8211; This is a wonderful Inpatient Coding opportunity working for a large and well-respected Health System<br />\n&#8211; A great opportunity for an Inpatient Coder interested in being a part of one of the best Coding/Auditing teams in the world!<br />\n&#8211; Full-time, stable, permanent Unionized opportunity<br />\n&#8211; Great benefits!<br />\n&#8211; $39-45/hr<br />\n&#8211; Laptop, docking station and dual monitors provided by employer<br />\n&#8211; No COVID Vaccine required</p>\n",
+    "protected": false
+  },
+  "author": 2,
+  "featured_media": 0,
+  "template": "",
+  "meta": {
+    "_et_pb_use_builder": "",
+    "_et_pb_old_content": "",
+    "_et_gb_content_width": "",
+    "_job_location": "100% Remote; must live in California",
+    "_application": "careersenq@gmail.com",
+    "_company_name": "$39-45/hr",
+    "_company_website": "",
+    "_company_tagline": "",
+    "_company_twitter": "",
+    "_company_video": "",
+    "_filled": 0,
+    "_featured": 0
+  },
+  "job-categories": [8, 39],
+  "job-types": [3],
+  "_links": {
+    "self": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/job-listings/4786" }
+    ],
+    "collection": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/job-listings" }
+    ],
+    "about": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/types/job_listing" }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/users/2"
+      }
+    ],
+    "wp:attachment": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/media?parent=4786" }
+    ],
+    "wp:term": [
+      {
+        "taxonomy": "job_listing_category",
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/job-categories?post=4786"
+      },
+      {
+        "taxonomy": "job_listing_type",
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/job-types?post=4786"
+      }
+    ],
+    "curies": [
+      { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+    ]
+  }
+}

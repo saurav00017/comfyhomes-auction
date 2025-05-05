@@ -1,0 +1,290 @@
+/*
+ Theme Name:     Divi Child Theme
+ Theme URI:      https://www.elegantthemes.com/gallery/divi/
+ Description:    Divi Child Theme
+ Author:         Elegant Themes
+ Author URI:     https://www.elegantthemes.com
+ Template:       Divi
+ Version:        1.0.0
+*/
+
+/* =Theme customization starts here
+------------------------------------------------------- */
+
+#et-info {
+  float: right;
+}
+
+h1 {
+  font-size: 30px;
+  color: #0063ba;
+  font-weight: 800;
+  padding-bottom: 4%;
+  text-transform: uppercase;
+}
+h2 {
+  color: #0063ba;
+  font-size: 30px;
+  font-weight: 800;
+  padding-bottom: 2%;
+  text-transform: uppercase;
+}
+h3 {
+  color: #0063ba;
+  font-size: 28px;
+  font-style: italic;
+  line-height: 1.2em;
+  padding-bottom: 2%;
+  padding-top: 3%;
+  text-transform: none;
+}
+h4 {
+  color: #0063ba;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+  padding-top: 2%;
+}
+
+ol {
+  padding: 0 0 0 1em !important;
+  list-style-position: outside !important;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.btn-blue {
+  width: 100%;
+  height: 100%;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+a.btn-blue:hover {
+  text-decoration: none;
+  background-color: #82be5a !important;
+}
+
+.btn-blue-2 {
+  font-weight: 400;
+}
+a.btn-blue-2:hover {
+  text-decoration: none;
+  background-color: #82be5a !important;
+}
+
+/* MAIN NAVIGATION */
+.nav li li {
+  line-height: 1.5em;
+}
+.et_mobile_menu li a:hover,
+.nav ul li a:hover {
+  opacity: 0.7;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* FOOTER */
+.et_pb_widget {
+  float: none;
+}
+
+/* HOME SLIDER */
+.home-slider a {
+  text-decoration: none;
+}
+
+/* HOME TESTIMONIIAL SLIDER */
+.et_pb_slide_content h6 {
+  text-transform: uppercase;
+  font-style: normal;
+  padding-top: 1em;
+}
+
+/* JOB SEARCH */
+.job_filters .search_jobs {
+  padding: 1.5em;
+}
+.select2-container--default .select2-selection--single {
+  border-radius: 5px;
+  padding-left: 0px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: 40px;
+}
+.select2-selection__placeholder {
+  font-size: 120%;
+}
+.job_filters .search_jobs input,
+.job_filters .search_jobs select {
+  font-size: 120%;
+}
+input.text,
+input.title,
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="text"],
+select,
+textarea {
+  border-radius: 5px;
+  padding: 10px;
+}
+.search_submit input {
+  background-color: #82be5a;
+  border: 1px solid #82be5a;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 120%;
+  padding: 10px;
+}
+.search_submit input[type="submit"]:hover {
+  background-color: #0063ba;
+  border: 1px solid #0063ba;
+  cursor: pointer;
+}
+.job_filters {
+  margin-bottom: 35px;
+}
+.job_types li {
+  list-style: none outside;
+}
+
+.job_listings h3 {
+  font-size: 20px !important;
+  text-transform: none;
+}
+ul.job_listings li.job_listing a {
+  padding: 2em 1em 2em 2em;
+}
+
+.single_job_listing li {
+  list-style-type: none;
+}
+.job-listing-meta {
+  padding: 0 0 23px 0 !important;
+}
+#left-area .post-meta {
+  display: none;
+}
+
+.single_job_listing .application .application_button {
+  background-color: #82be5a;
+  border: 1px solid #82be5a;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 120%;
+  padding: 10px;
+}
+.single_job_listing .application .application_button:hover {
+  background-color: #0063ba;
+  border: 1px solid #0063ba;
+  cursor: pointer;
+}
+
+h4.widgettitle {
+  font-size: 24px;
+  line-height: 1.2em;
+  padding-bottom: 10%;
+  padding-top: 0%;
+  text-transform: uppercase;
+}
+
+#nav_menu-2 a {
+  background-color: #bbbbbb;
+  border-radius: 5px;
+  color: #ffffff;
+  display: block;
+  padding: 10px;
+}
+#nav_menu-2 a:hover {
+  background-color: #82be5a;
+  text-decoration: none;
+}
+
+#home-job-feed ul .meta {
+  display: none;
+}
+#home-job-feed ul.job_listings {
+  border-top: 0;
+}
+#home-job-feed ul.job_listings li.job_listing a img.company_logo {
+  display: none;
+}
+#home-job-feed ul.job_listings li.job_listing {
+  width: 33%;
+  float: left;
+  text-align: center;
+  border-bottom: 0;
+}
+#home-job-feed ul.job_listings li.job_listing a div.location {
+  float: none;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+}
+#home-job-feed div.job_listings .load_more_jobs {
+  display: none;
+}
+#home-job-feed li.job_listing a div.position {
+  padding: 0;
+  width: 100%;
+}
+#home-job-feed ul.job_listings li.job_listing a {
+  padding: 2em 2em 2em 2em;
+  min-height: 150px;
+}
+#home-job-feed ul.job_listings li.job_listing a div.position h3 {
+  line-height: 1.2em;
+}
+#home-job-feed ul.job_listings li.job_listing a:hover {
+  background-color: #eeeeee;
+}
+
+/* Application
+------------------------------------------------------- */
+.job-manager-form fieldset label small {
+  display: none;
+}
+
+/* Upload a Job Opening Form
+------------------------------------------------------- */
+
+#caldera_form_1 .row {
+  padding-bottom: 7%;
+}
+
+@media (max-width: 981px) {
+  #home-job-feed ul.job_listings li.job_listing {
+    width: 100%;
+    float: left;
+    text-align: center;
+    border-bottom: 0;
+  }
+  #home-job-feed ul.job_listings li.job_listing a {
+    padding: 2em 2em 2em 2em;
+    min-height: inherit;
+  }
+  .et_pb_slide_description h2.et_pb_slide_title {
+    font-size: 40px !important;
+    font-weight: 800 !important;
+  }
+}
+
+/* Fix Double Buttons in Fullwidth Slider on iPhone
+------------------------------------------------------- */
+
+@media (max-width: 767px) {
+  .phoneFixExample {
+    display: block;
+    min-width: 225px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .hideStuff {
+    display: none;
+  }
+}

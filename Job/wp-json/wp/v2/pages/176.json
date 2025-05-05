@@ -1,0 +1,74 @@
+{
+  "id": 176,
+  "date": "2019-12-13T15:25:07",
+  "date_gmt": "2019-12-13T23:25:07",
+  "guid": { "rendered": "https://www.himjobs.com/?page_id=176" },
+  "modified": "2020-04-02T05:50:38",
+  "modified_gmt": "2020-04-02T12:50:38",
+  "slug": "candidates-our-promise-to-you",
+  "status": "publish",
+  "type": "page",
+  "link": "https://www.himjobs.com/candidates/candidates-our-promise-to-you/",
+  "title": { "rendered": "Candidates &#8211; Our Promise To You" },
+  "content": {
+    "rendered": "<p>[et_pb_section fb_built=&#8221;1&#8243; admin_label=&#8221;Section&#8221; _builder_version=&#8221;4.0.6&#8243; background_color=&#8221;#eeeeee&#8221; background_image=&#8221;https://www.himjobs.com/wp-content/uploads/2020/02/bkgd-hrd-blue.jpg&#8221; global_module=&#8221;504&#8243; saved_tabs=&#8221;all&#8221;][et_pb_row _builder_version=&#8221;4.0.6&#8243;][et_pb_column type=&#8221;4_4&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_text admin_label=&#8221;Candidates&#8221; _builder_version=&#8221;4.0.6&#8243; text_font=&#8221;|300||on|||||&#8221; text_font_size=&#8221;40px&#8221; background_layout=&#8221;dark&#8221;]</p>\n<p>Candidates</p>\n<p>[/et_pb_text][/et_pb_column][/et_pb_row][/et_pb_section][et_pb_section fb_built=&#8221;1&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_row _builder_version=&#8221;4.0.6&#8243;][et_pb_column type=&#8221;4_4&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_text _builder_version=&#8221;4.0.6&#8243;]</p>\n<h1>Candidates &#8211; Our Promise To You</h1>\n<ul>\n<li>No Cost to You</li>\n<li>Honest Career Advice</li>\n<li>Top Quality Employers</li>\n<li>Complete Confidentiality</li>\n<li>Resume Consultation</li>\n<li>Professional Representation</li>\n<li>Uncompromising Integrity</li>\n<li>Peer to Peer HIM Searches</li>\n<li>Your Resume will only be shared with your permission</li>\n</ul>\n<p>[/et_pb_text][/et_pb_column][/et_pb_row][/et_pb_section][et_pb_section fb_built=&#8221;1&#8243; _builder_version=&#8221;4.3.2&#8243; background_color=&#8221;#82be5a&#8221; background_image=&#8221;https://www.himjobs.com/wp-content/uploads/2020/02/cta-bkgd.jpg&#8221; custom_padding=&#8221;0px||0px||false|false&#8221; global_module=&#8221;572&#8243;][et_pb_row _builder_version=&#8221;4.0.6&#8243;][et_pb_column type=&#8221;4_4&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_cta title=&#8221;Start Your Job Search&#8221; button_url=&#8221;https://www.himjobs.com/search-jobs/&#8221; button_text=&#8221;Search Jobs&#8221; _builder_version=&#8221;4.0.6&#8243; background_enable_color=&#8221;off&#8221;]</p>\n<p>View all of the HIM job opportunities available now.</p>\n<p>[/et_pb_cta][/et_pb_column][/et_pb_row][/et_pb_section]</p>\n",
+    "protected": false
+  },
+  "excerpt": {
+    "rendered": "<p>[et_pb_section fb_built=&#8221;1&#8243; admin_label=&#8221;Section&#8221; _builder_version=&#8221;4.0.6&#8243; background_color=&#8221;#eeeeee&#8221; background_image=&#8221;https://www.himjobs.com/wp-content/uploads/2020/02/bkgd-hrd-blue.jpg&#8221; global_module=&#8221;504&#8243; saved_tabs=&#8221;all&#8221;][et_pb_row _builder_version=&#8221;4.0.6&#8243;][et_pb_column type=&#8221;4_4&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_text admin_label=&#8221;Candidates&#8221; _builder_version=&#8221;4.0.6&#8243; text_font=&#8221;|300||on|||||&#8221; text_font_size=&#8221;40px&#8221; background_layout=&#8221;dark&#8221;] Candidates [/et_pb_text][/et_pb_column][/et_pb_row][/et_pb_section][et_pb_section fb_built=&#8221;1&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_row _builder_version=&#8221;4.0.6&#8243;][et_pb_column type=&#8221;4_4&#8243; _builder_version=&#8221;4.0.6&#8243;][et_pb_text _builder_version=&#8221;4.0.6&#8243;] Candidates &#8211; Our Promise To You No Cost to You Honest Career Advice Top Quality Employers Complete Confidentiality Resume Consultation Professional Representation Uncompromising Integrity Peer to Peer HIM Searches Your Resume [&hellip;]</p>\n",
+    "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "parent": 27,
+  "menu_order": 0,
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "template": "",
+  "meta": {
+    "_et_pb_use_builder": "on",
+    "_et_pb_old_content": "",
+    "_et_gb_content_width": ""
+  },
+  "_links": {
+    "self": [{ "href": "https://www.himjobs.com/wp-json/wp/v2/pages/176" }],
+    "collection": [{ "href": "https://www.himjobs.com/wp-json/wp/v2/pages" }],
+    "about": [{ "href": "https://www.himjobs.com/wp-json/wp/v2/types/page" }],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/users/1"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/comments?post=176"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 7,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/pages/176/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 1062,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/pages/176/revisions/1062"
+      }
+    ],
+    "up": [
+      {
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/pages/27"
+      }
+    ],
+    "wp:attachment": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/media?parent=176" }
+    ],
+    "curies": [
+      { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+    ]
+  }
+}

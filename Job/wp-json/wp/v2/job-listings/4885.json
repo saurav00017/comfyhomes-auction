@@ -1,0 +1,73 @@
+{
+  "id": 4885,
+  "date": "2024-09-18T13:50:08",
+  "date_gmt": "2024-09-18T20:50:08",
+  "guid": {
+    "rendered": "https://www.himjobs.com/?post_type=job_listing&#038;p=4885"
+  },
+  "modified": "2024-09-18T13:50:56",
+  "modified_gmt": "2024-09-18T20:50:56",
+  "slug": "coding-supervisor",
+  "status": "publish",
+  "type": "job_listing",
+  "link": "https://www.himjobs.com/job/coding-supervisor/",
+  "title": { "rendered": "Coding Supervisor" },
+  "content": {
+    "rendered": "<p><strong>Salary:</strong> $90-125k+ based on experience</p>\n<p><strong>Location:</strong> 100% Remote but must live in California</p>\n<p><strong>Job Description:</strong><br />\n&#8211; An exciting Inpatient/Outpatient Coding Supervisor opportunity responsible for leading a team of 12 FTE\u2019s (9 Coders (4 IP/5 OP) and 3 CDI Specialists) for a 200-300 bed hospital<br />\n&#8211; Possess good decision-making skills based upon a mixture of analysis, experience and judgement<br />\n&#8211; Seeking a candidate with a proven history of proactively identifying, resolving and escalating issues that impact business and documentation outcomes</p>\n<p><strong>Requirements:</strong><br />\n&#8211; Must live in California where you will work 100% remotely<br />\n&#8211; At least 2 years of coding leadership experience<br />\n&#8211; RHIA, RHIT and/or CCS. It is possible other credentials would be accepted with great experience.<br />\n&#8211; Consistent work history, not seeking candidates who make frequent employer changes<br />\n&#8211; Familiarity with supervising in a union environment a plus<br />\n&#8211; Experience working in EPIC and 3M a plus</p>\n<p><strong>Benefits:</strong><br />\n&#8211; This is a wonderful Coding Supervisor opportunity where you would work directly for a hospital<br />\n&#8211; Full-time, stable, permanent position with great benefits!<br />\n&#8211; $90-125K+<br />\n&#8211; No COVID Vaccine required</p>\n",
+    "protected": false
+  },
+  "author": 2,
+  "featured_media": 0,
+  "template": "",
+  "meta": {
+    "_et_pb_use_builder": "",
+    "_et_pb_old_content": "",
+    "_et_gb_content_width": "",
+    "_job_location": "100% Remote; Must live in California",
+    "_application": "careersenq@gmail.com",
+    "_company_name": "$90-125k+",
+    "_company_website": "",
+    "_company_tagline": "",
+    "_company_twitter": "",
+    "_company_video": "",
+    "_filled": 0,
+    "_featured": 0
+  },
+  "job-categories": [10],
+  "job-types": [3],
+  "_links": {
+    "self": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/job-listings/4885" }
+    ],
+    "collection": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/job-listings" }
+    ],
+    "about": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/types/job_listing" }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/users/2"
+      }
+    ],
+    "wp:attachment": [
+      { "href": "https://www.himjobs.com/wp-json/wp/v2/media?parent=4885" }
+    ],
+    "wp:term": [
+      {
+        "taxonomy": "job_listing_category",
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/job-categories?post=4885"
+      },
+      {
+        "taxonomy": "job_listing_type",
+        "embeddable": true,
+        "href": "https://www.himjobs.com/wp-json/wp/v2/job-types?post=4885"
+      }
+    ],
+    "curies": [
+      { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+    ]
+  }
+}

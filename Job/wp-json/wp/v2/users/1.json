@@ -1,0 +1,18 @@
+{
+  "id": 1,
+  "name": "admin-wp",
+  "url": "",
+  "description": "",
+  "link": "https://www.himjobs.com/posts/author/admin-wp/",
+  "slug": "admin-wp",
+  "avatar_urls": {
+    "24": "https://secure.gravatar.com/avatar/2feab4fe36aa741330c4a7462a46d36c?s=24&d=mm&r=g",
+    "48": "https://secure.gravatar.com/avatar/2feab4fe36aa741330c4a7462a46d36c?s=48&d=mm&r=g",
+    "96": "https://secure.gravatar.com/avatar/2feab4fe36aa741330c4a7462a46d36c?s=96&d=mm&r=g"
+  },
+  "meta": [],
+  "_links": {
+    "self": [{ "href": "https://www.himjobs.com/wp-json/wp/v2/users/1" }],
+    "collection": [{ "href": "https://www.himjobs.com/wp-json/wp/v2/users" }]
+  }
+}
