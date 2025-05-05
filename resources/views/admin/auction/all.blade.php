@@ -4,6 +4,58 @@
     <!-- <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
          -->
     <style type="text/css">
+
+.switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+            vertical-align: middle;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #dc3545;
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked+.slider {
+            background-color: #28a745;
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(26px);
+        }
+
+        .status-text {
+            margin-left: 10px;
+            font-weight: 500;
+            vertical-align: middle;
+        }
         .col-sm-12 {
             margin-top: 100px;
             "
