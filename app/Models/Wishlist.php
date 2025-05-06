@@ -15,10 +15,14 @@ class Wishlist extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id',   // Add this to allow mass assignment
-        'property_id',
-        // Add any other fields that are allowed for mass assignment
+        'user_id',
+        'auction_id',
     ];
+
+    public function auction()
+    {
+        return $this->belongsTo(Auction::class);
+    }
 
     // Additional model logic here
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WishlistController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -64,6 +65,9 @@ Route::get('find-property', [App\Http\Controllers\HomeController::class, 'findPr
 
 Route::post('/buy-plan', [App\Http\Controllers\HomeController::class, 'buyPlan'])->name('buy.plan');
 
+// wishlist
+Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist.index')->middleware('auth');
+Route::post('/wishlist/toggle', [WishlistController::class, 'toggle'])->middleware('auth')->name('wishlist.toggle');
 
 Auth::routes();
 

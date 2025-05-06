@@ -271,8 +271,10 @@
                                             </div>
                                         @endif
                                         <div class="position-absolute top-0 end-0 m-2">
-                                            <button class="btn btn-sm btn-light rounded-circle">
-                                                <i class="far fa-heart"></i>
+                                            <button
+                                                class="btn btn-sm btn-light rounded-circle wishlist-btn {{ in_array($item->id, $wishlistIds ?? []) ? 'active' : '' }}"
+                                                data-id="{{ $item->id }}">
+                                                <i class="{{ in_array($item->id, $wishlistIds ?? []) ? 'fas' : 'far' }} fa-heart" style="color: purple;"></i>
                                             </button>
                                         </div>
                                     </div>
@@ -379,72 +381,6 @@
 
     <!-- Toastr JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
-
-    <script type="text/javascript">
-        $(document).on('click', '.starmark', function() {
-            var propertyId = $(this).data('property-id'); // Get property ID from data attribute
-            var element = this;
-            var isSelected = $(element).find('i').hasClass('wishlist-selected');
-
-            // Toggle the visual state of the star
-            if (isSelected) {
-                $(element).find('i').removeClass('wishlist-selected').css('color', 'white'); // Deselect
-            } else {
-                $(element).find('i').addClass('wishlist-selected').css('color', 'purple'); // Select
-            }
-
-            // Determine the action based on the current state (add or remove)
-            var url = isSelected ? "{{ config('app.baseURL') }}/remove-from-wishlist" :
-                "{{ config('app.baseURL') }}/add-to-wishlist";
-
-            // Send AJAX request to add or remove from wishlist
-            $.ajax({
-                url: url,
-                type: 'POST',
-                data: {
-                    property_id: propertyId,
-                    _token: '{{ csrf_token() }}' // CSRF token for security
-                },
-                success: function(response) {
-                    if (response.status === 'success') {
-                        if (isSelected) {
-                            toastr.success(
-                                'Property removed from wishlist'); // Toastr success alert for removal
-                        } else {
-                            toastr.success(
-                                'Property added to wishlist'); // Toastr success alert for addition
-                        }
-                    } else {
-                        toastr.error('Failed to update wishlist'); // Toastr error alert
-                    }
-                },
-                error: function(xhr) {
-                    toastr.error('Error: ' + xhr.responseText, 'Error'); // Toastr error alert
-                }
-            });
-        });
-
-
-
-        toastr.options = {
-            "closeButton": true,
-            "debug": false,
-            "newestOnTop": true,
-            "progressBar": true,
-            "positionClass": "toast-top-right",
-            "preventDuplicates": true,
-            "onclick": null,
-            "showDuration": "300",
-            "hideDuration": "1000",
-            "timeOut": "5000",
-            "extendedTimeOut": "1000",
-            "showEasing": "swing",
-            "hideEasing": "linear",
-            "showMethod": "fadeIn",
-            "hideMethod": "fadeOut"
-        };
-    </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
@@ -466,6 +402,48 @@
         });
         document.getElementById('possession').addEventListener('change', () => {
             document.getElementById('filterForm').submit();
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.wishlist-btn').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const auctionId = this.getAttribute('data-id');
+                    const btn = this;
+                    const icon = btn.querySelector('i');
+
+                    fetch("{{ route('wishlist.toggle') }}", {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                            },
+                            body: JSON.stringify({
+                                auction_id: auctionId
+                            })
+                        })
+                        .then(response => {
+                            if (response.redirected) {
+                                window.location.href = response.url;
+                                return;
+                            }
+
+                            return response.json();
+                        })
+                        .then(data => {
+                            if (data && data.status === 'added') {
+                                icon.classList.remove('far');
+                                icon.classList.add('fas');
+                                icon.style.color = 'purple';
+                            } else if (data && data.status === 'removed') {
+                                button.querySelector('i').classList.remove('fas');
+                                button.querySelector('i').classList.add('far');
+                            }
+                        });
+                });
+            });
         });
     </script>
 @endsection

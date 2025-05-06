@@ -408,8 +408,10 @@ class HomeController extends Controller
         // dd($locations, $banks);
         $categories = Category::where('is_active', 1)->get();
 
+        $wishlistIds = auth()->check() ? auth()->user()->wishlists->pluck('auction_id')->toArray() : [];
 
-        return view('search', compact('property', 'locations', 'banks', 'categories'));
+
+        return view('search', compact('property', 'locations', 'banks', 'categories', 'wishlistIds'));
     }
 
     public function addToWishlist(Request $request)

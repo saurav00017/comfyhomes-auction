@@ -45,430 +45,437 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/responsive.css' )}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/realestate-styles.css' )}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/realestate-footer.css' )}}"> 
-</head> 
 
+    
 
 <style type="text/css">
-.demo{ font-family: 'Noto Sans', sans-serif; }
-.panel{
-    background: linear-gradient(to right, #2980b9, #2c3e50);
-    padding: 0;
-    border-radius: 10px;
-    border: none;
-    box-shadow: 0 0 0 5px rgba(0,0,0,0.05),0 0 0 10px rgba(0,0,0,0.05);
-}
-.realestate-hide{
-display:block;
-}
 
-.realestate-hide1{
-display:none;
-}
-.panel .panel-heading{
-    padding: 20px 15px;
-    border-radius: 10px 10px 0 0;
-    margin: 0;
-}
-.panel .panel-heading .title{
-    color: #fff;
-    font-size: 28px;
-    font-weight: 500;
-    text-transform: capitalize;
-    line-height: 40px;
-    margin: 0;
-}
-.panel .panel-heading .btn{
-    color: rgba(255,255,255,0.5);
-    background: transparent;
-    font-size: 16px;
-    text-transform: capitalize;
-    border: 2px solid #fff;
-    border-radius: 50px;
-    transition: all 0.3s ease 0s;
-}
-.panel .panel-heading .btn:hover{
-    color: #fff;
-    text-shadow: 3px 3px rgba(255,255,255,0.2);
-}
-.panel .panel-heading .form-control{
-    color: #fff;
-    background-color: transparent;
-    width: 35%;
-    height: 40px;
-    border: 2px solid #fff;
-    border-radius: 20px;
-    display: inline-block;
-    transition: all 0.3s ease 0s;
-}
-.panel .panel-heading .form-control:focus{
-    background-color: rgba(255,255,255,0.2);
-    box-shadow: none;
-    outline: none;
-}
-.panel .panel-heading .form-control::placeholder{
-    color: rgba(255,255,255,0.5);
-    font-size: 15px;
-    font-weight: 500;
-}
-.panel .panel-body{ padding: 0; }
-.panel .panel-body .table thead tr th{
-    color: #fff;
-    background-color: rgba(255, 255, 255, 0.2);
-    font-size: 16px;
-    font-weight: 500;
-    text-transform: uppercase;
-    padding: 12px;
-    border: none;
-}
-.panel .panel-body .table tbody tr td{
-    color: #fff;
-    font-size: 15px;
-    padding: 10px 12px;
-    vertical-align: middle;
-    border: none;
-}
-.panel .panel-body .table tbody tr:nth-child(even){ background-color: rgba(255,255,255,0.05); }
-.panel .panel-body .table tbody .action-list{
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-.panel .panel-body .table tbody .action-list li{
-    display: inline-block;
-    margin: 0 5px;
-}
-.panel .panel-body .table tbody .action-list li a{
-    color: #fff;
-    font-size: 15px;
-    position: relative;
-    z-index: 1;
-    transition: all 0.3s ease 0s;
-}
-.panel .panel-body .table tbody .action-list li a:hover{ text-shadow: 3px 3px 0 rgba(255,255,255,0.3); }
-.panel .panel-body .table tbody .action-list li a:before,
-.panel .panel-body .table tbody .action-list li a:after{
-    content: attr(data-tip);
-    color: #fff;
-    background-color: #111;
-    font-size: 12px;
-    padding: 5px 7px;
-    border-radius: 4px;
-    text-transform: capitalize;
-    display: none;
-    transform: translateX(-50%);
-    position: absolute;
-    left: 50%;
-    top: -32px;
-    transition: all 0.3s ease 0s;
-}
-.panel .panel-body .table tbody .action-list li a:after{
-    content: '';
-    height: 15px;
-    width: 15px;
-    padding: 0;
-    border-radius: 0;
-    transform: translateX(-50%) rotate(45deg);
-    top: -18px;
-    z-index: -1;
-}
-.panel .panel-body .table tbody .action-list li a:hover:before,
-.panel .panel-body .table tbody .action-list li a:hover:after{
+.dropdown:hover .dropdown-menu {
     display: block;
+    margin-top: 0; /* Remove animation delay */
 }
-.panel .panel-footer{
-    color: #fff;
-    background-color: transparent;
-    padding: 15px;
-    border: none;
-}
-.panel .panel-footer .col{ line-height: 35px; }
-
-@media only screen and (max-width:767px){
+    .demo{ font-family: 'Noto Sans', sans-serif; }
+    .panel{
+        background: linear-gradient(to right, #2980b9, #2c3e50);
+        padding: 0;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 0 0 5px rgba(0,0,0,0.05),0 0 0 10px rgba(0,0,0,0.05);
+    }
+    .realestate-hide{
+    display:block;
+    }
+    
+    .realestate-hide1{
+    display:none;
+    }
+    .panel .panel-heading{
+        padding: 20px 15px;
+        border-radius: 10px 10px 0 0;
+        margin: 0;
+    }
     .panel .panel-heading .title{
-        text-align: center;
-        margin: 0 0 10px;
+        color: #fff;
+        font-size: 28px;
+        font-weight: 500;
+        text-transform: capitalize;
+        line-height: 40px;
+        margin: 0;
     }
-    .panel .panel-heading .btn_group{ text-align: center; }
-}
-
-</style>
-
-
-
-
-<style type="text/css">
-
-footer{
-    background-color: purple!important;
-}
-
-.footer-widget h4{
-    color: white!important;
-}
-
-footer li a{
-    color: white!important;
-}
-
-footer li{
-    color: white!important;
-}
-
-footer .copyright li a{
-    color: white!important;
-}
-
-
-
-footer span{
-    color: white!important;
-}
-
-footer p{
-    color: white!important;
-}
-
-.bg-gray{
-    background-color: #eaceea!important;
-}
-
-    iframe.VIpgJd-ZVi9od-ORHb-OEVmcd {
-    display: none !important;
-}
-
-/* Hide the top translation bar that sometimes appears */
-.goog-te-banner-frame.skiptranslate {
-    display: none !important;
-}
-
-    /* Hide the Google Translate branding */
-.goog-logo-link {
-    display: none !important;
-}
-
-.goog-te-gadget {
-    font-size: 0px !important;
-}
-
-/* Hide the Google Translate toolbar */
-.goog-te-banner-frame.skiptranslate {
-    display: none !important;
-}
-
-body {
-    top: 0px !important;
-}
-
-#custom_translate{
-
-        margin-left: 4%;
-
-
-}
-
-.col-lg-6 {
-        flex: 0 0 auto;
-        width: 30%;
+    .panel .panel-heading .btn{
+        color: rgba(255,255,255,0.5);
+        background: transparent;
+        font-size: 16px;
+        text-transform: capitalize;
+        border: 2px solid #fff;
+        border-radius: 50px;
+        transition: all 0.3s ease 0s;
     }
-
-        .col-lg-2 {
-        flex: 0 0 auto;
-        width: 12.666667%;
+    .panel .panel-heading .btn:hover{
+        color: #fff;
+        text-shadow: 3px 3px rgba(255,255,255,0.2);
     }
-
-
-    #custom_translate select {
-  background-color: purple; 
-  border: 1px solid purple;
-  color: white!important;
-  padding: 5px;
-      float: inline-end;
-
-}
-
-  #google_translate_element { display: none; }
-
-
-#google_translate_element span{
-    display: none!important;
-}
-
-#google_translate_element img{
-    display: none!important;
-}
-
-/* Style the select element */
-#languageSwitcher {
-    border: 2px solid purple; /* Set the initial border color */
-    border-radius: 5px; /* Optional: Add some rounding to the corners */
-    padding: 5px; /* Add padding for better appearance */
-    outline: none; /* Remove default browser focus outline */
-}
-
-/* When the select element is focused (clicked) */
-#languageSwitcher:focus {
-    border-color: purple; /* Keep the same border color on focus */
-    outline: none; /* Remove focus outline */
-}
-
-
-    .bg-primary, a.bg-primary, a.bg-primary:hover, a.bg-primary:focus, .hover-bg-primary:hover{
+    .panel .panel-heading .form-control{
+        color: #fff;
+        background-color: transparent;
+        width: 35%;
+        height: 40px;
+        border: 2px solid #fff;
+        border-radius: 20px;
+        display: inline-block;
+        transition: all 0.3s ease 0s;
+    }
+    .panel .panel-heading .form-control:focus{
+        background-color: rgba(255,255,255,0.2);
+        box-shadow: none;
+        outline: none;
+    }
+    .panel .panel-heading .form-control::placeholder{
+        color: rgba(255,255,255,0.5);
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .panel .panel-body{ padding: 0; }
+    .panel .panel-body .table thead tr th{
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0.2);
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding: 12px;
+        border: none;
+    }
+    .panel .panel-body .table tbody tr td{
+        color: #fff;
+        font-size: 15px;
+        padding: 10px 12px;
+        vertical-align: middle;
+        border: none;
+    }
+    .panel .panel-body .table tbody tr:nth-child(even){ background-color: rgba(255,255,255,0.05); }
+    .panel .panel-body .table tbody .action-list{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    .panel .panel-body .table tbody .action-list li{
+        display: inline-block;
+        margin: 0 5px;
+    }
+    .panel .panel-body .table tbody .action-list li a{
+        color: #fff;
+        font-size: 15px;
+        position: relative;
+        z-index: 1;
+        transition: all 0.3s ease 0s;
+    }
+    .panel .panel-body .table tbody .action-list li a:hover{ text-shadow: 3px 3px 0 rgba(255,255,255,0.3); }
+    .panel .panel-body .table tbody .action-list li a:before,
+    .panel .panel-body .table tbody .action-list li a:after{
+        content: attr(data-tip);
+        color: #fff;
+        background-color: #111;
+        font-size: 12px;
+        padding: 5px 7px;
+        border-radius: 4px;
+        text-transform: capitalize;
+        display: none;
+        transform: translateX(-50%);
+        position: absolute;
+        left: 50%;
+        top: -32px;
+        transition: all 0.3s ease 0s;
+    }
+    .panel .panel-body .table tbody .action-list li a:after{
+        content: '';
+        height: 15px;
+        width: 15px;
+        padding: 0;
+        border-radius: 0;
+        transform: translateX(-50%) rotate(45deg);
+        top: -18px;
+        z-index: -1;
+    }
+    .panel .panel-body .table tbody .action-list li a:hover:before,
+    .panel .panel-body .table tbody .action-list li a:hover:after{
+        display: block;
+    }
+    .panel .panel-footer{
+        color: #fff;
+        background-color: transparent;
+        padding: 15px;
+        border: none;
+    }
+    .panel .panel-footer .col{ line-height: 35px; }
+    
+    @media only screen and (max-width:767px){
+        .panel .panel-heading .title{
+            text-align: center;
+            margin: 0 0 10px;
+        }
+        .panel .panel-heading .btn_group{ text-align: center; }
+    }
+    
+    </style>
+    
+    
+    
+    
+    <style type="text/css">
+    
+    footer{
         background-color: purple!important;
     }
-
-   /* a, a:hover, .btn-link, .btn-link:hover {
-    text-decoration: none;
-    cursor: pointer;
-    color: #C3B1E1!important;
-}*/
-
- 
- .li{
-    color: #fff!important;
- }
-
-
-.icon-primary, .icon-primary i, .icon-primary svg, .hover-primary-nav .navbar-nav .nav-link.active, .hover-primary-nav .navbar-nav .nav-link:hover, .top-header .dropdown-toggle::after, .footer-widget li a:hover, .check-submit li input[type="checkbox"]:checked+label::before, .property-btn li a.active, .property-btn li a:hover, .hover-primary-nav .navbar-nav .nav-link:hover, .breadcrumb-item>a:hover, .copyright .line-menu a:hover, .dashboard-top-left .dropdown-toggle::before, .dashboard-panel .message-list .message-action a:hover, .breadcrumb-item.active, .navigation_link_widget li a:hover, .flat-primary [class^="flaticon-"]::before, .list-text-white a.dropdown-item:hover {
-    color: purple!important;
-}
-
-[class*="double-down-line"]::before, [class*="double-down-line"]::after {
-    background-color: purple!important;
-}
-
-
-:root {
-    --theme-primary-color: purple!important;
-}
-
-.bg-secondary {
-    background-color: purple!important;
-}
-
-.float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 40px;
-      right: 75px;
-      background-color: #25d366;
-      color: #FFF;
-      border-radius: 50px;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 2px 2px 3px #999;
-      z-index: 100;
-  }
-
-  .my-float {
-      margin-top: 16px;
-  }
-
-  @media (max-width: 768px) {
-
-       .page-banner{
-
-        margin-top: 9%!important;
-
-       }    
-
-       .viewdetails{
-        margin-bottom: 5px;
-       } 
-
-        #google_translate_element select {
-  background-color: purple; 
-  border: 1px solid purple;
-  color: white!important;
-  padding: 5px;
-    float: inline-start;
-        width: 40%;
-
-
-}
-}
-
- @media (max-width: 900px) {
-
-       .page-banner{
-
-        margin-top: 9%;
-
-       }    
-
-       .viewdetails{
-        margin-bottom: 5px;
-       } 
-
-        #google_translate_element select {
-  background-color: purple; 
-  border: 1px solid purple;
-  color: white!important;
-  padding: 5px;
-    float: inline-start;
-        width: 40%;
-
-
-}
-}
-
-@media screen and (min-width: 599px) and (max-width: 605px) {
-    .page-banner {
-        margin-top: 12%; /* Specific value for Nest Hub */
+    
+    .footer-widget h4{
+        color: white!important;
     }
-
-     #google_translate_element select {
-  background-color: purple; 
-  border: 1px solid purple;
-  color: white!important;
-  padding: 5px;
-    float: inline-start;
-        width: 40%;
-
-
-}
-}
-
-@media screen and (min-width: 1200px) and (max-width: 1300px) {
-    .page-banner {
-        margin-top: 12%; /* Specific value for Nest Hub */
+    
+    footer li a{
+        color: white!important;
     }
-
-     #google_translate_element select {
-  background-color: purple; 
-  border: 1px solid purple;
-  color: white!important;
-  padding: 5px;
-    float: inline-start;
+    
+    footer li{
+        color: white!important;
+    }
+    
+    footer .copyright li a{
+        color: white!important;
+    }
+    
+    
+    
+    footer span{
+        color: white!important;
+    }
+    
+    footer p{
+        color: white!important;
+    }
+    
+    .bg-gray{
+        background-color: #eaceea!important;
+    }
+    
+        iframe.VIpgJd-ZVi9od-ORHb-OEVmcd {
+        display: none !important;
+    }
+    
+    /* Hide the top translation bar that sometimes appears */
+    .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+    }
+    
+        /* Hide the Google Translate branding */
+    .goog-logo-link {
+        display: none !important;
+    }
+    
+    .goog-te-gadget {
+        font-size: 0px !important;
+    }
+    
+    /* Hide the Google Translate toolbar */
+    .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+    }
+    
+    body {
+        top: 0px !important;
+    }
+    
+    #custom_translate{
+    
+            margin-left: 4%;
+    
+    
+    }
+    
+    .col-lg-6 {
+            flex: 0 0 auto;
+            width: 30%;
+        }
+    
+            .col-lg-2 {
+            flex: 0 0 auto;
+            width: 12.666667%;
+        }
+    
+    
+        #custom_translate select {
+      background-color: purple; 
+      border: 1px solid purple;
+      color: white!important;
+      padding: 5px;
+          float: inline-end;
+    
+    }
+    
+      #google_translate_element { display: none; }
+    
+    
+    #google_translate_element span{
+        display: none!important;
+    }
+    
+    #google_translate_element img{
+        display: none!important;
+    }
+    
+    /* Style the select element */
+    #languageSwitcher {
+        border: 2px solid purple; /* Set the initial border color */
+        border-radius: 5px; /* Optional: Add some rounding to the corners */
+        padding: 5px; /* Add padding for better appearance */
+        outline: none; /* Remove default browser focus outline */
+    }
+    
+    /* When the select element is focused (clicked) */
+    #languageSwitcher:focus {
+        border-color: purple; /* Keep the same border color on focus */
+        outline: none; /* Remove focus outline */
+    }
+    
+    
+        .bg-primary, a.bg-primary, a.bg-primary:hover, a.bg-primary:focus, .hover-bg-primary:hover{
+            background-color: purple!important;
+        }
+    
+       /* a, a:hover, .btn-link, .btn-link:hover {
+        text-decoration: none;
+        cursor: pointer;
+        color: #C3B1E1!important;
+    }*/
+    
+     
+     .li{
+        color: #fff!important;
+     }
+    
+    
+    .icon-primary, .icon-primary i, .icon-primary svg, .hover-primary-nav .navbar-nav .nav-link.active, .hover-primary-nav .navbar-nav .nav-link:hover, .top-header .dropdown-toggle::after, .footer-widget li a:hover, .check-submit li input[type="checkbox"]:checked+label::before, .property-btn li a.active, .property-btn li a:hover, .hover-primary-nav .navbar-nav .nav-link:hover, .breadcrumb-item>a:hover, .copyright .line-menu a:hover, .dashboard-top-left .dropdown-toggle::before, .dashboard-panel .message-list .message-action a:hover, .breadcrumb-item.active, .navigation_link_widget li a:hover, .flat-primary [class^="flaticon-"]::before, .list-text-white a.dropdown-item:hover {
+        color: purple!important;
+    }
+    
+    [class*="double-down-line"]::before, [class*="double-down-line"]::after {
+        background-color: purple!important;
+    }
+    
+    
+    :root {
+        --theme-primary-color: purple!important;
+    }
+    
+    .bg-secondary {
+        background-color: purple!important;
+    }
+    
+    .float {
+          position: fixed;
+          width: 60px;
+          height: 60px;
+          bottom: 40px;
+          right: 75px;
+          background-color: #25d366;
+          color: #FFF;
+          border-radius: 50px;
+          text-align: center;
+          font-size: 30px;
+          box-shadow: 2px 2px 3px #999;
+          z-index: 100;
+      }
+    
+      .my-float {
+          margin-top: 16px;
+      }
+    
+      @media (max-width: 768px) {
+    
+           .page-banner{
+    
+            margin-top: 9%!important;
+    
+           }    
+    
+           .viewdetails{
+            margin-bottom: 5px;
+           } 
+    
+            #google_translate_element select {
+      background-color: purple; 
+      border: 1px solid purple;
+      color: white!important;
+      padding: 5px;
+        float: inline-start;
+            width: 40%;
+    
+    
+    }
+    }
+    
+     @media (max-width: 900px) {
+    
+           .page-banner{
+    
+            margin-top: 9%;
+    
+           }    
+    
+           .viewdetails{
+            margin-bottom: 5px;
+           } 
+    
+            #google_translate_element select {
+      background-color: purple; 
+      border: 1px solid purple;
+      color: white!important;
+      padding: 5px;
+        float: inline-start;
+            width: 40%;
+    
+    
+    }
+    }
+    
+    @media screen and (min-width: 599px) and (max-width: 605px) {
+        .page-banner {
+            margin-top: 12%; /* Specific value for Nest Hub */
+        }
+    
+         #google_translate_element select {
+      background-color: purple; 
+      border: 1px solid purple;
+      color: white!important;
+      padding: 5px;
+        float: inline-start;
+            width: 40%;
+    
+    
+    }
+    }
+    
+    @media screen and (min-width: 1200px) and (max-width: 1300px) {
+        .page-banner {
+            margin-top: 12%; /* Specific value for Nest Hub */
+        }
+    
+         #google_translate_element select {
+      background-color: purple; 
+      border: 1px solid purple;
+      color: white!important;
+      padding: 5px;
+        float: inline-start;
+            width: 40%;
+    
+    
+    }
+    }
+    
+    @media (max-width: 1050px) {
+    
+           .page-banner{
+    
+            margin-top: 7%!important;
+    
+           }    
+    
+           .viewdetails{
+            margin-bottom: 5px;
+           } 
+    
+            #google_translate_element select {
+      background-color:purple; 
+      border: 1px solid purple;
+      color: white!important;
+      padding: 5px;
+        float: inline-start;
         width: 40%;
+    
+    }
+    }
+    </style>
+</head> 
 
-
-}
-}
-
-@media (max-width: 1050px) {
-
-       .page-banner{
-
-        margin-top: 7%!important;
-
-       }    
-
-       .viewdetails{
-        margin-bottom: 5px;
-       } 
-
-        #google_translate_element select {
-  background-color:purple; 
-  border: 1px solid purple;
-  color: white!important;
-  padding: 5px;
-    float: inline-start;
-    width: 40%;
-
-}
-}
-</style>
 
 <body id="realestate-content">
 
