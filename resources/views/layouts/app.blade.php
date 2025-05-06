@@ -642,8 +642,12 @@ body {
     <script src="{{asset('assets/js/validate.js')}}"></script>
     <script src="{{asset('assets/js/jquery.cookie.js')}}"></script>
     <script src="{{asset('assets/js/custom.js')}}"></script>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/smoothness/jquery-ui.css">
+        
+        <!-- jQuery UI JS -->
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-    <script src="{{asset('assets/js/jquery.min.js')}}"></script>
 
 
  

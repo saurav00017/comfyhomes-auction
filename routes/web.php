@@ -30,7 +30,7 @@ Route::get('blogdetails', [App\Http\Controllers\HomeController::class, 'blogs'])
 Route::get('premium', [App\Http\Controllers\HomeController::class, 'ourpremium']);
 Route::get('faq', [App\Http\Controllers\HomeController::class, 'ourfaq']);
 Route::get('search', [App\Http\Controllers\HomeController::class, 'oursearch']);
-Route::get('verify-auction', [App\Http\Controllers\HomeController::class, 'verifiedProperty']);
+Route::get('verify-auction', [App\Http\Controllers\HomeController::class, 'verifiedProperty'])->name('verifiedProperty');
 
 Route::post('add-to-wishlist', [App\Http\Controllers\HomeController::class, 'addToWishlist']);
 

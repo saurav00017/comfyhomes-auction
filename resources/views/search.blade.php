@@ -163,46 +163,88 @@
                     </ol>
                 </nav>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
     </div>
 
     <section class="py-5 bg-white">
         <div class="container">
-            <!-- Search and Filter -->
-            <div class="row mb-4">
-                <div class="col-md-8">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search properties...">
-                        <button class="btn btn-primary" type="button">
-                            <i class="fas fa-search me-2"></i> Search
-                        </button>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <select class="form-select">
-                        <option selected>Sort by: Newest First</option>
-                        <option>Price: Low to High</option>
-                        <option>Price: High to Low</option>
-                    </select>
+            <!-- Filter Button for Mobile -->
+            <div class="mb-3 text-end d-md-none">
+                <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#filterCard">
+                    🔍 Filter Properties
+                </button>
+            </div>
+
+
+            <!-- Collapsible Filter Card (Always Open on PC) -->
+            <div class="collapse d-md-block" id="filterCard">
+                <div class="card card-body shadow-sm mb-4 mt-3">
+                    <form action="{{ route('verifiedProperty') }}" method="GET" class="row g-3" id="filterForm">
+                        <!-- Sort By and Possession OUTSIDE collapsible, but still INSIDE the form -->
+                        <div class="row g-3 align-items-end">
+                            <div class="col-md-2 col-6">
+                                <label for="sort_by" class="form-label">Sort By</label>
+                                <select name="sort_by" id="sort_by" class="form-select">
+                                    <option value="default" {{ request('sort_by') == 'default' ? 'selected' : '' }}>Default</option>
+                                    <option value="newest" {{ request('sort_by') == 'newest' ? 'selected' : '' }}>Newest</option>
+                                    <option value="recent" {{ request('sort_by') == 'recent' ? 'selected' : '' }}>Recent</option>
+                                    <option value="price_high" {{ request('sort_by') == 'price_high' ? 'selected' : '' }}>Price: High to Low</option>
+                                    <option value="price_low" {{ request('sort_by') == 'price_low' ? 'selected' : '' }}>Price: Low to High</option>
+                                </select>
+                            </div>
+                    
+                            <div class="col-md-2 col-6">
+                                <label for="possession" class="form-label">Possession</label>
+                                <select name="possession" id="possession" class="form-select">
+                                    <option value="">All</option>
+                                    <option value="1" {{ request('possession') == '1' ? 'selected' : '' }}>Physical</option>
+                                    <option value="0" {{ request('possession') == '0' ? 'selected' : '' }}>Symbolic</option>
+                                </select>
+                            </div>
+                        </div>
+                    
+                        <!-- Collapsible Filter Section -->
+                        <div class="collapse d-md-block" id="filterCard">
+                            <div class="card card-body shadow-sm mb-4 mt-3">
+                                <div class="row g-3">
+                                    <div class="col-md-3">
+                                        <label for="location" class="form-label">Location</label>
+                                        <input type="text" id="location" name="location" class="form-control"
+                                            placeholder="Search location..." value="{{ request('location') }}">
+                                    </div>
+                    
+                                    <div class="col-md-3">
+                                        <label for="bank" class="form-label">Bank</label>
+                                        <input type="text" id="bank" name="bank" class="form-control"
+                                            placeholder="Search bank..." value="{{ request('bank') }}">
+                                    </div>
+                    
+                                    <div class="col-md-3">
+                                        <label for="category" class="form-label">Category</label>
+                                        <select name="category" id="category" class="form-select">
+                                            <option value="">All</option>
+                                            @foreach ($categories as $category)
+                                                <option value="{{ $category->id }}"
+                                                    {{ request('category') == $category->id ? 'selected' : '' }}>
+                                                    {{ $category->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                    
+                                    <div class="col-12 text-end">
+                                        <button type="submit" class="btn btn-primary px-4">Search</button>
+                                        <a href="{{ route('verifiedProperty') }}" class="btn btn-secondary px-4 ms-2">Reset</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    
                 </div>
             </div>
+
 
             <!-- Property List -->
             <div class="row">
@@ -231,11 +273,14 @@
                                 <div class="col-md-8">
                                     <div class="card-body h-100 d-flex flex-column">
                                         <div class="d-flex justify-content-between">
-                                            <h4 class="card-title text-primary">{{ $item->property_type_one ?? 'Property' }}</h4>
-                                            <span class="badge bg-success d-flex align-items-center justify-content-center">{{ $item->category->name ?? 'Auction' }}</span>
+                                            <h4 class="card-title text-primary">{{ $item->property_type_one ?? 'Property' }}
+                                            </h4>
+                                            <span
+                                                class="badge bg-success d-flex align-items-center justify-content-center">{{ $item->category->name ?? 'Auction' }}</span>
                                         </div>
                                         <p class="text-muted mb-2">
-                                            <i class="fas fa-map-marker-alt text-primary me-1"></i> {{ $item->locality }}, {{ $item->district }}
+                                            <i class="fas fa-map-marker-alt text-primary me-1"></i> {{ $item->locality }},
+                                            {{ $item->district }}
                                         </p>
 
                                         <div class="property-features mb-3">
@@ -249,13 +294,15 @@
                                                 <div class="col-4">
                                                     <div class="bg-light p-2 rounded text-center">
                                                         <small class="d-block text-muted">EMD</small>
-                                                        <span class="fw-bold">₹{{ number_format($item->emd_amount) }}</span>
+                                                        <span
+                                                            class="fw-bold">₹{{ number_format($item->emd_amount) }}</span>
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="bg-light p-2 rounded text-center">
                                                         <small class="d-block text-muted">Possession</small>
-                                                        <span class="fw-bold">{{ $item->possession == '1' ? 'Physical' : 'Symbolic' }}</span>
+                                                        <span
+                                                            class="fw-bold">{{ $item->possession == '1' ? 'Physical' : 'Symbolic' }}</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -263,12 +310,13 @@
 
                                         <div class="mt-auto d-flex justify-content-between align-items-center">
                                             <div class="d-flex align-items-center">
-                                                <img src="{{ asset('storage/' .$item->bank->icon) ?? 'https://via.placeholder.com/24' }}" alt="Bank" width="24"
-                                                    class="me-2">
+                                                <img src="{{ asset('storage/' . $item->bank->icon) ?? 'https://via.placeholder.com/24' }}"
+                                                    alt="Bank" width="24" class="me-2">
                                                 <span>{{ $item->bank->bank_name ?? $item->bank_name }}</span>
                                             </div>
                                             <div>
-                                                <h4 class="text-primary mb-0">₹{{ number_format($item->property_price) }}</h4>
+                                                <h4 class="text-primary mb-0">₹{{ number_format($item->property_price) }}
+                                                </h4>
                                             </div>
                                         </div>
 
@@ -280,14 +328,14 @@
                             </div>
                         </div>
                     </div>
-                    @empty
-                        <p>No verified properties found.</p>
-                    @endforelse
+                @empty
+                    <p>No verified properties found.</p>
+                @endforelse
 
-                    {{-- Add pagination links --}}
-                    <div class="d-flex justify-content-center mt-4">
-                        {{ $property->links() }}
-                    </div>
+                {{-- Add pagination links --}}
+                <div class="d-flex justify-content-center mt-4">
+                    {{ $property->links() }}
+                </div>
             </div>
         </div>
     </section>
@@ -378,5 +426,28 @@
             "showMethod": "fadeIn",
             "hideMethod": "fadeOut"
         };
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(function() {
+            const locations = @json($locations);
+            const banks = @json($banks);
+            $("#location").autocomplete({
+                source: locations
+            });
+            $("#bank").autocomplete({
+                source: banks
+            });
+        });
+    </script>
+
+    <script>
+        document.getElementById('sort_by').addEventListener('change', () => {
+            document.getElementById('filterForm').submit();
+        });
+        document.getElementById('possession').addEventListener('change', () => {
+            document.getElementById('filterForm').submit();
+        });
     </script>
 @endsection

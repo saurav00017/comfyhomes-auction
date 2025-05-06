@@ -8,6 +8,7 @@ use DataTables;
 use App\Service;
 use App\Models\Category;
 use App\Models\Auction;
+use App\Models\Bank;
 use App\Models\Blog;
 use App\Models\Contact;
 use App\Models\Subscreption;
@@ -43,54 +44,45 @@ class HomeController extends Controller
     public function index()
     {
 
-        $user=Auth::User();
+        $user = Auth::User();
 
 
 
-        if($user!="")
-        {
-            if($user->role_id==1)
-            {
-               return view('admin.auction.all');
-            }
-            else
-            {
-               $category=Category::where('is_active',1)->get();
-               $auction = Auction::where('is_active', 1)->where('featured',1)->with('category')->with('bank')->paginate(5);
-               $blog=Blog::where('is_active',1)->get();
-               $upcomingauction = Auction::where('is_active', 1)->where('auction_start_datetime', '>', now())->with('category')->with('bank')->paginate(3);
-
-               $liveauction = Auction::where('is_active', 1)->whereDate('auction_start_datetime', now())->with('category')->with('bank')->get();
-                 $premium=Subscreption::where('is_active',1)->get();
-
-
-               // echo $upcomingauction;die;
-
-               return view('index')->with('category',$category)->with('auction',$auction)->with('blog',$blog)->with('upcomingauction',$upcomingauction)->with('liveauction',$liveauction)->with('premium',$premium);
-            }
-
-        }
-
-        $category=Category::where('is_active',1)->get();
-               $auction = Auction::where('is_active', 1)->where('featured',1)->with('category')->with('bank')->paginate(5);
-               $blog=Blog::where('is_active',1)->get();
-
-               $upcomingauction = Auction::where('is_active', 1)->where('auction_start_datetime', '>', now())->with('category')->with('bank')->paginate(3);
+        if ($user != "") {
+            if ($user->role_id == 1) {
+                return view('admin.auction.all');
+            } else {
+                $category = Category::where('is_active', 1)->get();
+                $auction = Auction::where('is_active', 1)->where('featured', 1)->with('category')->with('bank')->paginate(5);
+                $blog = Blog::where('is_active', 1)->get();
+                $upcomingauction = Auction::where('is_active', 1)->where('auction_start_datetime', '>', now())->with('category')->with('bank')->paginate(3);
 
                 $liveauction = Auction::where('is_active', 1)->whereDate('auction_start_datetime', now())->with('category')->with('bank')->get();
-                 $premium=Subscreption::where('is_active',1)->get();
+                $premium = Subscreption::where('is_active', 1)->get();
 
 
-               // echo $upcomingauction;die;
-               return view('index')->with('category',$category)->with('auction',$auction)->with('blog',$blog)->with('upcomingauction',$upcomingauction)->with('liveauction',$liveauction)->with('premium',$premium);
+                // echo $upcomingauction;die;
+
+                return view('index')->with('category', $category)->with('auction', $auction)->with('blog', $blog)->with('upcomingauction', $upcomingauction)->with('liveauction', $liveauction)->with('premium', $premium);
+            }
+        }
+
+        $category = Category::where('is_active', 1)->get();
+        $auction = Auction::where('is_active', 1)->where('featured', 1)->with('category')->with('bank')->paginate(5);
+        $blog = Blog::where('is_active', 1)->get();
+
+        $upcomingauction = Auction::where('is_active', 1)->where('auction_start_datetime', '>', now())->with('category')->with('bank')->paginate(3);
+
+        $liveauction = Auction::where('is_active', 1)->whereDate('auction_start_datetime', now())->with('category')->with('bank')->get();
+        $premium = Subscreption::where('is_active', 1)->get();
 
 
-
-        
-        
+        // echo $upcomingauction;die;
+        return view('index')->with('category', $category)->with('auction', $auction)->with('blog', $blog)->with('upcomingauction', $upcomingauction)->with('liveauction', $liveauction)->with('premium', $premium);
     }
 
-    public function getLogout(Request $request){
+    public function getLogout(Request $request)
+    {
 
         Auth::logout();
         return redirect('login');
@@ -109,44 +101,42 @@ class HomeController extends Controller
 
     public function postContact(Request $request)
     {
-        $input=$request->all();
+        $input = $request->all();
 
-        $contact=new Contact();
-        $contact->name=$input['name'];
-        $contact->email=$input['email'];
-        $contact->subject=$input['subject'];
-        $contact->message=$input['message'];
+        $contact = new Contact();
+        $contact->name = $input['name'];
+        $contact->email = $input['email'];
+        $contact->subject = $input['subject'];
+        $contact->message = $input['message'];
         $contact->save();
 
         $notification = array(
-                'message' => 'Contact Submitted successfully', 
-                'alert-type' => 'success'
-             );
+            'message' => 'Contact Submitted successfully',
+            'alert-type' => 'success'
+        );
 
         return redirect('contact')->with($notification);
-
-
     }
     public function ourmenu()
     {
         return view('menu');
     }
-     public function ourblog()
+    public function ourblog()
     {
-        $blog=Blog::where('is_active',1)->get();
-        return view('blog')->with('blog',$blog);
+        $blog = Blog::where('is_active', 1)->get();
+        return view('blog')->with('blog', $blog);
     }
     public function blogs(Request $request)
     {
-        $id=$request->id;
-        $blog=Blog::where('id',$id)->first();
-        return view('blogdetails')->with('blog',$blog);
+        $id = $request->id;
+        $blog = Blog::where('id', $id)->first();
+        return view('blogdetails')->with('blog', $blog);
     }
     public function ourpremium()
     {
-        $premium=Subscreption::where('is_active',1)->get();
+        $premium = Subscreption::where('is_active', 1)->get();
         // echo $premimum;die;
-      return view('premium')->with('premium', $premium);
+        return view('premium')->with('premium', $premium);
     }
     public function ourfaq()
     {
@@ -184,195 +174,245 @@ class HomeController extends Controller
     //     return view('search')->with('property',$property)->with('category',$category);
     // }
 
-public function oursearch(Request $request)
-{
-    $category = Category::where('is_active', 1)->get();
-    $property_category = $request->id;
-    $city = $request->city;
-    $property_type = $request->property_type;
-
-    // Check if user is logged in and get their wishlist property IDs, only if user is logged in
-    $userWishlist = [];
-
-    $user=Auth::User();
-
-    if($user!="")
+    public function oursearch(Request $request)
     {
-        $userWishlist = Wishlist::where('user_id', $user->id)->pluck('property_id')->toArray();
-    }
+        $category = Category::where('is_active', 1)->get();
+        $property_category = $request->id;
+        $city = $request->city;
+        $property_type = $request->property_type;
 
-   
+        // Check if user is logged in and get their wishlist property IDs, only if user is logged in
+        $userWishlist = [];
 
-    
-    if ($city != "") {
-        if ($property_type != '') {
-            $property = Auction::where('is_active', 1)
-                ->where('category', $property_category)
-                ->where(function($query) use ($city) {
-                    $query->where('district', $city)->orWhere('state', $city);
-                })
-                ->with('category')
-                ->with('bank')
-                ->paginate(10);
+        $user = Auth::User();
+
+        if ($user != "") {
+            $userWishlist = Wishlist::where('user_id', $user->id)->pluck('property_id')->toArray();
+        }
+
+
+
+
+        if ($city != "") {
+            if ($property_type != '') {
+                $property = Auction::where('is_active', 1)
+                    ->where('category', $property_category)
+                    ->where(function ($query) use ($city) {
+                        $query->where('district', $city)->orWhere('state', $city);
+                    })
+                    ->with('category')
+                    ->with('bank')
+                    ->paginate(10);
+            } else {
+                $property = Auction::where('is_active', 1)
+                    ->where('category', $property_category)
+                    ->where(function ($query) use ($city) {
+                        $query->where('district', $city)->orWhere('state', $city);
+                    })
+                    ->with('category')
+                    ->with('bank')
+                    ->paginate(10);
+            }
         } else {
             $property = Auction::where('is_active', 1)
                 ->where('category', $property_category)
-                ->where(function($query) use ($city) {
-                    $query->where('district', $city)->orWhere('state', $city);
-                })
                 ->with('category')
                 ->with('bank')
                 ->paginate(10);
         }
-    } else {
-        $property = Auction::where('is_active', 1)
-            ->where('category', $property_category)
-            ->with('category')
-            ->with('bank')
-            ->paginate(10);
+
+        // Pass both properties and userWishlist to the view
+        return view('search', [
+            'property' => $property,
+            'category' => $category,
+            'userWishlist' => $userWishlist,
+        ]);
     }
 
-    // Pass both properties and userWishlist to the view
-    return view('search', [
-        'property' => $property,
-        'category' => $category,
-        'userWishlist' => $userWishlist,
-    ]);
-}
+
+
+    // public function ibcAuction(Request $request)
+    // {
 
 
 
-// public function ibcAuction(Request $request)
-// {
-
-
-
-// }
+    // }
 
 
     public function oursearchDetails(Request $request)
     {
-        $id=$request->id;
+        $id = $request->id;
 
-        $user_id=Auth::User();
+        $user_id = Auth::User();
 
-        $subscription_available=1;
+        $subscription_available = 1;
 
 
-        if($user_id!="")
-        {
+        if ($user_id != "") {
 
-        $user=PurchaseSubscription::where('user_id',$user_id->id)->where('is_active',1)->first();
+            $user = PurchaseSubscription::where('user_id', $user_id->id)->where('is_active', 1)->first();
 
-        if($user!="")
-        {
-            $subscription=Subscreption::where('id',$user->plan_id)->first();
+            if ($user != "") {
+                $subscription = Subscreption::where('id', $user->plan_id)->first();
 
-            $createdAt = Carbon::parse($subscription->created_at); 
-            $today = Carbon::now(); 
+                $createdAt = Carbon::parse($subscription->created_at);
+                $today = Carbon::now();
 
-            $daysDifference = $createdAt->diffInDays($today);
+                $daysDifference = $createdAt->diffInDays($today);
 
-            $subscriptionDays = (int) $subscription->days;
+                $subscriptionDays = (int) $subscription->days;
 
-            if ($daysDifference <= $subscriptionDays) {
+                if ($daysDifference <= $subscriptionDays) {
 
-                 $subscription_available=0;
-               
-            } else {
+                    $subscription_available = 0;
+                } else {
 
-                $user=PurchaseSubscription::where('user_id',$user_id->id)->first();
-                $user->is_active=0;
-                $user->save();
+                    $user = PurchaseSubscription::where('user_id', $user_id->id)->first();
+                    $user->is_active = 0;
+                    $user->save();
 
 
 
 
-               $subscription_available=1;
-
-               }
-
-         }
-
-     }
-
-       
+                    $subscription_available = 1;
+                }
+            }
+        }
 
 
-        $property = Auction::where('id',$id)->with('category')->with('bank')->first();
 
-        return view('acutionDetails')->with('property',$property)->with('subscription_available',$subscription_available);
 
+        $property = Auction::where('id', $id)->with('category')->with('bank')->first();
+
+        return view('acutionDetails')->with('property', $property)->with('subscription_available', $subscription_available);
     }
 
     public function allNotice(Request $request)
     {
-        $notice=Notice::where('is_active',1)->get();
+        $notice = Notice::where('is_active', 1)->get();
 
         // echo $notice;die;
 
-        return view('notice')->with('notice',$notice);
+        return view('notice')->with('notice', $notice);
     }
 
     public function allNoticeDetails(Request $request)
     {
-        $id=$request->id;
+        $id = $request->id;
 
-        $notice=Notice::where('id',$id)->first();
+        $notice = Notice::where('id', $id)->first();
 
-        return view('noticedetails')->with('notice',$notice);
+        return view('noticedetails')->with('notice', $notice);
     }
 
     public function buyPlan(Request $request)
-{
-    $user = auth()->user();
+    {
+        $user = auth()->user();
 
-    $plan = Subscreption::find($request->plan_id)->first();
+        $plan = Subscreption::find($request->plan_id)->first();
 
-    $purchase = new PurchaseSubscription();
-    $purchase->user_id = $user->id;
-    $purchase->plan_id = $plan->id;
-    $purchase->save();
+        $purchase = new PurchaseSubscription();
+        $purchase->user_id = $user->id;
+        $purchase->plan_id = $plan->id;
+        $purchase->save();
 
-    return response()->json(['success' => true]);
-}
+        return response()->json(['success' => true]);
+    }
 
-  public function findProperty(Request $request)
-  {
-      $id=$request->id;
+    public function findProperty(Request $request)
+    {
+        $id = $request->id;
 
-      if($id!=0)
-      {
-         $property = Auction::where('is_active', 1)->where('property_type', $id)->with('category')->with('bank')->paginate(10);  
-
-      }
-      else
-      {
-         $property = Auction::where('is_active', 1)->with('category')->with('bank')->paginate(10);  
-
-      }
-
-     
-      $category=Category::where('is_active',1)->get();
-      
-
-      return view('search')->with('property', $property)->with('category',$category);
-
-  }
-
-  public function verifiedProperty(Request $request)
-  {
-
-      $property = Auction::where('is_active', 1)->where('featured',1)->with('category')->with('bank')->paginate(10);
+        if ($id != 0) {
+            $property = Auction::where('is_active', 1)->where('property_type', $id)->with('category')->with('bank')->paginate(10);
+        } else {
+            $property = Auction::where('is_active', 1)->with('category')->with('bank')->paginate(10);
+        }
 
 
-            $category=Category::where('is_active',1)->get();
+        $category = Category::where('is_active', 1)->get();
 
 
-      return view('search')->with('property', $property)->with('category',$category);
-  }
+        return view('search')->with('property', $property)->with('category', $category);
+    }
 
-  public function addToWishlist(Request $request)
+    public function verifiedProperty(Request $request)
+    {
+
+        $query = Auction::query()
+            ->where('is_active', 1)
+            ->where('featured', 1)
+            ->with(['category', 'bank']);
+
+        // Filter: Location
+        if ($request->filled('location')) {
+            $location = $request->location;
+            $query->where(function ($q) use ($location) {
+                $q->where('locality', 'like', "%$location%")
+                    ->orWhere('district', 'like', "%$location%")
+                    ->orWhere('state', 'like', "%$location%");
+            });
+        }
+
+        // Filter: Bank
+        if ($request->filled('bank')) {
+            $query->whereHas('bank', function ($q) use ($request) {
+                $q->where('bank_name', 'like', '%' . $request->bank . '%');
+            });
+        }
+
+        // Filter: Category
+        if ($request->filled('category')) {
+            $query->where('category_id', $request->category);
+        }
+
+        // Filter: Possession
+        if ($request->filled('possession')) {
+            $query->where('possession', $request->possession);
+        }
+
+        if ($request->filled('sort_by')) {
+            switch ($request->sort_by) {
+                case 'price_low': // Price: Low to High
+                    $query->orderByRaw('CAST(property_price AS UNSIGNED) ASC');
+                    break;
+
+                case 'price_high': // Price: High to Low
+                    $query->orderByRaw('CAST(property_price AS UNSIGNED) DESC');
+                    break;
+
+                    case 'newest':
+                        $query->orderBy('auction_start_datetime', 'desc');
+                        break;
+            
+                    case 'recent':
+                        $query->where('auction_start_datetime', '>=', now())
+                              ->orderBy('auction_start_datetime', 'desc');
+                        break;
+            }
+        } else {
+            // Default: Newest by auction start date
+            $query->orderBy('auction_start_datetime', 'desc');
+        }
+
+        $property = $query->paginate(10)->appends($request->query());
+        $locations = Auction::where('is_active', 1)
+            ->get(['locality', 'district', 'state'])
+            ->flatMap(function ($item) {
+                return [$item->locality, $item->district, $item->state];
+            })
+            ->filter()
+            ->unique()
+            ->values();
+        $banks = Bank::select('bank_name')->distinct()->pluck('bank_name');
+        // dd($locations, $banks);
+        $categories = Category::where('is_active', 1)->get();
+
+
+        return view('search', compact('property', 'locations', 'banks', 'categories'));
+    }
+
+    public function addToWishlist(Request $request)
     {
         $propertyId = $request->input('property_id');
 
@@ -381,11 +421,11 @@ public function oursearch(Request $request)
 
             $user = Auth::User();
 
-            $userId=$user->id;
+            $userId = $user->id;
 
-            $wishlist=new Wishlist();
-            $wishlist->user_id=$userId;
-            $wishlist->property_id=$propertyId;
+            $wishlist = new Wishlist();
+            $wishlist->user_id = $userId;
+            $wishlist->property_id = $propertyId;
             $wishlist->save();
 
             return response()->json(['status' => 'success']);
@@ -402,13 +442,12 @@ public function oursearch(Request $request)
 
     public function removeFromWishlist(Request $request)
     {
-        $user = Auth:: User();
-        $userId=$user->id;
+        $user = Auth::User();
+        $userId = $user->id;
         $propertyId = $request->input('property_id');
 
         Wishlist::where('user_id', $userId)->where('property_id', $propertyId)->delete();
 
         return response()->json(['status' => 'success']);
     }
-
 }
