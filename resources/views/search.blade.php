@@ -216,7 +216,7 @@
                                     <div class="position-relative h-100">
                                         <img src="{{ $item->thumbnail ? asset('storage/' . $item->thumbnail) : 'https://via.placeholder.com/500x300?text=No+Image' }}"
                                             class="img-fluid rounded-start h-100 w-100 object-fit-cover" alt="Property">
-                                        @if ($item->verified)
+                                        @if ($item->featured)
                                             <div class="position-absolute top-0 start-0 m-2">
                                                 <span class="badge bg-primary">Verified</span>
                                             </div>
@@ -232,7 +232,7 @@
                                     <div class="card-body h-100 d-flex flex-column">
                                         <div class="d-flex justify-content-between">
                                             <h4 class="card-title text-primary">{{ $item->property_type_one ?? 'Property' }}</h4>
-                                            <span class="badge bg-success">{{ $item->category->name ?? 'Auction' }}</span>
+                                            <span class="badge bg-success d-flex align-items-center justify-content-center">{{ $item->category->name ?? 'Auction' }}</span>
                                         </div>
                                         <p class="text-muted mb-2">
                                             <i class="fas fa-map-marker-alt text-primary me-1"></i> {{ $item->locality }}, {{ $item->district }}
@@ -243,7 +243,7 @@
                                                 <div class="col-4">
                                                     <div class="bg-light p-2 rounded text-center">
                                                         <small class="d-block text-muted">Area</small>
-                                                        <span class="fw-bold">{{ $item->area ?? '-' }}</span>
+                                                        <span class="fw-bold">{{ $item->area ?? '-' }} Sq Ft</span>
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
@@ -255,7 +255,7 @@
                                                 <div class="col-4">
                                                     <div class="bg-light p-2 rounded text-center">
                                                         <small class="d-block text-muted">Possession</small>
-                                                        <span class="fw-bold">{{ $item->possession }}</span>
+                                                        <span class="fw-bold">{{ $item->possession == '1' ? 'Physical' : 'Symbolic' }}</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -263,9 +263,9 @@
 
                                         <div class="mt-auto d-flex justify-content-between align-items-center">
                                             <div class="d-flex align-items-center">
-                                                <img src="{{ $item->bank->logo_url ?? 'https://via.placeholder.com/24' }}" alt="Bank" width="24"
+                                                <img src="{{ asset('storage/' .$item->bank->icon) ?? 'https://via.placeholder.com/24' }}" alt="Bank" width="24"
                                                     class="me-2">
-                                                <span>{{ $item->bank->name ?? $item->bank_name }}</span>
+                                                <span>{{ $item->bank->bank_name ?? $item->bank_name }}</span>
                                             </div>
                                             <div>
                                                 <h4 class="text-primary mb-0">₹{{ number_format($item->property_price) }}</h4>

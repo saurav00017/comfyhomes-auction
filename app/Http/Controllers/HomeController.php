@@ -363,7 +363,7 @@ public function oursearch(Request $request)
   public function verifiedProperty(Request $request)
   {
 
-      $property = Auction::where('is_active', 1)->where('featured',1)->with('category')->with('bank')->paginate(3);
+      $property = Auction::where('is_active', 1)->where('featured',1)->with('category')->with('bank')->paginate(10);
 
 
             $category=Category::where('is_active',1)->get();
