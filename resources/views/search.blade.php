@@ -186,24 +186,31 @@
                             <div class="col-md-2 col-6">
                                 <label for="sort_by" class="form-label">Sort By</label>
                                 <select name="sort_by" id="sort_by" class="form-select">
-                                    <option value="default" {{ request('sort_by') == 'default' ? 'selected' : '' }}>Default</option>
-                                    <option value="newest" {{ request('sort_by') == 'newest' ? 'selected' : '' }}>Newest</option>
-                                    <option value="recent" {{ request('sort_by') == 'recent' ? 'selected' : '' }}>Recent</option>
-                                    <option value="price_high" {{ request('sort_by') == 'price_high' ? 'selected' : '' }}>Price: High to Low</option>
-                                    <option value="price_low" {{ request('sort_by') == 'price_low' ? 'selected' : '' }}>Price: Low to High</option>
+                                    <option value="default" {{ request('sort_by') == 'default' ? 'selected' : '' }}>Default
+                                    </option>
+                                    <option value="newest" {{ request('sort_by') == 'newest' ? 'selected' : '' }}>Newest
+                                    </option>
+                                    <option value="recent" {{ request('sort_by') == 'recent' ? 'selected' : '' }}>Recent
+                                    </option>
+                                    <option value="price_high" {{ request('sort_by') == 'price_high' ? 'selected' : '' }}>
+                                        Price: High to Low</option>
+                                    <option value="price_low" {{ request('sort_by') == 'price_low' ? 'selected' : '' }}>
+                                        Price: Low to High</option>
                                 </select>
                             </div>
-                    
+
                             <div class="col-md-2 col-6">
                                 <label for="possession" class="form-label">Possession</label>
                                 <select name="possession" id="possession" class="form-select">
                                     <option value="">All</option>
-                                    <option value="1" {{ request('possession') == '1' ? 'selected' : '' }}>Physical</option>
-                                    <option value="0" {{ request('possession') == '0' ? 'selected' : '' }}>Symbolic</option>
+                                    <option value="1" {{ request('possession') == '1' ? 'selected' : '' }}>Physical
+                                    </option>
+                                    <option value="0" {{ request('possession') == '0' ? 'selected' : '' }}>Symbolic
+                                    </option>
                                 </select>
                             </div>
                         </div>
-                    
+
                         <!-- Collapsible Filter Section -->
                         <div class="collapse d-md-block" id="filterCard">
                             <div class="card card-body shadow-sm mb-4 mt-3">
@@ -213,13 +220,13 @@
                                         <input type="text" id="location" name="location" class="form-control"
                                             placeholder="Search location..." value="{{ request('location') }}">
                                     </div>
-                    
+
                                     <div class="col-md-3">
                                         <label for="bank" class="form-label">Bank</label>
                                         <input type="text" id="bank" name="bank" class="form-control"
                                             placeholder="Search bank..." value="{{ request('bank') }}">
                                     </div>
-                    
+
                                     <div class="col-md-3">
                                         <label for="category" class="form-label">Category</label>
                                         <select name="category" id="category" class="form-select">
@@ -232,23 +239,23 @@
                                             @endforeach
                                         </select>
                                     </div>
-                    
+
                                     <div class="col-12 text-end">
                                         <button type="submit" class="btn btn-primary px-4">Search</button>
-                                        <a href="{{ route('verifiedProperty') }}" class="btn btn-secondary px-4 ms-2">Reset</a>
+                                        <a href="{{ route('verifiedProperty') }}"
+                                            class="btn btn-secondary px-4 ms-2">Reset</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </form>
-                    
+
                 </div>
             </div>
 
 
             <!-- Property List -->
             <div class="row">
-                <!-- Property Item 1 -->
 
                 @forelse ($property as $item)
                     <div class="col-12 mb-4">
@@ -273,7 +280,8 @@
                                 <div class="col-md-8">
                                     <div class="card-body h-100 d-flex flex-column">
                                         <div class="d-flex justify-content-between">
-                                            <h4 class="card-title text-primary">{{ $item->property_type_one ?? 'Property' }}
+                                            <h4 class="card-title text-primary">
+                                                {{ $item->property_type_one ?? 'Property' }}
                                             </h4>
                                             <span
                                                 class="badge bg-success d-flex align-items-center justify-content-center">{{ $item->category->name ?? 'Auction' }}</span>
@@ -282,6 +290,16 @@
                                             <i class="fas fa-map-marker-alt text-primary me-1"></i> {{ $item->locality }},
                                             {{ $item->district }}
                                         </p>
+
+                                        @if ($item->auction_start_datetime)
+                                            <div class="mb-2">
+                                                <i class="fas fa-calendar-alt text-primary me-1"></i>
+                                                <span class="text-muted">
+                                                    {{ \Carbon\Carbon::parse($item->auction_start_datetime)->format('d M Y') }}
+                                                </span>
+                                            </div>
+                                        @endif
+
 
                                         <div class="property-features mb-3">
                                             <div class="row g-2">
