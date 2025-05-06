@@ -1,281 +1,435 @@
-@extends('layouts.app')
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auction Details | Property Auction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-
-
-          .premium-container {
-        background-color: #007ac9;
-        padding: 40px;
-        border-radius: 10px;
-        text-align: center;
-        color: white;
-        margin-top: 2%!important;
-        width: 75%!important;
-    }
-    .premium-container h1 {
-        margin-bottom: 20px;
-        font-size: 24px;
-        color: #ffc107;
-    }
-    .premium-container button {
-        background-color: #28a745;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        cursor: pointer;
-    }
-    .premium-container button:hover {
-        background-color: #218838;
-    }
-    .login-register {
-        margin-top: 15px;
-    }
-    .login-register a {
-        color: #fff;
-        text-decoration: underline;
-    }
-    .app-links img {
-        width: 150px;
-        margin-top: 20px;
-    }
-    .premium-modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 999;
-    }
-    .premium-content {
-        background-color: purple;
-        padding: 40px;
-        border-radius: 10px;
-        text-align: center;
-        color: white;
-        width: 50%;
-    }
-    .premium-content button {
-        background-color: #eaceea;
-        color: purple;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        cursor: pointer;
-    }
-    .premium-content button:hover {
-        background-color: #218838;
-    }
-    .hidden {
-        display: none;
-    }
-
-
-
-         span{
-        font-family: "Poppins", sans-serif;
-        font-weight: 500;
-  font-style: normal;
-    }
-
-
-
-        .body-section .container {
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        :root {
+            --primary-color: #6f42c1;
+            --secondary-color: #f8f9fa;
+            --dark-color: #343a40;
+            --light-color: #f8f9fa;
         }
-
-        footer .container {
-          
-            border-radius: 8px;
-            box-shadow: 0 0 0px rgba(0, 0, 0, 0)!important;
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
         }
-
-        .section-title {
-            font-size: 1.25rem;
+        
+        .auction-header {
+            background: linear-gradient(135deg, #6f42c1 0%, #4a1d96 100%);
+            color: white;
+            padding: 2rem 0;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .property-image {
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .gallery-thumbnail {
+            height: 80px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-thumbnail:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .detail-card {
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .detail-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        
+        .badge-verified {
+            background-color: var(--primary-color);
+            font-size: 0.8rem;
+        }
+        
+        .price-tag {
+            font-size: 1.8rem;
             font-weight: 700;
-            color: purple;
-/*            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-*/            padding-bottom: 5px;
-            margin-bottom: 20px;
-                    font-family: "Poppins", sans-serif;
-
+            color: var(--primary-color);
         }
-
-        .detail-row {
-            margin-bottom: 10px;
+        
+        .feature-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 10px;
         }
-
-        .detail-row span {
-            font-weight: bold;
+        
+        .countdown-timer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
         }
-
-        .detail-row div {
-            margin-bottom: 5px;
+        
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 700;
         }
-
-        .go-back {
-            color: purple;
+        
+        .countdown-label {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+        
+        .btn-bid {
+            background-color: var(--primary-color);
+            color: white;
             font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            margin-bottom: 20px;
-                float: inline-end;
-                    font-family: "Poppins", sans-serif;
-
-
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            border: none;
+            transition: all 0.3s ease;
         }
-
-        .go-back:hover {
-            text-decoration: underline;
+        
+        .btn-bid:hover {
+            background-color: #5a32a0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
-
-        .text-secondary {
-            color: #6c757d;
+        
+        .document-card {
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .wishlist-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: white;
+            border: none;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        
+        .wishlist-btn.active {
+            background-color: #f3e9ff;
         }
     </style>
-@section('content')
-<div class="full-row body-section bg-white py-80">
-<div class="container">
-<a href="javascript:void(0);" class="go-back" onclick="history.back()">&laquo; Go Back</a>
-    <h3 class="section-title">Auction Details</h3>
-    <hr>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="auction-header mb-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="fw-bold mb-3">Luxury Villa in Prime Location</h1>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-map-marker-alt me-2"></i>
+                        <span>Malabar Hill, Mumbai, Maharashtra</span>
+                    </div>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge badge-verified p-2">
+                            <i class="fas fa-check-circle me-1"></i> Verified Property
+                        </span>
+                        <span class="badge bg-success p-2">Bank Auction</span>
+                    </div>
+                </div>
+                <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                    <button class="btn btn-light me-2">
+                        <i class="fas fa-share-alt me-1"></i> Share
+                    </button>
+                    <button class="wishlist-btn active">
+                        <i class="fas fa-heart" style="color: purple;"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    <div>
-<!--         <h4 class="section-title">General Detail</h4>
- -->        <div class="row detail-row">
-            <div class="col-md-6">
-                <span>Bank Name</span>: {{$property->bank->bank_name}}
+    <div class="container mb-5">
+        <div class="row">
+            <!-- Main Image and Gallery -->
+            <div class="col-lg-8">
+                <div class="mb-4">
+                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         class="property-image w-100" 
+                         alt="Property Image" 
+                         id="mainImage">
+                </div>
+                
+                <div class="row g-3 mb-4">
+                    <div class="col-3">
+                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             class="gallery-thumbnail" 
+                             onclick="changeMainImage(this)">
+                    </div>
+                    <div class="col-3">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             class="gallery-thumbnail" 
+                             onclick="changeMainImage(this)">
+                    </div>
+                    <div class="col-3">
+                        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             class="gallery-thumbnail" 
+                             onclick="changeMainImage(this)">
+                    </div>
+                    <div class="col-3">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             class="gallery-thumbnail" 
+                             onclick="changeMainImage(this)">
+                    </div>
+                </div>
+                
+                <!-- Property Details -->
+                <div class="card detail-card mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4">Property Details</h3>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-home feature-icon"></i>
+                                    <div>
+                                        <h6 class="mb-0">Property Type</h6>
+                                        <p class="text-muted mb-0">Luxury Villa</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-ruler-combined feature-icon"></i>
+                                    <div>
+                                        <h6 class="mb-0">Area</h6>
+                                        <p class="text-muted mb-0">3,500 Sq Ft</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-key feature-icon"></i>
+                                    <div>
+                                        <h6 class="mb-0">Possession Type</h6>
+                                        <p class="text-muted mb-0">Physical Possession</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-tag feature-icon"></i>
+                                    <div>
+                                        <h6 class="mb-0">Market Price</h6>
+                                        <p class="text-muted mb-0">₹8,75,00,000</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <h5>Description</h5>
+                            <p class="text-muted">
+                                This luxurious villa is located in the prestigious Malabar Hill area, offering breathtaking sea views. The property features 4 bedrooms, 5 bathrooms, a spacious living area, modern kitchen, and a private garden. The villa comes with high-end finishes, premium fixtures, and ample natural light throughout.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Auction Terms -->
+                <div class="card detail-card mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4">Auction Terms</h3>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-gavel feature-icon"></i>
+                                    <div>
+                                        <h6 class="mb-0">Reserve Price</h6>
+                                        <p class="text-muted mb-0">₹5,25,00,000</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-coins feature-icon"></i>
+                                    <div>
+                                        <h6 class="mb-0">EMD Amount</h6>
+                                        <p class="text-muted mb-0">₹10,50,000</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-arrow-up feature-icon"></i>
+                                    <div>
+                                        <h6 class="mb-0">Bid Increment</h6>
+                                        <p class="text-muted mb-0">₹1,00,000</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-file-signature feature-icon"></i>
+                                    <div>
+                                        <h6 class="mb-0">EMD Submission</h6>
+                                        <p class="text-muted mb-0">Demand Draft in favor of SBI</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Documents -->
+                <div class="card detail-card mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4">Documents</h3>
+                        <div class="document-card p-3 mb-3 bg-light rounded">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-1">Auction File</h6>
+                                    <p class="text-muted mb-0">PDF • 1.1 MB</p>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary">
+                                    <i class="fas fa-download me-1"></i> Download
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6">
-                <span>Property Type</span>: {{$property->property_type_one}}
+            
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <!-- Auction Timer -->
+                <div class="card detail-card mb-4">
+                    <div class="card-body">
+                        <h4 class="card-title text-center mb-4">Auction Ends In</h4>
+                        <div class="countdown-timer mb-3">
+                            <div class="row text-center">
+                                <div class="col-3">
+                                    <div class="countdown-number">05</div>
+                                    <div class="countdown-label">Days</div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="countdown-number">12</div>
+                                    <div class="countdown-label">Hours</div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="countdown-number">45</div>
+                                    <div class="countdown-label">Minutes</div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="countdown-number">30</div>
+                                    <div class="countdown-label">Seconds</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mb-3">
+                            <p class="mb-1"><i class="fas fa-calendar-alt me-2"></i> Starts: 15 Nov 2023, 10:00 AM</p>
+                            <p class="mb-1"><i class="fas fa-calendar-alt me-2"></i> Ends: 20 Nov 2023, 05:00 PM</p>
+                            <p><i class="fas fa-calendar-alt me-2"></i> Inspection: 10 Nov 2023 to 15 Nov 2023</p>
+                        </div>   
+                    </div>
+                </div>
+                
+                <!-- Current Bid -->
+                {{-- <div class="card detail-card mb-4">
+                    <div class="card-body">
+                        <h4 class="card-title mb-4">Current Bid</h4>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="mb-0">Highest Bid:</h5>
+                            <div class="price-tag">₹5,75,00,000</div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="mb-0">Bid Increment:</h5>
+                            <div class="text-primary fw-bold">₹1,00,000</div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">Next Bid:</h5>
+                            <div class="price-tag">₹5,76,00,000</div>
+                        </div>
+                    </div>
+                </div> --}}
+                
+                <!-- Bank Information -->
+                <div class="card detail-card mb-4">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/State_Bank_of_India_logo.svg/1200px-State_Bank_of_India_logo.svg.png" 
+                                 alt="Bank Logo" 
+                                 width="50" 
+                                 class="me-3">
+                            <div>
+                                <h4 class="mb-0">State Bank of India</h4>
+                                <p class="text-muted mb-0">NPA Asset Management</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <h6>Contact Information</h6>
+                            <p class="mb-1"><i class="fas fa-user me-2"></i> Mr. Rajesh Kumar</p>
+                            <p class="mb-1"><i class="fas fa-phone me-2"></i> +91 98765 43210</p>
+                            <p class="mb-0"><i class="fas fa-envelope me-2"></i> auctions@sbi.co.in</p>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <h6>Branch Address</h6>
+                            <p class="mb-0">
+                                SBI Main Branch, Nariman Point, Mumbai - 400021, Maharashtra
+                            </p>
+                        </div>
+                        
+                        <a href="#" class="btn btn-outline-primary w-100">
+                            <i class="fas fa-phone-alt me-1"></i> Contact Bank
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Location Map -->
+                {{-- <div class="card detail-card">
+                    <div class="card-body">
+                        <h4 class="card-title mb-4">Location</h4>
+                        <div class="ratio ratio-16x9 mb-3">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.651944315546!2d72.7935573153781!3d18.96389298715874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce6e593e5a4b%3A0x7f4c1a8a4b4b4b4b!2sMalabar%20Hill%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy"></iframe>
+                        </div>
+                        <p class="text-muted mb-0">
+                            <i class="fas fa-map-marker-alt text-danger me-1"></i> 
+                            Malabar Hill, Mumbai, Maharashtra - 400006
+                        </p>
+                    </div>
+                </div> --}}
             </div>
         </div>
-        <div class="row detail-row">
-            <div class="col-md-6">
-                <span>Area</span>: {{$property->area}} Sqft
-            </div>
-            <div class="col-md-6">
-                <span>Possession</span>: @if($property->possession==1)
-                                        Physical
-                                        @else
-                                        Symbolic
-                                        @endif
-            </div>
-        </div>
-        <div class="row detail-row">
-            <div class="col-md-6">
-                <span>Locality</span>: {{$property->locality}}
-            </div>
-            <div class="col-md-6">
-                <span>City</span>:{{$property->district}}
-            </div>
-        </div>
-        <div class="row detail-row">
-            <div class="col-md-6">
-                <span>Reserve Price</span>: ₹ {{ number_format($property->reserve_price, 0, '.', ',') }}
-            </div>
-            <div class="col-md-6">
-                <span>Market Price Range</span>: ₹ {{ number_format($property->market_price, 0, '.', ',') }}
-            </div>
-        </div>
-        <div class="row detail-row">
-            <div class="col-md-6">
-                <span>Emd Amount</span>: ₹ {{ number_format($property->emd_amount, 0, '.', ',') }}
-            </div>
-             <div class="col-md-6">
-                <span>Emd Submission</span>: {{$property->emd_submission}}
-            </div>
-        </div>
-        <div class="row detail-row">
-           
-            <div class="col-md-6">
-                <span>Auction Start Date & Time</span>: {{$property->auction_start_datetime}}
-            </div>
-
-            <div class="col-md-6">
-                <span>Auction End Date & Time</span>: {{$property->auction_end_datetime}}
-            </div>
-        </div>
-
-        
     </div>
 
-    <!-- Inspection Detail Section -->
-      @if($subscription_available==0)
-    <div>
-        <div class="row detail-row">
-            <div class="col-md-6">
-                <span>Contact Number</span>: 8585854554
-            </div>
-            <div class="col-md-6">
-                <span>Email</span>: test@gmail.com
-            </div>
-        </div>
-       <!--  <div class="row detail-row">
-            <div class="col-md-6">
-                <span>Branch Address</span>: #36, Housing Board Colony, New Bus Stand Road
-            </div>
-        </div> -->
-    </div>
-    @endif
-
-    <!-- Download Document Button -->
-@if(Auth::check())
-    @if($subscription_available == 0)
-        <!-- If user is logged in and subscription is available -->
-        <a href="{{ config('app.baseURL') }}/storage/app/{{$property->document}}" class="btn btn-primary">Download Document</a>
-    @else
-        <!-- Show premium modal if user does not have an active subscription -->
-        <button class="btn btn-primary" id="show-premium-download">Download Document</button>
-    @endif
-@else
-    <!-- If the user is not logged in -->
-    <button class="btn btn-primary" id="show-premium-download">Download Document</button>
-@endif
-
-<!-- Premium Modal -->
-<div id="premium-modal" class="premium-modal hidden">
-    <div class="premium-content">
-        <h1>Join Premium Membership</h1>
-        <p>View and download auction Document</p>
-        <a href="{{config('app.baseURL')}}/premium"><button>GET PREMIUM</button></a>
-        <div class="login-register">
-            <p>If you are already a premium member <a href="{{config('app.baseURL')}}/login">LOGIN</a> | <a href="{{config('app.baseURL')}}/register">REGISTER</a></p>
-        </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-
-<script>
-    // Show the premium modal when the download button is clicked
-    document.getElementById('show-premium-download').addEventListener('click', function() {
-        var modal = document.getElementById('premium-modal');
-        modal.classList.remove('hidden');
-        modal.style.display = 'flex';
-    });
-
-    // Close the modal when clicking outside the content
-    document.getElementById('premium-modal').addEventListener('click', function(event) {
-        if (event.target === this) {
-            this.style.display = 'none';
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function changeMainImage(element) {
+            document.getElementById('mainImage').src = element.src;
         }
-    });
-</script>
-
-@endsection
+    </script>
+</body>
+</html>

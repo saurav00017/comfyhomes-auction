@@ -241,50 +241,51 @@ class HomeController extends Controller
 
     public function oursearchDetails(Request $request)
     {
-        $id = $request->id;
+        // $id = $request->id;
 
-        $user_id = Auth::User();
+        // $user_id = Auth::User();
 
-        $subscription_available = 1;
-
-
-        if ($user_id != "") {
-
-            $user = PurchaseSubscription::where('user_id', $user_id->id)->where('is_active', 1)->first();
-
-            if ($user != "") {
-                $subscription = Subscreption::where('id', $user->plan_id)->first();
-
-                $createdAt = Carbon::parse($subscription->created_at);
-                $today = Carbon::now();
-
-                $daysDifference = $createdAt->diffInDays($today);
-
-                $subscriptionDays = (int) $subscription->days;
-
-                if ($daysDifference <= $subscriptionDays) {
-
-                    $subscription_available = 0;
-                } else {
-
-                    $user = PurchaseSubscription::where('user_id', $user_id->id)->first();
-                    $user->is_active = 0;
-                    $user->save();
+        // $subscription_available = 1;
 
 
+        // if ($user_id != "") {
 
+        //     $user = PurchaseSubscription::where('user_id', $user_id->id)->where('is_active', 1)->first();
 
-                    $subscription_available = 1;
-                }
-            }
-        }
+        //     if ($user != "") {
+        //         $subscription = Subscreption::where('id', $user->plan_id)->first();
+
+        //         $createdAt = Carbon::parse($subscription->created_at);
+        //         $today = Carbon::now();
+
+        //         $daysDifference = $createdAt->diffInDays($today);
+
+        //         $subscriptionDays = (int) $subscription->days;
+
+        //         if ($daysDifference <= $subscriptionDays) {
+
+        //             $subscription_available = 0;
+        //         } else {
+
+        //             $user = PurchaseSubscription::where('user_id', $user_id->id)->first();
+        //             $user->is_active = 0;
+        //             $user->save();
 
 
 
 
-        $property = Auction::where('id', $id)->with('category')->with('bank')->first();
+        //             $subscription_available = 1;
+        //         }
+        //     }
+        // }
 
-        return view('acutionDetails')->with('property', $property)->with('subscription_available', $subscription_available);
+
+
+
+        // $property = Auction::where('id', $id)->with('category')->with('bank')->first();
+
+        // return view('acutionDetails')->with('property', $property)->with('subscription_available', $subscription_available);
+        return view('acutionDetails');
     }
 
     public function allNotice(Request $request)

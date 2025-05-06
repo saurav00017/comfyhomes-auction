@@ -54,7 +54,7 @@ Route::get('notice', [App\Http\Controllers\HomeController::class, 'allNotice']);
 Route::get('noticedetails', [App\Http\Controllers\HomeController::class, 'allNoticeDetails']);
 
 
-Route::get('search-details', [App\Http\Controllers\HomeController::class, 'oursearchDetails']);
+Route::get('search-details', [App\Http\Controllers\HomeController::class, 'oursearchDetails'])->name('auction.details');
 
 
 Route::get('find-property', [App\Http\Controllers\HomeController::class, 'findProperty']);
