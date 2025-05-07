@@ -34,14 +34,14 @@
         <!--============== Footer Section Start ==============-->
         <footer class="full-row p-0">
             <div class="container">
-                <div class="row">
-                    <div class="col">
+                <div class="row ">
+                    <div class="col mt-50">
                         <div class="divider py-80">
                             <div class="row g-4">
                                 <div class="col-lg-4">
                                     <div class="footer-widget">
                                         <div class="footer-logo mb-4">
-                                            <a href="#"><img class="logo-bottom" src="{{asset('assets/images/logo/vebsigns.png' )}}" alt="image" style="width: 170px !important;"></a>
+                                            <a href="#"><img class="logo-bottom" src="{{ asset('assets/images/logo/logo_footer.png') }}" alt="image" style="width: 100px !important;"></a>
                                         </div>
                                         <p class="pb-20">Risus commodo congue augue phasellus morbi hymenaeos ante tincidunt eu orci dictum bibendum lacus platea primis mi lacinia felis gravida natoque bibendum cubilia montes tristique et arcu blandit risus. Lobortis
                                             dignissim nam.

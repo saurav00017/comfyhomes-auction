@@ -3,9 +3,9 @@
 			<a class="main-logo" href="">
 
 					
-						<img src="{{ asset('assets/img/propberries.jpeg') }}" class="header-brand-img desktop-logo" alt="logo" class="img-responsive"  style="height: 118px!important;">
+						<img src="{{ asset('assets/images/logo/logo_header.png') }}" class="header-brand-img desktop-logo" alt="logo" class="img-responsive"  style="height: 40px!important;">
 				
-						<img src="{{ asset('assets/img/propberries.jpeg') }}" class="header-brand-img icon-logo" alt="logo">
+						<img src="{{ asset('assets/images/logo/logo_header.png') }}" class="header-brand-img icon-logo" alt="logo">
 						
 					</a>
 				</div>

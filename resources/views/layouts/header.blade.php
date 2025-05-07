@@ -5,7 +5,7 @@
                 <div class="realestate-header-top-bar">
                     <div class="realestate-header-logo">
                         <a href="{{ url('/') }}">
-                            <img loading="lazy" src="assets/images/final logo.png" alt="realestate-logo">
+                            <img loading="lazy" src="{{ asset('assets/images/logo/logo_header.png') }}" alt="realestate-logo">
                         </a>
                     </div>
                     <button class="realestate-not-filled-btn d-flex d-lg-none realestate-offcanvas-menu-btn"
