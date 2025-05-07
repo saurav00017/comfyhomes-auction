@@ -286,6 +286,8 @@ class HomeController extends Controller
 
         // return view('acutionDetails')->with('property', $property)->with('subscription_available', $subscription_available);
 
+        // $isPremium = false;
+
         $auction = Auction::where('slug', $slug)->firstOrFail();
 
         $isInWishlist = auth()->check() ? $auction->wishlist()->where('user_id', auth()->id())->exists() : false;

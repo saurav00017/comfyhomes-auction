@@ -57,8 +57,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function hasActivePremiumSubscription()
+    {
+        return $this->purchasedSubscriptions()
+            ->where('is_active', true)
+            ->exists();
+    }
+
     public function wishlists()
     {
         return $this->hasMany(Wishlist::class);
+    }
+
+    public function purchasedSubscriptions()
+    {
+        return $this->hasMany(PurchaseSubscription::class);
     }
 }

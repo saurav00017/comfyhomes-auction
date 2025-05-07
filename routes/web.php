@@ -28,7 +28,7 @@ Route::post('contact', [App\Http\Controllers\HomeController::class, 'postContact
 Route::get('menu', [App\Http\Controllers\HomeController::class, 'ourmenu']);
 Route::get('blog', [App\Http\Controllers\HomeController::class, 'ourblog']);
 Route::get('blogdetails', [App\Http\Controllers\HomeController::class, 'blogs']);
-Route::get('premium', [App\Http\Controllers\HomeController::class, 'ourpremium']);
+Route::get('premium', [App\Http\Controllers\HomeController::class, 'ourpremium'])->name('subscription.plans');
 Route::get('faq', [App\Http\Controllers\HomeController::class, 'ourfaq']);
 Route::get('search', [App\Http\Controllers\HomeController::class, 'oursearch']);
 Route::get('verify-auction', [App\Http\Controllers\HomeController::class, 'verifiedProperty'])->name('verifiedProperty');

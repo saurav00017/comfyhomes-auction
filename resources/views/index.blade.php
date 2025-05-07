@@ -1163,18 +1163,6 @@
     </p>
 
     <div class="pricing">
-        {{-- <div class="plan">
-        <h2>Dev</h2>
-        <div class="price">FREE</div>
-        <ul class="features">
-          <li><i class="fas fa-check-circle"></i> Unlimited Websites</li>
-          <li><i class="fas fa-check-circle"></i> 1 User</li>
-          <li><i class="fas fa-check-circle"></i> 100MB Space/website</li>
-          <li><i class="fas fa-check-circle"></i> Continuous deployment</li>
-          <li><i class="fas fa-times-circle"></i> No priority support</li>
-        </ul>
-        <button>Signup</button>
-      </div> --}}
         @foreach ($premium as $premiumItem)
             <div class="plan popular">
                 <span>Most Popular</span>
@@ -1209,18 +1197,6 @@
                 @endguest
             </div>
         @endforeach
-        {{-- <div class="plan">
-        <h2>Enterprise</h2>
-        <div class="price">Custom Pricing</div>
-        <ul class="features">
-          <li><i class="fas fa-check-circle"></i> Unlimited Websites</li>
-          <li><i class="fas fa-check-circle"></i> Unlimited Users</li>
-          <li><i class="fas fa-check-circle"></i> Unlimited Space/website</li>
-          <li><i class="fas fa-check-circle"></i> Continuous deployment</li>
-          <li><i class="fas fa-check-circle"></i> 24/7 Email support</li>
-        </ul>
-        <button>Contact Us</button>
-      </div> --}}
     </div>
 
     {{-- Confirmation Modal --}}

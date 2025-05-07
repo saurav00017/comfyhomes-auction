@@ -95,7 +95,7 @@
                                         </div>
 
                                         <div class="d-flex justify-content-end mt-3">
-                                            <a href="#" class="btn btn-primary px-4">View Details</a>
+                                            <a href="{{ route('auction.details', $item->slug) }}" class="btn btn-primary px-4">View Details</a>
                                         </div>
                                     </div>
                                 </div>

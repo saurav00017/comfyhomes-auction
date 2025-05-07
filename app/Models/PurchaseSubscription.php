@@ -9,5 +9,8 @@ class PurchaseSubscription extends Model
 {
     use HasFactory;
 
-    
+    public function plan()
+    {
+        return $this->belongsTo(Subscreption::class); // Assuming you have a Plan model
+    }
 }
