@@ -137,8 +137,9 @@
                         <span>{{ $auction->locality }}, {{ $auction->district }}, {{ $auction->state }}</span>
                     </div>
                     <div class="d-flex flex-wrap gap-2">
-                        <span class="badge badge-verified p-2"
-                            style="
+                        @if ($auction->featured == 1)
+                            <span class="badge badge-verified p-2"
+                                style="
                         background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
                         color: #6f42c1;
                         padding: 6px 12px;
@@ -149,20 +150,39 @@
                         align-items: center;
                         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
                     ">
-                            <i class="fas fa-check-circle me-1"></i> Verified Property
-                        </span>
+                                <i class="fas fa-check-circle me-1"></i> Verified Property
+                            </span>
+                        @endif
                         <span class="badge bg-success p-2">{{ $auction->categories->name ?? 'Auction' }}</span>
                     </div>
                 </div>
-                <div class="col-md-4 text-md-end mt-3 mt-md-0">
-                    <button class="btn btn-light me-2">
-                        <i class="fas fa-share-alt me-1"></i> Share
-                    </button>
-                    <button class="wishlist-btn active" data-id="{{ $auction->id }}">
-                        <i class="{{ $isInWishlist ? 'fas' : 'far' }} fa-heart" style="color: purple;"></i>
-
+                <div class="col-md-4 text-md-end mt-3 mt-md-0 d-flex justify-content-md-end gap-2 flex-wrap">
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/?text={{ urlencode(request()->fullUrl()) }}" target="_blank" class="btn btn-success rounded-circle" title="Share on WhatsApp" style="width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(request()->fullUrl()) }}" target="_blank" class="btn btn-primary rounded-circle" title="Share on Facebook" style="width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                
+                    <!-- Twitter -->
+                    <a href="https://twitter.com/intent/tweet?url={{ urlencode(request()->fullUrl()) }}" target="_blank" class="btn btn-info text-white rounded-circle" title="Share on Twitter" style="width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                
+                    <!-- Email -->
+                    <a href="mailto:?subject=Check this Auction Property&body={{ urlencode(request()->fullUrl()) }}" class="btn btn-dark rounded-circle" title="Share via Email" style="width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                
+                    <!-- Wishlist -->
+                    <button class="wishlist-btn active ms-2" data-id="{{ $auction->id }}" title="Add to Wishlist" style="width: 38px; height: 38px; background: white; border: none;">
+                        <i class="{{ $isInWishlist ? 'fas' : 'far' }} fa-heart" style="color: purple; font-size: 20px;"></i>
                     </button>
                 </div>
+                
             </div>
         </div>
     </header>
@@ -172,28 +192,26 @@
             <!-- Main Image and Gallery -->
             <div class="col-lg-8">
                 <div class="mb-4">
-                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                        class="property-image w-100" alt="Property Image" id="mainImage">
+                    <img src="{{ asset('storage/' . $auction->thumbnail) }}" class="property-image w-100"
+                        alt="Property Image" id="mainImage">
                 </div>
-
-                <div class="row g-3 mb-4">
-                    <div class="col-3">
-                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                            class="gallery-thumbnail" onclick="changeMainImage(this)">
+                @if ($auction->images->count() > 0)
+                    <div class="row g-3 mb-4">
+                        @unless ($auction->images->contains('image_path', $auction->thumbnail))
+                            <div class="col-3">
+                                <img src="{{ asset('storage/' . $auction->thumbnail) }}" class="gallery-thumbnail"
+                                    onclick="changeMainImage(this)" data-src="{{ asset('storage/' . $auction->thumbnail) }}">
+                            </div>
+                        @endunless
+                        @foreach ($auction->images as $image)
+                            <div class="col-3">
+                                <img src="{{ asset('storage/' . $image->image_path) }}" class="gallery-thumbnail"
+                                    onclick="changeMainImage(this)"
+                                    data-src="{{ asset('storage/' . $image->image_path) }}">
+                            </div>
+                        @endforeach
                     </div>
-                    <div class="col-3">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                            class="gallery-thumbnail" onclick="changeMainImage(this)">
-                    </div>
-                    <div class="col-3">
-                        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                            class="gallery-thumbnail" onclick="changeMainImage(this)">
-                    </div>
-                    <div class="col-3">
-                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                            class="gallery-thumbnail" onclick="changeMainImage(this)">
-                    </div>
-                </div>
+                @endif
 
                 <!-- Property Details -->
                 <div class="card detail-card mb-4">
@@ -206,7 +224,7 @@
                                     <i class="fas fa-user feature-icon"></i>
                                     <div>
                                         <h6 class="mb-0">Borrower Name</h6>
-                                        <p class="text-muted mb-0">John Smith</p>
+                                        <p class="text-muted mb-0">{{ $auction->borrower_name }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -215,7 +233,7 @@
                                     <i class="fas fa-home feature-icon"></i>
                                     <div>
                                         <h6 class="mb-0">Property Type</h6>
-                                        <p class="text-muted mb-0">Luxury Villa</p>
+                                        <p class="text-muted mb-0">{{ $auction->property_type_one }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -224,7 +242,8 @@
                                     <i class="fas fa-key feature-icon"></i>
                                     <div>
                                         <h6 class="mb-0">Possession Type</h6>
-                                        <p class="text-muted mb-0">Physical Possession</p>
+                                        <p class="text-muted mb-0">
+                                            {{ $auction->possession == '1' ? 'Physical' : 'Symbolic' }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -236,7 +255,7 @@
                                     <i class="fas fa-tag feature-icon"></i>
                                     <div>
                                         <h6 class="mb-0">Property Price</h6>
-                                        <p class="text-muted mb-0">₹7,50,00,000</p>
+                                        <p class="text-muted mb-0">₹{{ number_format($auction->property_price) }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -245,7 +264,7 @@
                                     <i class="fas fa-tags feature-icon"></i>
                                     <div>
                                         <h6 class="mb-0">Market Price</h6>
-                                        <p class="text-muted mb-0">₹8,75,00,000</p>
+                                        <p class="text-muted mb-0">₹{{ number_format($auction->market_price) }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -254,7 +273,7 @@
                                     <i class="fas fa-ruler-combined feature-icon"></i>
                                     <div>
                                         <h6 class="mb-0">Area</h6>
-                                        <p class="text-muted mb-0">3,500 Sq Ft</p>
+                                        <p class="text-muted mb-0">{{ number_format($auction->area) }} Sq Ft</p>
                                     </div>
                                 </div>
                             </div>
@@ -263,10 +282,7 @@
                         <div class="mb-3">
                             <h5>Description</h5>
                             <p class="text-muted">
-                                This luxurious villa is located in the prestigious Malabar Hill area, offering breathtaking
-                                sea views. The property features 4 bedrooms, 5 bathrooms, a spacious living area, modern
-                                kitchen, and a private garden. The villa comes with high-end finishes, premium fixtures, and
-                                ample natural light throughout.
+                                {!! $auction->description !!}
                             </p>
                         </div>
                     </div>
@@ -283,7 +299,7 @@
                                     <i class="fas fa-gavel feature-icon"></i>
                                     <div>
                                         <h6 class="mb-0">Reserve Price</h6>
-                                        <p class="text-muted mb-0">₹5,25,00,000</p>
+                                        <p class="text-muted mb-0">₹{{ number_format($auction->reserve_price) }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -292,7 +308,7 @@
                                     <i class="fas fa-coins feature-icon"></i>
                                     <div>
                                         <h6 class="mb-0">EMD Amount</h6>
-                                        <p class="text-muted mb-0">₹10,50,000</p>
+                                        <p class="text-muted mb-0">₹{{ number_format($auction->emd_amount) }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -301,7 +317,7 @@
                                     <i class="fas fa-arrow-up feature-icon"></i>
                                     <div>
                                         <h6 class="mb-0">Bid Increment</h6>
-                                        <p class="text-muted mb-0">₹1,00,000</p>
+                                        <p class="text-muted mb-0">₹{{ number_format($auction->bid_increment) }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -310,7 +326,8 @@
                                     <i class="fas fa-file-signature feature-icon"></i>
                                     <div>
                                         <h6 class="mb-0">EMD Submission</h6>
-                                        <p class="text-muted mb-0">Demand Draft in favor of SBI</p>
+                                        <p class="text-muted mb-0">
+                                            {{ \Carbon\Carbon::parse($auction->emd_submission)->format('d M Y') }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -326,9 +343,10 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <div>
                                     <h6 class="mb-1">Auction File</h6>
-                                    <p class="text-muted mb-0">PDF • 1.1 MB</p>
+                                    {{-- <p class="text-muted mb-0">PDF • 1.1 MB</p> --}}
                                 </div>
-                                <a href="#" class="btn btn-outline-primary">
+                                <a href="{{ asset('storage/' . $auction->document) }}" class="btn btn-outline-primary"
+                                    target="_blank">
                                     <i class="fas fa-download me-1"></i> Download
                                 </a>
                             </div>
@@ -343,30 +361,32 @@
                 <div class="card detail-card mb-4">
                     <div class="card-body">
                         <h4 class="card-title text-center mb-4">Auction Ends In</h4>
-                        <div class="countdown-timer mb-3">
+                        <div class="countdown-timer mb-3" id="auctionCountdown">
                             <div class="row text-center">
                                 <div class="col-3">
-                                    <div class="countdown-number">05</div>
+                                    <div class="countdown-number" id="countdown-days">00</div>
                                     <div class="countdown-label">Days</div>
                                 </div>
                                 <div class="col-3">
-                                    <div class="countdown-number">12</div>
+                                    <div class="countdown-number" id="countdown-hours">00</div>
                                     <div class="countdown-label">Hours</div>
                                 </div>
                                 <div class="col-3">
-                                    <div class="countdown-number">45</div>
+                                    <div class="countdown-number" id="countdown-minutes">00</div>
                                     <div class="countdown-label">Minutes</div>
                                 </div>
                                 <div class="col-3">
-                                    <div class="countdown-number">30</div>
+                                    <div class="countdown-number" id="countdown-seconds">00</div>
                                     <div class="countdown-label">Seconds</div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="text-center mb-3">
-                            <p class="mb-1"><i class="fas fa-calendar-alt me-2"></i> Starts: 15 Nov 2023, 10:00 AM</p>
-                            <p class="mb-1"><i class="fas fa-calendar-alt me-2"></i> Ends: 20 Nov 2023, 05:00 PM</p>
+                            <p class="mb-1"><i class="fas fa-calendar-alt me-2"></i> Starts:
+                                {{ \Carbon\Carbon::parse($auction->auction_start_datetime)->format('d M Y, h:i A') }}</p>
+                            <p class="mb-1"><i class="fas fa-calendar-alt me-2"></i> Ends:
+                                {{ \Carbon\Carbon::parse($auction->auction_end_datetime)->format('d M Y, h:i A') }}</p>
                             <p><i class="fas fa-calendar-alt me-2"></i> Inspection: 10 Nov 2023 to 15 Nov 2023</p>
                         </div>
                     </div>
@@ -395,29 +415,29 @@
                 <div class="card detail-card mb-4">
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-3">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/State_Bank_of_India_logo.svg/1200px-State_Bank_of_India_logo.svg.png"
+                            <img src="{{ asset('storage/'. $auction->bank->icon) }}"
                                 alt="Bank Logo" width="50" class="me-3">
                             <div>
-                                <h4 class="mb-0">State Bank of India</h4>
-                                <p class="text-muted mb-0">NPA Asset Management</p>
+                                <h4 class="mb-0">{{ $auction->bank->bank_name }}</h4>
+                                {{-- <p class="text-muted mb-0">NPA Asset Management</p> --}}
                             </div>
                         </div>
 
                         <div class="mb-3">
                             <h6>Contact Information</h6>
-                            <p class="mb-1"><i class="fas fa-user me-2"></i> Mr. Rajesh Kumar</p>
-                            <p class="mb-1"><i class="fas fa-phone me-2"></i> +91 98765 43210</p>
-                            <p class="mb-0"><i class="fas fa-envelope me-2"></i> auctions@sbi.co.in</p>
+                            <p class="mb-1"><i class="fas fa-user me-2"></i> {{ $auction->bank_contact_name }}</p>
+                            <p class="mb-1"><i class="fas fa-phone me-2"></i> {{ $auction->bank_contact_phone }}</p>
+                            <p class="mb-0"><i class="fas fa-envelope me-2"></i> {{ $auction->bank_contact_email }}</p>
                         </div>
 
                         <div class="mb-3">
                             <h6>Branch Address</h6>
                             <p class="mb-0">
-                                SBI Main Branch, Nariman Point, Mumbai - 400021, Maharashtra
+                                {{ $auction->branch_address }}
                             </p>
                         </div>
 
-                        <a href="#" class="btn btn-outline-primary w-100">
+                        <a href="tel:{{ $auction->bank_contact_phone }}" class="btn btn-outline-primary w-100">
                             <i class="fas fa-phone-alt me-1"></i> Contact Bank
                         </a>
                     </div>
@@ -489,6 +509,43 @@
                         });
                 });
             });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the end time from PHP variable (ISO 8601 format)
+            const endTime = new Date("{{ $auction->auction_end_datetime }}").getTime();
+
+            // Update countdown every second
+            const countdownInterval = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = endTime - now;
+
+                // Calculate time units
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Display values with leading zeros
+                document.getElementById("countdown-days").textContent = days.toString().padStart(2, '0');
+                document.getElementById("countdown-hours").textContent = hours.toString().padStart(2, '0');
+                document.getElementById("countdown-minutes").textContent = minutes.toString().padStart(2,
+                    '0');
+                document.getElementById("countdown-seconds").textContent = seconds.toString().padStart(2,
+                    '0');
+
+                // If auction ended
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById("auctionCountdown").innerHTML = `
+                    <div class="alert alert-danger text-center py-2">
+                        <i class="fas fa-gavel me-2"></i> Auction has ended
+                    </div>
+                `;
+                }
+            }, 1000);
         });
     </script>
 @endsection

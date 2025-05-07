@@ -49,9 +49,14 @@ class Auction extends Model
         return $this->belongsTo(Category::class, 'property_type', 'id');
     }
 
+    public function possesion()
+    {
+        return $this->belongsTo(Pos::class, 'property_type', 'id');
+    }
+
     public function wishlist()
     {
-        return $this->hasMany(Wishlist::class, 'id', 'id');
+        return $this->hasMany(Wishlist::class);
     }
 
 
