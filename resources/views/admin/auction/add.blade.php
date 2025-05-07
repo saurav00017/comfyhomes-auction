@@ -84,6 +84,57 @@
                                         </div>
                                     </div>
 
+                                    <!-- Borrower Information Section -->
+                                    <div class="mb-4">
+                                        <h6 class="section-title">Borrower Information</h6>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Borrower Name:</label><sup class="text-danger">*</sup>
+                                                    <input class="form-control" name="borrower_name" required type="text"
+                                                        placeholder="Enter Borrower Name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Bank Contact Details Section -->
+                                    <div class="mb-4">
+                                        <h6 class="section-title">Bank Contact Details</h6>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Branch Address:</label><sup class="text-danger">*</sup>
+                                                    <textarea class="form-control" name="branch_address" placeholder="Enter Branch Address"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Contact Person Name:</label><sup class="text-danger">*</sup>
+                                                    <input class="form-control" name="bank_contact_name"
+                                                        type="text" placeholder="Enter Contact Person Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Contact Email:</label><sup class="text-danger">*</sup>
+                                                    <input class="form-control" name="bank_contact_email"
+                                                        type="email" placeholder="Enter Contact Email">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Contact Phone:</label><sup class="text-danger">*</sup>
+                                                    <input class="form-control" name="bank_contact_phone"
+                                                        type="tel" placeholder="Enter Contact Phone">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
                                     <!-- Location Information Section -->
                                     <div class="mb-4">
                                         <h6 class="section-title">Location Information</h6>

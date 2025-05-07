@@ -69,6 +69,11 @@ class AuctionController extends Controller
         $auction->market_price = $input['market_price'];
         $auction->description = $input['description'];
         $auction->category = $input['category'];
+        $auction->borrower_name = $input['borrower_name'];
+        $auction->branch_address = $input['branch_address'];
+        $auction->bank_contact_name = $input['bank_contact_name'];
+        $auction->bank_contact_email = $input['bank_contact_email'];
+        $auction->bank_contact_phone = $input['bank_contact_phone'];
 
 
         if (Input::hasFile('document')) {
@@ -142,6 +147,11 @@ class AuctionController extends Controller
         $auction->market_price = $input['market_price'];
         $auction->description = $input['description'];
         $auction->category = $input['category'];
+        $auction->borrower_name = $input['borrower_name'];
+        $auction->branch_address = $input['branch_address'];
+        $auction->bank_contact_name = $input['bank_contact_name'];
+        $auction->bank_contact_email = $input['bank_contact_email'];
+        $auction->bank_contact_phone = $input['bank_contact_phone'];
 
 
         // Handle thumbnail
@@ -199,7 +209,7 @@ class AuctionController extends Controller
     public function view(Request $request)
     {
         $id = $request->id;
-        $auction = Auction::where('id', $id)->first();
+        $auction = Auction::with('categories')->where('id', $id)->first();
         return view('admin.auction.view', compact('auction'));
     }
 

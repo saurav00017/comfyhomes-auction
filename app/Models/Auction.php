@@ -9,14 +9,18 @@ class Auction extends Model
 {
     use HasFactory;
 
-    public function category()
+    protected $casts = [
+        'property_type' => 'integer',
+    ];
+
+    public function categories()
     {
-        return $this->belongsTo('App\Models\Category', 'property_type', 'id');
+        return $this->belongsTo(Category::class, 'property_type', 'id');
     }
 
     public function wishlist()
     {
-        return $this->hasMany(Wishlist::class, 'id', 'id');  // Ensure property_id and id are correctly referenced
+        return $this->hasMany(Wishlist::class, 'id', 'id');
     }
 
 
