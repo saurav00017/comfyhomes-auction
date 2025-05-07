@@ -19,7 +19,7 @@ class SubCategoryController extends Controller
 
     public function allData(Request $request)
     {
-        $subCategory=SubCategory::with('category')->get();
+        $subCategory=SubCategory::with('categories')->get();
 
         return DataTables::of($subCategory)->make(true);
     }

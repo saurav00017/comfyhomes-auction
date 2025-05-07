@@ -53,11 +53,11 @@ class HomeController extends Controller
                 return view('admin.auction.all');
             } else {
                 $category = Category::where('is_active', 1)->get();
-                $auction = Auction::where('is_active', 1)->where('featured', 1)->with('category')->with('bank')->paginate(5);
+                $auction = Auction::where('is_active', 1)->where('featured', 1)->with('categories')->with('bank')->paginate(5);
                 $blog = Blog::where('is_active', 1)->get();
-                $upcomingauction = Auction::where('is_active', 1)->where('auction_start_datetime', '>', now())->with('category')->with('bank')->paginate(3);
+                $upcomingauction = Auction::where('is_active', 1)->where('auction_start_datetime', '>', now())->with('categories')->with('bank')->paginate(3);
 
-                $liveauction = Auction::where('is_active', 1)->whereDate('auction_start_datetime', now())->with('category')->with('bank')->get();
+                $liveauction = Auction::where('is_active', 1)->whereDate('auction_start_datetime', now())->with('categories')->with('bank')->get();
                 $premium = Subscreption::where('is_active', 1)->get();
 
 
@@ -68,12 +68,12 @@ class HomeController extends Controller
         }
 
         $category = Category::where('is_active', 1)->get();
-        $auction = Auction::where('is_active', 1)->where('featured', 1)->with('category')->with('bank')->paginate(5);
+        $auction = Auction::where('is_active', 1)->where('featured', 1)->with('categories')->with('bank')->paginate(5);
         $blog = Blog::where('is_active', 1)->get();
 
-        $upcomingauction = Auction::where('is_active', 1)->where('auction_start_datetime', '>', now())->with('category')->with('bank')->paginate(3);
+        $upcomingauction = Auction::where('is_active', 1)->where('auction_start_datetime', '>', now())->with('categories')->with('bank')->paginate(3);
 
-        $liveauction = Auction::where('is_active', 1)->whereDate('auction_start_datetime', now())->with('category')->with('bank')->get();
+        $liveauction = Auction::where('is_active', 1)->whereDate('auction_start_datetime', now())->with('categories')->with('bank')->get();
         $premium = Subscreption::where('is_active', 1)->get();
 
 
@@ -156,19 +156,19 @@ class HomeController extends Controller
     //              $property = Auction::where('is_active',1)->where('property_type', $property_type)
     //               ->where(function($query) use ($city) {
     //                   $query->where('district', $city)->orWhere('state', $city);
-    //              })->with('category')->with('bank')->paginate(10);
+    //              })->with('categories')->with('bank')->paginate(10);
     //           }
     //           else
     //           {
     //              $property = Auction::where('is_active',1)->where(function($query) use ($city) {
     //                   $query->Where('district', $city)->orWhere('state', $city);
-    //              })->with('category')->with('bank')->paginate(10);
+    //              })->with('categories')->with('bank')->paginate(10);
     //            }
 
     //     }
     //     else
     //     {
-    //         $property = Auction::where('is_active',1)->with('category')->with('bank')->get();
+    //         $property = Auction::where('is_active',1)->with('categories')->with('bank')->get();
     //     }
 
     //     return view('search')->with('property',$property)->with('category',$category);
@@ -200,7 +200,7 @@ class HomeController extends Controller
                     ->where(function ($query) use ($city) {
                         $query->where('district', $city)->orWhere('state', $city);
                     })
-                    ->with('category')
+                    ->with('categories')
                     ->with('bank')
                     ->paginate(10);
             } else {
@@ -209,14 +209,14 @@ class HomeController extends Controller
                     ->where(function ($query) use ($city) {
                         $query->where('district', $city)->orWhere('state', $city);
                     })
-                    ->with('category')
+                    ->with('categories')
                     ->with('bank')
                     ->paginate(10);
             }
         } else {
             $property = Auction::where('is_active', 1)
                 ->where('category', $property_category)
-                ->with('category')
+                ->with('categories')
                 ->with('bank')
                 ->paginate(10);
         }
@@ -239,7 +239,7 @@ class HomeController extends Controller
     // }
 
 
-    public function oursearchDetails(Request $request)
+    public function oursearchDetails(Request $request, $slug)
     {
         // $id = $request->id;
 
@@ -282,10 +282,14 @@ class HomeController extends Controller
 
 
 
-        // $property = Auction::where('id', $id)->with('category')->with('bank')->first();
+        // $property = Auction::where('id', $id)->with('categories')->with('bank')->first();
 
         // return view('acutionDetails')->with('property', $property)->with('subscription_available', $subscription_available);
-        return view('acutionDetails');
+
+        $auction = Auction::where('slug', $slug)->firstOrFail();
+
+        $isInWishlist = auth()->check() ? $auction->wishlist()->where('user_id', auth()->id())->exists() : false;
+        return view('acutionDetails', compact('auction', 'isInWishlist'));
     }
 
     public function allNotice(Request $request)
@@ -325,9 +329,9 @@ class HomeController extends Controller
         $id = $request->id;
 
         if ($id != 0) {
-            $property = Auction::where('is_active', 1)->where('property_type', $id)->with('category')->with('bank')->paginate(10);
+            $property = Auction::where('is_active', 1)->where('property_type', $id)->with('categories')->with('bank')->paginate(10);
         } else {
-            $property = Auction::where('is_active', 1)->with('category')->with('bank')->paginate(10);
+            $property = Auction::where('is_active', 1)->with('categories')->with('bank')->paginate(10);
         }
 
 
@@ -343,7 +347,7 @@ class HomeController extends Controller
         $query = Auction::query()
             ->where('is_active', 1)
             ->where('featured', 1)
-            ->with(['category', 'bank']);
+            ->with(['categories', 'bank']);
 
         // Filter: Location
         if ($request->filled('location')) {

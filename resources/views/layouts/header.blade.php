@@ -17,7 +17,7 @@
                             <li><a href="{{ url('/') }}">Home</i></a>
 
                             </li>
-                            <li><a href="#">Auction</a>
+                            <li><a href="{{ route('verifiedProperty') }}">Auction</a>
 
                             </li>
                             <li><a href="#">Notice</a>

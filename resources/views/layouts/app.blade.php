@@ -343,7 +343,11 @@
     
     
     :root {
-        --theme-primary-color: purple!important;
+        --theme-primary-color: #6f42c1!important;
+        --primary-color: #6f42c1;
+        --secondary-color: #f8f9fa;
+        --dark-color: #343a40;
+        --light-color: #f8f9fa;
     }
     
     .bg-secondary {

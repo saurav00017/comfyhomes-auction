@@ -4,13 +4,14 @@
 /* This is because whare headers change then the color cheme and also fonts changed */
 
 #realestate-content {
-    --primary-color: #4081FF;
+    --primary-color: #6f42c1;
     --primary-color-700: #E6F2FF;
-    --secondary-color: #070026;
+    --secondary-color: #f8f9fa;
+    --dark-color: #343a40;
     --primary-font-color: #070026;
     --secondary-font-color: #E6F2FF;
     --a-hover-color: #4081FF;
-    --heading-color: #070026;
+    --heading-color: white;
     --descprition-color: #73777D;
     --deaf-font-color: #222222;
     --deaf-font-color-600: #8894ad1f;
@@ -26,7 +27,7 @@
     --primary-border-color-600: #e5edf966;
     --primary-border-color: #eaeef7;
     --grid-text-color: #424857;
-    --grid-text-color: #73777D;
+    --grid-text-color: #212529;
     --overlay-color: #000000;
     --stats-bg-color: #F4F5F7;
     --stars-color: #d1e4fa;
@@ -64,7 +65,9 @@
     --search-icon-code: "\f002";
     --remove-heart-icon-code: "\e4ff";
     --loading-icon: "\f110";
-    --bs-body-font-family: 'inter';
+    --bs-body-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --light-color: #f8f9fa;
+
 }
 
 
@@ -86,7 +89,7 @@
 }
 
 body {
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1.5em;
     font-weight: 400;
     font-family: var(--bs-body-font-family);
@@ -94,68 +97,6 @@ body {
     margin: 0 0 0 0;
 }
 
-h1 {
-    font-size: 48px;
-    line-height: 1.3em;
-    font-weight: 700;
-    font-family: var(--bs-body-font-family);
-    color: var(--heading-color);
-    margin: 0 0 0 0;
-}
-
-h2 {
-    font-size: 24px;
-    line-height: 1.5em;
-    font-weight: 600;
-    font-family: var(--bs-body-font-family);
-    color: var(--heading-color);
-    margin: 0 0 0 0;
-}
-
-h3 {
-    font-size: 22px;
-    line-height: 1.5em;
-    font-weight: 700;
-    font-family: var(--bs-body-font-family);
-    color: var(--primary-font-color);
-    margin: 0 0 0 0;
-}
-
-h4 {
-    font-size: 18px;
-    line-height: 1.5em;
-    font-weight: 400;
-    font-family: var(--bs-body-font-family);
-    color: var(--heading-color);
-    margin: 0 0 0 0;
-}
-
-h5 {
-    font-size: 16px;
-    line-height: 1.5em;
-    font-weight: 600;
-    font-family: var(--bs-body-font-family);
-    color: var(--heading-color);
-    margin: 0 0 0 0;
-}
-
-h6 {
-    font-size: 14px;
-    line-height: 1.5em;
-    font-weight: 600;
-    font-family: var(--bs-body-font-family);
-    color: var(--heading-color);
-    margin: 0 0 0 0;
-}
-
-p {
-    font-size: 16px;
-    line-height: 1.5em;
-    font-weight: 400;
-    font-family: var(--bs-body-font-family);
-    color: var(--descprition-color);
-    margin: 0 0 0 0;
-}
 
 
 /* Start header css  */

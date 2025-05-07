@@ -286,7 +286,7 @@
                                                 {{ $item->property_type_one ?? 'Property' }}
                                             </h4>
                                             <span
-                                                class="badge bg-success d-flex align-items-center justify-content-center">{{ $item->category->name ?? 'Auction' }}</span>
+                                                class="badge bg-success d-flex align-items-center justify-content-center">{{ $item->categories->name ?? 'Auction' }}</span>
                                         </div>
                                         <p class="text-muted mb-2">
                                             <i class="fas fa-map-marker-alt text-primary me-1"></i> {{ $item->locality }},
@@ -341,7 +341,7 @@
                                         </div>
 
                                         <div class="d-flex justify-content-end mt-3">
-                                            <a href="{{ route('auction.details') }}" class="btn btn-primary px-4">View Details</a>
+                                            <a href="{{ route('auction.details', $item->slug) }}" class="btn btn-primary px-4">View Details</a>
                                         </div>
                                     </div>
                                 </div>
