@@ -330,7 +330,7 @@
 
                                         <div class="mt-auto d-flex justify-content-between align-items-center">
                                             <div class="d-flex align-items-center">
-                                                <img src="{{ asset('storage/app/public' . $item->bank->icon) ?? 'https://via.placeholder.com/24' }}"
+                                                <img src="{{ asset('storage/app/public/' . $item->bank->icon) ?? 'https://via.placeholder.com/24' }}"
                                                     alt="Bank" width="24" class="me-2">
                                                 <span>{{ $item->bank->bank_name ?? $item->bank_name }}</span>
                                             </div>
