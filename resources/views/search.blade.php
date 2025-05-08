@@ -263,7 +263,7 @@
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     <div class="position-relative h-100">
-                                        <img src="{{ $item->thumbnail ? asset('storage/' . $item->thumbnail) : 'https://via.placeholder.com/500x300?text=No+Image' }}"
+                                        <img src="{{ $item->thumbnail ? asset('storage/app/public/' . $item->thumbnail) : 'https://via.placeholder.com/500x300?text=No+Image' }}"
                                             class="img-fluid rounded-start h-100 w-100 object-fit-cover" alt="Property">
                                         @if ($item->featured)
                                             <div class="position-absolute top-0 start-0 m-2">
@@ -330,7 +330,7 @@
 
                                         <div class="mt-auto d-flex justify-content-between align-items-center">
                                             <div class="d-flex align-items-center">
-                                                <img src="{{ asset('storage/' . $item->bank->icon) ?? 'https://via.placeholder.com/24' }}"
+                                                <img src="{{ asset('storage/app/public' . $item->bank->icon) ?? 'https://via.placeholder.com/24' }}"
                                                     alt="Bank" width="24" class="me-2">
                                                 <span>{{ $item->bank->bank_name ?? $item->bank_name }}</span>
                                             </div>

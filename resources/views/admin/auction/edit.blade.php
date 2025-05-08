@@ -334,7 +334,7 @@
                                                     <!-- Show existing thumbnail if exists -->
                                                     @if ($auction->thumbnail)
                                                         <div class="mb-2">
-                                                            <img src="{{ Storage::url($auction->thumbnail) }}"
+                                                            <img src="{{ Storage::url(str_replace('app/public/', '', $image->image_path)) }}"
                                                                 style="max-width: 200px;" class="img-thumbnail mb-2">
                                                             <div class="form-check">
                                                                 <input type="checkbox" name="remove_thumbnail"
@@ -371,7 +371,7 @@
                                                             @foreach ($auction->images as $image)
                                                                 <div
                                                                     class="image-container d-inline-block mr-2 mb-2 position-relative">
-                                                                    <img src="{{ Storage::url($image->image_path) }}"
+                                                                    <img src="{{ Storage::url(str_replace('app/public/', '', $image->image_path)) }}"
                                                                         style="max-width: 100px;" class="img-thumbnail">
                                                                     <div class="form-check position-absolute"
                                                                         style="top: 5px; left: 5px;">
@@ -413,7 +413,7 @@
 
                                                         @if (!empty($auction->document))
                                                             <div class="input-group-append">
-                                                                <a href="{{ Storage::url($auction->document) }}"
+                                                                <a href="{{ Storage::url(str_replace('app/public/', '', $image->image_path)) }}"
                                                                     target="_blank" class="btn btn-outline-primary">
                                                                     <i class="fas fa-eye"></i> View
                                                                 </a>

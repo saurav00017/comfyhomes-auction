@@ -219,7 +219,7 @@
                                 </div>
                                 <div class="card-body text-center">
                                     @if ($auction->thumbnail)
-                                        <img src="{{ Storage::url($auction->thumbnail) }}" class="img-fluid"
+                                        <img src="{{ Storage::url(str_replace('app/public/', '', $image->image_path)) }}" class="img-fluid"
                                             style="max-height: 300px;">
                                     @else
                                         <p class="text-muted">No thumbnail available</p>
@@ -237,7 +237,7 @@
                                         <div class="row">
                                             @foreach ($auction->images as $image)
                                                 <div class="col-md-4 mb-2">
-                                                    <img src="{{ Storage::url($image->image_path) }}"
+                                                    <img src="{{ Storage::url(str_replace('app/public/', '', $image->image_path)) }}"
                                                         class="img-thumbnail">
                                                 </div>
                                             @endforeach
@@ -263,7 +263,7 @@
                                 </div>
                                 <div class="card-body">
                                     @if ($auction->document)
-                                        <a href="{{ Storage::url($auction->document) }}" target="_blank"
+                                        <a href="{{ Storage::url(str_replace('app/public/', '', $image->image_path)) }}" target="_blank"
                                             class="btn btn-primary">
                                             <i class="fas fa-download"></i> Download Document
                                         </a>

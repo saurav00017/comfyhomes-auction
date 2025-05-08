@@ -275,23 +275,26 @@
         <div class="row">
             <!-- Main Image and Gallery -->
             <div class="col-lg-8">
-                <div class="mb-4">
-                    <img src="{{ asset('storage/' . $auction->thumbnail) }}" class="property-image w-100"
-                        alt="Property Image" id="mainImage">
-                </div>
+                @if ($auction->thumbnail)
+                    <div class="mb-4">
+                        <img src="{{ asset('storage/app/public/' . $auction->thumbnail) }}" class="property-image w-100"
+                            alt="Property Image" id="mainImage">
+                    </div>
+                @endif
                 @if ($auction->images->count() > 0)
                     <div class="row g-3 mb-4">
                         @unless ($auction->images->contains('image_path', $auction->thumbnail))
                             <div class="col-3">
-                                <img src="{{ asset('storage/' . $auction->thumbnail) }}" class="gallery-thumbnail"
-                                    onclick="changeMainImage(this)" data-src="{{ asset('storage/' . $auction->thumbnail) }}">
+                                <img src="{{ asset('storage/app/public/' . $auction->thumbnail) }}" class="gallery-thumbnail"
+                                    onclick="changeMainImage(this)"
+                                    data-src="{{ asset('storage/app/public/' . $auction->thumbnail) }}">
                             </div>
                         @endunless
                         @foreach ($auction->images as $image)
                             <div class="col-3">
-                                <img src="{{ asset('storage/' . $image->image_path) }}" class="gallery-thumbnail"
-                                    onclick="changeMainImage(this)"
-                                    data-src="{{ asset('storage/' . $image->image_path) }}">
+                                <img src="{{ asset('storage/app/public/' . $image->image_path) }}"
+                                    class="gallery-thumbnail" onclick="changeMainImage(this)"
+                                    data-src="{{ asset('storage/app/public/' . $image->image_path) }}">
                             </div>
                         @endforeach
                     </div>
@@ -440,7 +443,7 @@
                                         <h6 class="mb-1">Auction File</h6>
                                         {{-- <p class="text-muted mb-0">PDF • 1.1 MB</p> --}}
                                     </div>
-                                    <a href="{{ asset('storage/' . $auction->document) }}"
+                                    <a href="{{ asset('storage/app/public/' . $auction->document) }}"
                                         class="btn btn-outline-primary" target="_blank">
                                         <i class="fas fa-download me-1"></i> Download
                                     </a>
@@ -545,8 +548,8 @@
                     <div class="card-body premium-content-wrapper">
                         @if ($isPremium)
                             <div class="d-flex align-items-center mb-3">
-                                <img src="{{ asset('storage/' . $auction->bank->icon) }}" alt="Bank Logo" width="50"
-                                    class="me-3">
+                                <img src="{{ asset('storage/app/public/' . $auction->bank->icon) }}" alt="Bank Logo"
+                                    width="50" class="me-3">
                                 <div>
                                     <h4 class="mb-0">{{ $auction->bank->bank_name }}</h4>
                                     {{-- <p class="text-muted mb-0">NPA Asset Management</p> --}}
