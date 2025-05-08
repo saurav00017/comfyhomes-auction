@@ -48,7 +48,14 @@
 
     
 
-<style type="text/css">
+<style>
+
+
+header {
+    background-color: #FFFFFF; /* or try #F8F9FA or #E6FAF8 */
+    color: #1A1A1A;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
 
 .dropdown:hover .dropdown-menu {
     display: block;
@@ -204,11 +211,26 @@
     <style type="text/css">
     
     footer{
-        background-color: purple!important;
+        margin: 30px 0px 0px 0px;
+        background-color: #0B2239;
+        color: #F5F5F5;
+        border-top: 4px solid #1DBAAF;
+
+    }
+    footer .container {
     }
     
     .footer-widget h4{
         color: white!important;
+    }
+
+    footer a {
+        color: #1DBAAF; /* your "88" color */
+        text-decoration: none;
+    }
+
+    footer a:hover {
+        color: #FFFFFF; /* Optional: white on hover */
     }
     
     footer li a{
@@ -264,12 +286,6 @@
         top: 0px !important;
     }
     
-    #custom_translate{
-    
-            margin-left: 4%;
-    
-    
-    }
     
     .col-lg-6 {
             flex: 0 0 auto;
@@ -282,14 +298,7 @@
         }
     
     
-        #custom_translate select {
-      background-color: purple; 
-      border: 1px solid purple;
-      color: white!important;
-      padding: 5px;
-          float: inline-end;
-    
-    }
+        
     
       #google_translate_element { display: none; }
     
@@ -303,18 +312,8 @@
     }
     
     /* Style the select element */
-    #languageSwitcher {
-        border: 2px solid purple; /* Set the initial border color */
-        border-radius: 5px; /* Optional: Add some rounding to the corners */
-        padding: 5px; /* Add padding for better appearance */
-        outline: none; /* Remove default browser focus outline */
-    }
     
     /* When the select element is focused (clicked) */
-    #languageSwitcher:focus {
-        border-color: purple; /* Keep the same border color on focus */
-        outline: none; /* Remove focus outline */
-    }
     
     
         .bg-primary, a.bg-primary, a.bg-primary:hover, a.bg-primary:focus, .hover-bg-primary:hover{
@@ -628,9 +627,7 @@
 
 
 
-        <!-- Scroll to top -->
-        <a href="#" class="bg-secondary text-white" id="scroll"><i class="fas fa-angle-up"></i></a>
-        <!-- End Scroll To top -->
+        
     </div>
     <!-- Wrapper End -->
 

@@ -32,7 +32,7 @@
         <!--============== Subscribe Section End ==============-->
 
         <!--============== Footer Section Start ==============-->
-        <footer class="full-row p-0">
+        <footer class="full-row">
             <div class="container">
                 <div class="row ">
                     <div class="col mt-50">

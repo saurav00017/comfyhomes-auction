@@ -8,11 +8,6 @@
             /* Changes star to purple */
         }
 
-        .page-banner {
-
-            margin-top: 12%;
-
-        }
 
         .vertical-line {
             border-left: 1px solid #ccc;

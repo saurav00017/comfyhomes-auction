@@ -41,8 +41,8 @@
 
                     <div id="google_translate_element" class="text-right"> </div>
 
-                    <div id="custom_translate">
-                        <select id="languageSwitcher" onchange="translatePage()">
+                    <div>
+                        <select class="header-select" id="languageSwitcher" onchange="translatePage()">
                             <option value="">Select Language</option>
                             <option value="en">English</option>
                             <option value="hi">Hindi</option>
@@ -72,8 +72,8 @@
                         @else
                             <div
                                 class="hover-text-secondary text-white ps-3 ps-lg-3 mb-3 mb-lg-0 d-flex align-items-center">
-                                <a class="btn btn-outline-light me-2" style="background-color: purple !important; color: white !important;" href="{{ config('app.baseURL') }}/login">Login</a>
-                                <a class="btn btn-primary" href="{{ config('app.baseURL') }}/register">Register</a>
+                                <a class="btn login-btn me-2" href="{{ config('app.baseURL') }}/login">Login</a>
+                                <a class="btn register-btn" href="{{ config('app.baseURL') }}/register">Register</a>
                             </div>
                         @endif
                     </div>

@@ -460,11 +460,6 @@ body {
 }
 
 
-/* New css  */
-.realestate-header.home2 .realestate-header-container {
-    padding: 60px 0px;
-}
-
 
  
 .realestate-classic-navigation-icons {
@@ -506,3 +501,105 @@ body {
     align-items: center;
     width: 100%;
 }
+
+.realestate-header-container:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+.realestate-header.home2 .realestate-navigation-nav ul a {
+    color: #1A1A1A;
+    transition: all 0.3s ease;
+}
+
+.realestate-header.home2 .realestate-navigation-nav ul a:hover {
+    background-color: #F0F4F8; /* light grayish-blue hover */
+    color: #1DBAAF; /* your 88 brand color */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+}
+
+/* Optional: animate underline for hover */
+.realestate-header.home2 .realestate-navigation-nav ul a {
+    position: relative;
+}
+
+.realestate-header.home2 .realestate-navigation-nav ul a::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 10px;
+    width: 0;
+    height: 2px;
+    background-color: #1DBAAF;
+    transition: width 0.3s ease;
+}
+
+.realestate-header.home2 .realestate-navigation-nav ul a:hover::after {
+    width: calc(100% - 20px);
+}
+
+/* Submission Button hover - reverse brand color */
+.realestate-header.home2 .realestate-submission-btn {
+    background-color: #fff;
+    color: #1DBAAF;
+    border: 1px solid #1DBAAF;
+}
+
+.realestate-header.home2 .realestate-submission-btn:hover {
+    background-color: #1DBAAF;
+    color: #fff;
+}
+
+.login-btn {
+    background-color: transparent;
+    color: #1DBAAF;
+    border: 1px solid #1DBAAF;
+    border-radius: 6px;
+    padding: 6px 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #1DBAAF;
+    color: #FFFFFF;
+}
+
+.register-btn {
+    background-color: #1DBAAF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.register-btn:hover {
+    background-color: #159e99; /* Slightly darker teal */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-select {
+    background-color: #FFFFFF;
+    color: #1A1A1A;
+    border: 1px solid #DDD;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+    appearance: none; /* remove native arrow (you can style it) */
+    background-image: url("data:image/svg+xml,%3Csvg fill='%231DBAAF' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px;
+    cursor: pointer;
+}
+
+.header-select:focus {
+    border-color: #1DBAAF;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(29, 186, 175, 0.2);
+}
+

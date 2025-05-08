@@ -1,184 +1,200 @@
 @extends('layouts.app')
-
-<style type="text/css">
-    .col-md-8{
-        margin-top: 5%!important;
-        margin-bottom: 5%;
-    }
-
-    .page-banner{
-            margin-top: 4%;
-
-    }
-
-
-</style>
 @section('content')
-    <!-- <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+    <style>
+        :root {
+            --primary-purple: #6f42c1;
+            --dark-purple: #4a1d96;
+            --light-purple: #f0e9ff;
+            --gold: #FFD700;
+            --dark-gold: #D4AF37;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            /* display: flex; */
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .login-container {
+            max-width: 500px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .login-card {
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(111, 66, 193, 0.15);
+            overflow: hidden;
+            border: none;
+        }
+        
+        .login-header {
+            background: linear-gradient(135deg, #6f42c1 0%, #4a1d96 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .login-body {
+            padding: 2rem;
+            background: white;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-purple);
+            box-shadow: 0 0 0 0.25rem rgba(111, 66, 193, 0.25);
+        }
+        
+        .btn-login {
+            background: linear-gradient(135deg, #6f42c1 0%, #4a1d96 100%);
+            color: white;
+            border: none;
+            padding: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-login:hover {
+            background: linear-gradient(135deg, #5a32a0 0%, #3a1777 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(111, 66, 193, 0.3);
+        }
+        
+        .auth-divider {
+            display: flex;
+            align-items: center;
+            margin: 1.5rem 0;
+            color: #6c757d;
+        }
+        
+        .auth-divider::before,
+        .auth-divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .auth-divider::before {
+            margin-right: 1rem;
+        }
+        
+        .auth-divider::after {
+            margin-left: 1rem;
+        }
+        
+        .social-login .btn {
+            border-radius: 50px;
+            padding: 10px;
+            font-weight: 500;
+        }
+        
+        .login-footer {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #6c757d;
+        }
+        
+        .login-footer a {
+            color: var(--primary-purple);
+            font-weight: 600;
+        }
+        
+        .premium-badge {
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+            color: var(--primary-purple);
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .login-error {
+            border-radius: 8px; 
+            padding: 12px 16px; 
+            background-color: #f8d7da; 
+            color: #842029;"
+        }
+    </style>
+    <div class="container mt-4">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="login-header">
+                    <h3><i class="fas fa-gavel me-2"></i> Property Auction</h3>
+                    <p class="mb-0">Access your account to bid on premium properties</p>
+                </div>
+                
+                <div class="login-body">
 
-                <div class="card-body">
+                    @if ($errors->any())
+                        <div class="login-error alert alert-danger">
+                            <ul class="mb-0 ps-3" style="list-style-type: disc;">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    {{-- <div class="text-center">
+                        <span class="premium-badge">
+                            <i class="fas fa-crown me-1"></i> Premium Member Access
+                        </span>
+                    </div> --}}
+                    
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                    --> <!--                     <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light">
+                                    <i class="fas fa-envelope text-purple"></i>
+                                </span>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email" value="{{ old('email') }}">
                             </div>
                         </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                        
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light">
+                                    <i class="fas fa-lock text-purple"></i>
+                                </span>
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password">
                             </div>
                         </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
+                        
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="remember">
+                                <label class="form-check-label" for="remember">Remember me</label>
                             </div>
+                            {{-- <a href="#" class="text-purple">Forgot password?</a> --}}
                         </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
+                        
+                        <button type="submit" class="btn btn-login w-100 mb-3">
+                            <i class="fas fa-sign-in-alt me-2"></i> Login
+                        </button>
+                        
+                        {{-- <div class="auth-divider">OR</div> --}}
+                        
+                        {{-- <div class="social-login d-grid gap-2 mb-4">
+                            <button class="btn btn-outline-primary">
+                                <i class="fab fa-google me-2"></i> Continue with Google
+                            </button>
+                            <button class="btn btn-outline-dark">
+                                <i class="fab fa-apple me-2"></i> Continue with Apple
+                            </button>
+                        </div> --}}
+                        
+                        <div class="login-footer">
+                            Don't have an account? <a href="{{ url('/register') }}">Sign up</a>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-    </div> -->
-
-
-         <!--============== Banner Section Start ==============-->
-    <div class="page-banner full-row bg-gray py-5">
-        <div class="container">
-            <div class="row row-cols-md-2 row-cols-1 g-3">
-                <div class="col">
-                    <h3 class="page-name text-secondary m-0">Login</h3>
-                </div>
-                <div class="col">
-                    <nav class="float-start float-md-end">
-                        <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="index-1.html">Home</a></li>
-                            <li class="breadcrumb-item active">Login</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-        </div>
     </div>
-    <!--============== Banner Section End ==============-->
-
-    <!--============== Login Section Start ==============-->
-    <div class="full-row bg-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7">
-                    <div class="mb-5">
-                        <h4 class="mb-4 text-secondary">Welcome</h4>
-                        <p>Are you looking to buy a property with full confidence? You’re in the right place! At Auction, we specialize in auctions of verified properties, ensuring a smooth, transparent, and secure process.</p>
-                    </div>
-                    <div class="login-condition flat-small flat-primary">
-                        <h5 class="mb-4 text-secondary">Keep in mind a few basic password rules:</h5>
-                        <ul>
-                            <li><i class="flaticon-checked text-primary"></i> Change your passwords periodically</li>
-                            <li><i class="flaticon-checked text-primary"></i> Avoid re-using passwords for multiple sites</li>
-                            <li><i class="flaticon-checked text-primary"></i> Use complex characters including uppercase and numbers</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-5">
-                    <div class="mt-sm-50">
-                        <a href="{{ route('login') }}" class="down-active text-secondary me-3">Login</a>
-                        <a href="{{config('app.baseURL')}}/register" class="text-secondary">Register</a>
-
-                        <form method="POST" action="{{ route('login') }}">
-                            @csrf
-
-                            <!-- Display validation errors -->
-                            @if ($errors->any())
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-
-                            <div class="mb-3 user">
-                                <label class="form-label" for="exampleInputEmail1">Email or Phone Number</label>
-                                <input id="exampleInputEmail1" name="email" type="text" class="form-control bg-gray @error('email') is-invalid @enderror" placeholder="Email or Phone Number" value="{{ old('email') }}">
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-
-                            <div class="mb-3 password">
-                                <label class="form-label" for="exampleInputPassword1">Password</label>
-                                <input id="exampleInputPassword1" name="password" type="password" class="form-control bg-gray @error('password') is-invalid @enderror" placeholder="Password">
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-
-                           
-
-                            <button type="submit" class="btn btn-primary mt-3">Login</button>
-<!-- 
-                            @if (Route::has('password.request'))
-                                <a class="text-secondary hover-text-primary d-block mt-4" href="{{ route('password.request') }}">I forgot my password!</a>
-                            @endif -->
-                        </form>
-
-                       <!--  <div class="social-media d-block mt-5">
-                            <button class="btn facebook w-100">Login With Facebook</button>
-                            <button class="btn twiter w-100">Login With Twitter</button>
-                            <button class="btn googleplus w-100">Login With Google Plus</button>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-      
 @endsection
