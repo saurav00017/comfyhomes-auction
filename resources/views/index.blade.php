@@ -1165,11 +1165,13 @@
                                         </div>
                                     </div> -->
     <!--============== Massage Box One Section End ==============-->
+<div class="col" style="margin-bottom: 50px;">
 
     <h1>Services</h1>
-    <p>
+    <p mb-2>
         We listed our oppertunity and servies as a real estate company
     </p>
+</div>
 
     <div class="pricing">
         @foreach ($premium as $premiumItem)
