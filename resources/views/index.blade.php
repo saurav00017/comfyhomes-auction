@@ -670,122 +670,125 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="row">
-                        <div class="col">
-                            <h2 class="text-secondary double-down-line text-center">Live Auctions</h2>
-                            <span class="text-center mt-4 d-block mb-5">All of our Live Auctions properties for this month
-                                are included</span>
-                        </div>
-                        @if (!$upcomingauction->isEmpty())
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header bg-white border-0 d-flex justify-content-between align-items-center">
                             <div>
-                                <a href="{{ config('    ') }}/search">
-                                    <button class="btn btn-primary view-all">View All</button>
-                                </a>
+                                <h2 class="text-secondary double-down-line text-center mb-0">Live Auctions</h2>
+                                <p class="text-muted mb-0">All of our Live Auctions properties for this month are included</p>
                             </div>
-                        @endif
-                    </div>
-
-                    @if ($upcomingauction->isEmpty())
-                        <!-- Display image if no auction data is available -->
-                        <div class="text-center">
-                            <img src="{{ asset('assets/img/coming-soon.png') }}" alt="No Auctions Available"
-                                style="max-width: 75%; height: auto;">
-                            <p>No auctions available at the moment. Please check back later.</p>
+                            @if (!$auction->isEmpty())
+                                <a href="{{ config('app.baseURL') }}/verify-auction" class="btn btn-outline-primary">
+                                    View All <i class="fas fa-arrow-right ms-2"></i>
+                                </a>
+                            @endif
                         </div>
-                    @else
-                        <!-- Table showing auction data -->
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th scope="col" >Sr. No
-                                        </th>
-                                        <th scope="col" >Auction ID
-                                        </th>
-                                        <th scope="col" >Bank</th>
-                                        <th scope="col" >Location
-                                        </th>
-                                        <th scope="col" >Auction
-                                            Start Date</th>
-                                        <th scope="col" >Auction
-                                            End Date</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($upcomingauction as $upcomingauctions)
-                                        <tr>
-                                            <td >
-                                                {{ $loop->iteration + ($upcomingauction->currentPage() - 1) * $upcomingauction->perPage() }}
-                                            </td>
-                                            <td >
-                                                {{ $upcomingauctions->id }}</td>
-                                            <td >
-                                                {{ $upcomingauctions->bank->bank_name }}</td>
-                                            <td >
-                                                {{ $upcomingauctions->locality }}</td>
-                                            <td >
-                                                {{ $upcomingauctions->auction_start_datetime }}</td>
-                                            <td >
-                                                {{ $upcomingauctions->auction_end_datetime }}</td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <!-- Pagination -->
-                        @if ($upcomingauction->hasPages())
-                            <div class="pagination-container">
-                                <nav aria-label="Page navigation example">
-                                    <ul class="pagination justify-content-center">
-                                        <!-- Previous Page Link -->
-                                        @if ($upcomingauction->onFirstPage())
-                                            <li class="page-item disabled">
-                                                <a class="page-link" href="#" tabindex="-1"
-                                                    aria-disabled="true">Previous</a>
-                                            </li>
-                                        @else
-                                            <li class="page-item">
-                                                <a class="page-link" href="{{ $upcomingauction->previousPageUrl() }}"
-                                                    rel="prev">Previous</a>
-                                            </li>
-                                        @endif
-
-                                        <!-- Pagination Elements -->
-                                        @foreach ($upcomingauction->links()->elements as $element)
-                                            @if (is_string($element))
-                                                <li class="page-item disabled"><span
-                                                        class="page-link">{{ $element }}</span></li>
-                                            @endif
-                                            @if (is_array($element))
-                                                @foreach ($element as $page => $url)
-                                                    @if ($page == $upcomingauction->currentPage())
-                                                        <li class="page-item active" aria-current="page"><span
-                                                                class="page-link">{{ $page }}</span></li>
-                                                    @else
-                                                        <li class="page-item"><a class="page-link"
-                                                                href="{{ $url }}">{{ $page }}</a></li>
+                        
+                        <div class="card-body">
+                            @if ($auction->isEmpty())
+                                <div class="text-center py-5">
+                                    <img src="{{ asset('assets/img/coming-soon.png') }}" alt="No Auctions Available" class="img-fluid" style="max-height: 200px;">
+                                    <h4 class="mt-4 text-muted">No auctions available</h4>
+                                    <p class="text-muted">Please check back later for updates</p>
+                                </div>
+                            @else
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th scope="col" class="text-nowrap">Sr. No</th>
+                                                <th scope="col" class="text-nowrap">Auction ID</th>
+                                                <th scope="col" class="text-nowrap">Bank</th>
+                                                <th scope="col" class="text-nowrap">Location</th>
+                                                <th scope="col" class="text-nowrap">Auction Start</th>
+                                                <th scope="col" class="text-nowrap">Auction End</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($upcomingauction as $auctions)
+                                                <tr class="align-middle">
+                                                    <td class="text-center">
+                                                        {{ $loop->iteration + ($upcomingauction->currentPage() - 1) * $upcomingauction->perPage() }}
+                                                    </td>
+                                                    <td class="text-center">{{ $auctions->id }}</td>
+                                                        
+                                                        <td class="text-center"><span class="badge bg-light text-dark">{{ $auctions->bank->bank_name }}</span></td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-light text-dark">{{ $auctions->locality }}</span>
+                                                    </td>
+                                                    <td class="text-center text-nowrap">
+                                                        <span class="badge bg-info text-white">
+                                                            {{ \Carbon\Carbon::parse($auctions->auction_start_datetime)->format('d M Y') }}
+                                                        </span>
+                                                    </td>
+                                                    <td class="text-center text-nowrap">
+                                                        <span class="badge bg-danger text-white">
+                                                            {{ \Carbon\Carbon::parse($auctions->auction_end_datetime)->format('d M Y') }}
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                
+                                <!-- Pagination -->
+                                @if ($upcomingauction->hasPages())
+                                    <div class="d-flex justify-content-between align-items-center mt-4">
+                                        <div class="text-muted">
+                                            Showing {{ $upcomingauction->firstItem() }} to {{ $upcomingauction->lastItem() }} of {{ $upcomingauction->total() }} entries
+                                        </div>
+                                        <nav aria-label="Page navigation">
+                                            <ul class="pagination mb-0">
+                                                <!-- Previous Page Link -->
+                                                @if ($upcomingauction->onFirstPage())
+                                                    <li class="page-item disabled">
+                                                        <span class="page-link"><i class="fas fa-angle-left"></i></span>
+                                                    </li>
+                                                @else
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="{{ $upcomingauction->previousPageUrl() }}" rel="prev">
+                                                            <i class="fas fa-angle-left"></i>
+                                                        </a>
+                                                    </li>
+                                                @endif
+                
+                                                <!-- Pagination Elements -->
+                                                @foreach ($upcomingauction->links()->elements as $element)
+                                                    @if (is_string($element))
+                                                        <li class="page-item disabled"><span class="page-link">{{ $element }}</span></li>
+                                                    @endif
+                
+                                                    @if (is_array($element))
+                                                        @foreach ($element as $page => $url)
+                                                            @if ($page == $auction->currentPage())
+                                                                <li class="page-item active"><span class="page-link">{{ $page }}</span></li>
+                                                            @else
+                                                                <li class="page-item"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
+                                                            @endif
+                                                        @endforeach
                                                     @endif
                                                 @endforeach
-                                            @endif
-                                        @endforeach
-
-                                        <!-- Next Page Link -->
-                                        @if ($upcomingauction->hasMorePages())
-                                            <li class="page-item">
-                                                <a class="page-link" href="{{ $upcomingauction->nextPageUrl() }}"
-                                                    rel="next">Next</a>
-                                            </li>
-                                        @else
-                                            <li class="page-item disabled">
-                                                <a class="page-link" href="#">Next</a>
-                                            </li>
-                                        @endif
-                                    </ul>
-                                </nav>
-                            </div>
-                        @endif
-                    @endif
+                
+                                                <!-- Next Page Link -->
+                                                @if ($auction->hasMorePages())
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="{{ $auction->nextPageUrl() }}" rel="next">
+                                                            <i class="fas fa-angle-right"></i>
+                                                        </a>
+                                                    </li>
+                                                @else
+                                                    <li class="page-item disabled">
+                                                        <span class="page-link"><i class="fas fa-angle-right"></i></span>
+                                                    </li>
+                                                @endif
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                @endif
+                            @endif
+                        </div>
+                    </div>
+                    
                 </div>
                 <div class="col-md-6">
                     <div class="card border-0 shadow-sm">
