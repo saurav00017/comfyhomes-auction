@@ -1,4 +1,20 @@
 <style type="text/css">
+.copyright {
+        background-color: #0f1a2e;
+        padding: 20px 0;
+        color: #a0aec0;
+    }
+    .line-menu li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .line-menu a {
+        color: #a0aec0;
+        transition: color 0.3s ease;
+    }
+    .line-menu a:hover {
+        color: #4299e1;
+    }
     .footer-widget li {
     margin-bottom: 10px;
         font-size: larger;
@@ -49,17 +65,17 @@
                                          <div class="col">
                                             <div class="footer-widget">
                                                 <ul>  
-                                                    <div style="display: flex; align-items: center; gap:5px;">
+                                                    <div style="display: flex; align-items: center; gap:10px;">
                                                     <li class="fa fa-phone"></li><p>+91-9970876727</p>
                                                     </div>
-                                                    <div style="display: flex; align-items: center; gap:5px;">
+                                                    <div style="display: flex; align-items: center; gap:10px;">
                                                     <li class="fa fa-envelope"></li><p>vebsigns@gmail.com</p>
                                                    </div>
                                                 </ul>
                                             </div>
                                           
                                         </div>
-                                         <div class="footer-widget media-widget mt-4 text-secondary hover-text-primary">
+                                         <div class="footer-widget media-widget mt-2 mb-2 text-secondary hover-text-primary">
                                                 <!-- <a href="#"><i class="fab fa-facebook-f"></i></a>
                                                 <a href="#"><i class="fab fa-google-plus-g"></i></a>
                                                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -156,14 +172,14 @@
             <div class="copyright">
                 <div class="container">
                     <div class="row row-cols-sm-2 row-cols-1">
-                        <div class="col"> <span>© 2024 Vebsigns All right reserved</span> </div>
+                        <div class="col"><span>© 2025 Vebsigns All right reserved</span></div>
                         <div class="col">
                             <ul class="line-menu text-ordinary float-end">
                                 <li><a href="#">Privacy & Policy</a></li>
                                 <li>|</li>
                                 <li><a href="#">Terms and Condition</a></li>
                                 <li>|</li>
-                                <li><a href="#"> Site Map</a></li>
+                                <li><a href="#">Site Map</a></li>
                             </ul>
                         </div>
                     </div>

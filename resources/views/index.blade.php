@@ -23,7 +23,6 @@
 
         p {
             text-align: center;
-            margin-bottom: 4rem;
         }
 
         .pricing {
@@ -138,7 +137,6 @@
         .full-row {
             position: relative;
             width: 100%;
-            padding: 20px 0;
         }
 
         .swiper-wrapper {
