@@ -433,6 +433,40 @@
             margin-top: 16px;
         }
 
+        #preloader {
+            position: fixed;
+            background-color: #f9f9f9;
+            /* light background */
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .spinner {
+            border: 6px solid #eee;
+            border-top: 6px solid #6f42c1;
+            /* brand purple */
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 0.9s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
         @media (max-width: 768px) {
 
             .page-banner {
@@ -544,6 +578,11 @@
 
 
 <body id="realestate-content">
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
 
     <!--    Page Loader
 =============================================================
@@ -777,6 +816,17 @@
     </script>
 
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
+
+    <script>
+        window.addEventListener('load', function () {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            preloader.style.opacity = '0';
+            preloader.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => preloader.style.display = 'none', 500);
+        }
+        });
     </script>
 
 
