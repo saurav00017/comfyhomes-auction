@@ -484,7 +484,7 @@
 
 
 
-                <form method="get" action="{{ config('app.baseURL') }}/search">
+                <form action="{{ route('verifiedProperty') }}" method="GET">
 
                     <div class="realestate-form-content">
 
@@ -492,8 +492,8 @@
                         <div class="realestate-form">
                             <div class="realestate-form-inputs">
                                 <img src="assets/images/icons/home-new-location.svg" alt="location">
-                                <input type="text" name="city" id="address-search"
-                                    placeholder="Enter an address, city or ZIP code" required="">
+                                <input type="text" name="location" id="address-search"
+                                    placeholder="Search location...">
                             </div>
                         </div>
 
@@ -532,30 +532,37 @@
             <div class="realestate-category-style1">
                 <ul class="realestate-category-style1-list-iterms">
                     <li>
-                        <a href="archive.html">
-                            <span><img src="assets/images/icons/ho1.svg" alt="Vacant Land "></span> Residential
+                        <a href="{{ route('verifiedProperty', ['category' => 1]) }}">
+                            <span><img src="{{ asset('assets/images/icons/ho1.svg') }}" alt="Vacant Land"></span> Residential
                         </a>
                     </li>
                     <li>
-                        <a href="archive.html"> <span><img src="assets/images/icons/ho2.svg"
-                                    alt="Agricultural"></span>Agricultural</a>
-                    </li>
-                    <li>
-                        <a href="archive.html"> <span><img src="assets/images/icons/ho3.svg" alt="Industrial"></span>
-                            Industrial
+                        <a href="{{ route('verifiedProperty', ['category' => 3]) }}">
+                            <span><img src="{{ asset('assets/images/icons/ho2.svg') }}" alt="Agricultural"></span> Agricultural
                         </a>
                     </li>
                     <li>
-                        <a href="archive.html"> <span><img src="assets/images/icons/ho4.svg" alt="Commercial"></span>
-                            Commercial
+                        <a href="{{ route('verifiedProperty', ['category' => 4]) }}">
+                            <span><img src="{{ asset('assets/images/icons/ho3.svg') }}" alt="Industrial"></span> Industrial
                         </a>
                     </li>
                     <li>
-                        <a href="archive.html"> <span><img src="assets/images/icons/ho5.svg"
-                                    alt="Residential "></span>Jewellery</a>
+                        <a href="{{ route('verifiedProperty', ['category' => 2]) }}">
+                            <span><img src="{{ asset('assets/images/icons/ho4.svg') }}" alt="Commercial"></span> Commercial
+                        </a>
                     </li>
-
+                    <li>
+                        <a href="{{ route('verifiedProperty', ['category' => 5]) }}">
+                            <span><img src="{{ asset('assets/images/icons/ho5.svg') }}" alt="Jewellery"></span> Jewellery
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('verifiedProperty', ['category' => 6]) }}">
+                            <span><img src="{{ asset('assets/images/icons/ho6.png') }}" alt="Vehicle"></span> Vehicle
+                        </a>
+                    </li>
                 </ul>
+                
             </div>
         </div>
 

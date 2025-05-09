@@ -134,6 +134,27 @@
             background: #dc3545;
             transition: all 0.3s ease;
         }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .error-message i {
+            margin-right: 5px;
+        }
+
+        .is-invalid {
+            border-color: #dc3545;
+        }
+
+        .is-invalid:focus {
+            border-color: #dc3545;
+            box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+        }
     </style>
 
     <div class="container mt-4">
@@ -145,16 +166,24 @@
                 </div>
 
                 <div class="register-body">
-                    <form>
+                    <form method="POST" action="{{ url('/register') }}">
+                        @csrf
                         <div class="mb-3">
                             <label for="username" class="form-label">Username</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light">
                                     <i class="fas fa-user text-purple"></i>
                                 </span>
-                                <input type="text" class="form-control" id="username" placeholder="Choose a username"
-                                    required>
+                                <input type="text" class="form-control @error('name') is-invalid @enderror" 
+                                       id="username" placeholder="Choose a username" name="name" 
+                                       value="{{ old('name') }}" required>
                             </div>
+                            @error('name')
+                                <div class="error-message">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
 
                         <div class="mb-3">
@@ -163,9 +192,16 @@
                                 <span class="input-group-text bg-light">
                                     <i class="fas fa-phone text-purple"></i>
                                 </span>
-                                <input type="tel" class="form-control" id="contact"
-                                    placeholder="Enter your phone number" required>
+                                <input type="tel" class="form-control @error('number') is-invalid @enderror" 
+                                       id="contact" name="number" placeholder="Enter your phone number" 
+                                       value="{{ old('number') }}" required>
                             </div>
+                            @error('number')
+                                <div class="error-message">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
 
                         <div class="mb-3">
@@ -174,9 +210,16 @@
                                 <span class="input-group-text bg-light">
                                     <i class="fas fa-envelope text-purple"></i>
                                 </span>
-                                <input type="email" class="form-control" id="email" placeholder="Enter your email"
-                                    required>
+                                <input type="email" class="form-control @error('email') is-invalid @enderror" 
+                                       name="email" id="email" placeholder="Enter your email" 
+                                       value="{{ old('email') }}" required>
                             </div>
+                            @error('email')
+                                <div class="error-message">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
 
                         <div class="mb-3">
@@ -185,9 +228,15 @@
                                 <span class="input-group-text bg-light">
                                     <i class="fas fa-lock text-purple"></i>
                                 </span>
-                                <input type="password" class="form-control" id="password" placeholder="Create a password"
-                                    required>
+                                <input type="password" class="form-control @error('password') is-invalid @enderror" 
+                                       id="password" name="password" placeholder="Create a password" required>
                             </div>
+                            @error('password')
+                                <div class="error-message">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    {{ $message }}
+                                </div>
+                            @enderror
                             <div class="password-strength">
                                 <div class="strength-bar" id="strengthBar"></div>
                             </div>
@@ -206,46 +255,26 @@
                         </div>
 
                         <div class="form-check mb-4">
-                            <input class="form-check-input" type="checkbox" id="terms" required>
+                            <input class="form-check-input @error('terms') is-invalid @enderror" type="checkbox" 
+                                   id="terms" name="terms" {{ old('terms') ? 'checked' : '' }} required>
                             <label class="form-check-label" for="terms">
                                 I agree to the <a href="#" class="text-purple">Terms of Service</a> and <a
                                     href="#" class="text-purple">Privacy Policy</a>
                             </label>
+                            @error('terms')
+                                <div class="error-message">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
 
                         <button type="submit" class="btn btn-register w-100 mb-3">
                             <i class="fas fa-user-plus me-2"></i> Create Account
                         </button>
 
-                        <div class="auth-divider">OR</div>
-
-                        <div class="social-register d-grid gap-2 mb-4">
-                            <button class="btn btn-outline-primary">
-                                <i class="fab fa-google me-2"></i> Sign up with Google
-                            </button>
-                            <button class="btn btn-outline-dark">
-                                <i class="fab fa-apple me-2"></i> Sign up with Apple
-                            </button>
-                        </div>
-
-                        <div class="premium-benefits">
-                            <h6 class="mb-3"><i class="fas fa-crown me-2"></i> Premium Membership Benefits</h6>
-                            <div class="benefit-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Access to complete property documents</span>
-                            </div>
-                            <div class="benefit-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Direct bank contact information</span>
-                            </div>
-                            <div class="benefit-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Priority customer support</span>
-                            </div>
-                        </div>
-
                         <div class="register-footer">
-                            Already have an account? <a href="login.html">Sign in</a>
+                            Already have an account? <a href="{{ url('/login') }}">Sign in</a>
                         </div>
                     </form>
                 </div>
@@ -280,6 +309,26 @@
             } else {
                 strengthBar.style.width = '100%';
                 strengthBar.style.backgroundColor = '#28a745';
+            }
+        });
+    </script>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const password = document.getElementById('password').value.trim();
+            const confirmPassword = document.getElementById('confirmPassword').value.trim();
+
+            if (password !== confirmPassword) {
+                e.preventDefault();
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'error-message';
+                errorDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> Password and Confirm Password do not match.';
+                
+                const confirmPassGroup = document.getElementById('confirmPassword').parentNode.parentNode;
+                if (!confirmPassGroup.nextElementSibling.classList.contains('error-message')) {
+                    confirmPassGroup.parentNode.insertBefore(errorDiv, confirmPassGroup.nextElementSibling);
+                }
+                document.getElementById('confirmPassword').focus();
             }
         });
     </script>
