@@ -23,7 +23,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
 Route::get('about', [App\Http\Controllers\HomeController::class, 'aboutus']);
 Route::get('contact', [App\Http\Controllers\HomeController::class, 'contactus']);
-Route::post('contact', [App\Http\Controllers\HomeController::class, 'postContact']);
+Route::post('contact', [App\Http\Controllers\HomeController::class, 'postContact'])->name('contact.submit');
 
 Route::get('menu', [App\Http\Controllers\HomeController::class, 'ourmenu']);
 Route::get('blog', [App\Http\Controllers\HomeController::class, 'ourblog']);
