@@ -46,7 +46,7 @@ class Auction extends Model
 
     public function categories()
     {
-        return $this->belongsTo(Category::class, 'property_type', 'id');
+        return $this->belongsTo(Category::class, 'category', 'id');
     }
 
     public function possesion()

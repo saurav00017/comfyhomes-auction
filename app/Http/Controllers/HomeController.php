@@ -370,7 +370,7 @@ class HomeController extends Controller
 
         // Filter: Category
         if ($request->filled('category')) {
-            $query->where('category_id', $request->category);
+            $query->where('category', $request->category);
         }
 
         // Filter: Possession
@@ -403,6 +403,7 @@ class HomeController extends Controller
         }
 
         $property = $query->paginate(10)->appends($request->query());
+        // dd($property);
         $locations = Auction::where('is_active', 1)
             ->get(['locality', 'district', 'state'])
             ->flatMap(function ($item) {

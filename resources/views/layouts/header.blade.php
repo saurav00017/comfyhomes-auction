@@ -20,19 +20,19 @@
                             <li><a href="{{ route('verifiedProperty') }}">Auction</a>
 
                             </li>
-                            <li><a href="#">Notice</a>
+                            <li><a href="{{ url('/notice') }}">Notice</a>
 
                             </li>
-                            <li><a href="#">Voting</a>
+                            {{-- <li><a href="#">Voting</a>
 
-                            </li>
+                            </li> --}}
                             <li><a href="{{ url('premium') }}">Sevices</a>
 
                             </li>
-                            <li><a href="#">Contact</a>
+                            <li><a href="{{ url('/contact') }}">Contact</a>
 
                             </li>
-                            <li><a href="#">EAuction</a>
+                            <li><a href="{{ url('/properties') }}">Properties</a>
 
                             </li>
                         </ul>
