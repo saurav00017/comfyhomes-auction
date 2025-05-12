@@ -143,25 +143,67 @@
             }
 
         }
+
+        .page-header {
+            background: linear-gradient(135deg, #6f42c1 0%, #4a1d96 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .filter-card {
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: none;
+            margin-bottom: 2rem;
+        }
+
+        .search-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0 8px 8px 0 !important;
+        }
+        
+        .reset-btn {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+        }
+        
+        .form-select:focus, .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(111, 66, 193, 0.25);
+        }
+        
+        .search-input-group .form-control {
+            border-right: none;
+        }
+        
+        .search-input-group .input-group-text {
+            background-color: white;
+            border-left: none;
+        }
     </style>
 
     <!--============== Banner Section Start ==============-->
-    <div class="page-banner bg-light py-4">
+    <div class="page-header">
         <div class="container">
-            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
-                <h1 class="mb-3 mb-md-0 text-primary fw-bold">Auction Properties</h1>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb mb-0 bg-transparent p-0">
-                        <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Properties</a></li>
-                        <li class="breadcrumb-item active text-primary" aria-current="page">Auctions</li>
-                    </ol>
-                </nav>
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="fw-bold mb-3">Current Property Auctions</h1>
+                    <p class="lead mb-0">Browse through verified bank auction properties across India</p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <span class="badge bg-light text-dark p-2">
+                        <i class="fas fa-home me-1"></i> {{ $property->total() }} Properties Listed
+                    </span>
+                </div>
             </div>
         </div>
     </div>
 
-    <section class="py-5 bg-white">
+    <section class="bg-white">
         <div class="container">
             <!-- Filter Button for Mobile -->
             <div class="mb-3 text-end d-md-none">
@@ -172,14 +214,59 @@
             </div>
 
 
-            <!-- Collapsible Filter Card (Always Open on PC) -->
-            <div class="collapse d-md-block" id="filterCard">
-                <div class="card card-body shadow-sm mb-4 mt-3">
+            <div class="card filter-card mb-4">
+                <div class="card-body">
                     <form action="{{ route('verifiedProperty') }}" method="GET" class="row g-3" id="filterForm">
-                        <!-- Sort By and Possession OUTSIDE collapsible, but still INSIDE the form -->
-                        <div class="row g-3 align-items-end">
-                            <div class="col-md-2 col-6">
-                                <label for="sort_by" class="form-label">Sort By</label>
+                        <div class="row g-3">
+                            <!-- Location Search -->
+                            <div class="col-md-3">
+                                <label class="form-label">Location</label>
+                                <div class="input-group search-input-group">
+                                    <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                                    <input type="text" class="form-control" id="location" value="{{ request('location') }}"
+                                    name="location" placeholder="Search location...">
+                                </div>
+                            </div>
+                            
+                            <!-- Bank Search -->
+                            <div class="col-md-3">
+                                <label class="form-label">Bank</label>
+                                <div class="input-group search-input-group">
+                                    <span class="input-group-text"><i class="fas fa-university"></i></span>
+                                    <input type="text" class="form-control" id="bank" 
+                                    name="bank" value="{{ request('bank') }}" placeholder="Search bank...">
+                                </div>
+                            </div>
+                            
+                            <!-- Category Dropdown -->
+                            <div class="col-md-2">
+                                <label class="form-label">Category</label>
+                                <select class="form-select" name="category" id="category">
+                                    <option selected value="">All Categories</option>
+                                    @foreach ($categories as $category)
+                                                <option value="{{ $category->id }}"
+                                                    {{ request('category') == $category->id ? 'selected' : '' }}>
+                                                    {{ $category->name }}
+                                                </option>
+                                            @endforeach
+                                </select>
+                            </div>
+                            
+                            <!-- Possession Dropdown -->
+                            <div class="col-md-2">
+                                <label class="form-label">Possession</label>
+                                <select name="possession" id="possession" class="form-select">
+                                    <option value="">All</option>
+                                    <option value="1" {{ request('possession') == '1' ? 'selected' : '' }}>Physical
+                                    </option>
+                                    <option value="0" {{ request('possession') == '0' ? 'selected' : '' }}>Symbolic
+                                    </option>
+                                </select>
+                            </div>
+                            
+                            <!-- Sort By Dropdown -->
+                            <div class="col-md-2">
+                                <label class="form-label">Sort By</label>
                                 <select name="sort_by" id="sort_by" class="form-select">
                                     <option value="default" {{ request('sort_by') == 'default' ? 'selected' : '' }}>Default
                                     </option>
@@ -193,60 +280,24 @@
                                         Price: Low to High</option>
                                 </select>
                             </div>
-
-                            <div class="col-md-2 col-6">
-                                <label for="possession" class="form-label">Possession</label>
-                                <select name="possession" id="possession" class="form-select">
-                                    <option value="">All</option>
-                                    <option value="1" {{ request('possession') == '1' ? 'selected' : '' }}>Physical
-                                    </option>
-                                    <option value="0" {{ request('possession') == '0' ? 'selected' : '' }}>Symbolic
-                                    </option>
-                                </select>
-                            </div>
                         </div>
-
-                        <!-- Collapsible Filter Section -->
-                        <div class="collapse d-md-block" id="filterCard">
-                            <div class="card card-body shadow-sm mb-4 mt-3">
-                                <div class="row g-3">
-                                    <div class="col-md-3">
-                                        <label for="location" class="form-label">Location</label>
-                                        <input type="text" id="location" name="location" class="form-control"
-                                            placeholder="Search location..." value="{{ request('location') }}">
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <label for="bank" class="form-label">Bank</label>
-                                        <input type="text" id="bank" name="bank" class="form-control"
-                                            placeholder="Search bank..." value="{{ request('bank') }}">
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <label for="category" class="form-label">Category</label>
-                                        <select name="category" id="category" class="form-select">
-                                            <option value="">All</option>
-                                            @foreach ($categories as $category)
-                                                <option value="{{ $category->id }}"
-                                                    {{ request('category') == $category->id ? 'selected' : '' }}>
-                                                    {{ $category->name }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-
-                                    <div class="col-12 text-end">
-                                        <button type="submit" class="btn btn-primary px-4">Search</button>
-                                        <a href="{{ route('verifiedProperty') }}"
-                                            class="btn btn-secondary px-4 ms-2">Reset</a>
-                                    </div>
-                                </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="row mt-3">
+                            <div class="col-12 d-flex justify-content-end">
+                                <button type="button" onclick="window.location.href='{{ route('verifiedProperty') }}'" class="btn reset-btn me-2">
+                                    <i class="fas fa-undo me-1"></i> Reset
+                                </button>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-search me-1"></i> Search
+                                </button>
                             </div>
                         </div>
                     </form>
-
                 </div>
             </div>
+            <!-- Collapsible Filter Card (Always Open on PC) -->
+           
 
 
             <!-- Property List -->
