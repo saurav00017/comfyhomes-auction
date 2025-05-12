@@ -258,8 +258,8 @@
                             <input class="form-check-input @error('terms') is-invalid @enderror" type="checkbox" 
                                    id="terms" name="terms" {{ old('terms') ? 'checked' : '' }} required>
                             <label class="form-check-label" for="terms">
-                                I agree to the <a href="#" class="text-purple">Terms of Service</a> and <a
-                                    href="#" class="text-purple">Privacy Policy</a>
+                                I agree to the <a href="{{ url('/terms') }}" class="text-purple">Terms of Service</a> and <a
+                                    href="{{ url('/privacy') }}" class="text-purple">Privacy Policy</a>
                             </label>
                             @error('terms')
                                 <div class="error-message">
