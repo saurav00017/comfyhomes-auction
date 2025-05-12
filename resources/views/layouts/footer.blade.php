@@ -103,16 +103,16 @@
                                                 <h4 class="widget-title text-secondary double-down-line-left position-relative">Auction</h4>
                                                 <ul>
                                             <li>
-                                                <a href="{{config('app.baseURL')}}/search?id=1">IBC Auction</a>
+                                                <a href="{{ route('verifiedProperty', ['category' => 4]) }}">Industrial Auction</a>
                                             </li>
                                             <li>
-                                                <a href="{{config('app.baseURL')}}/search?id=2">Car Auction</a>
+                                                <a href="{{ route('verifiedProperty', ['category' => 6]) }}">Vehicle Auction</a>
                                             </li>
                                             <li>
-                                                <a href="{{config('app.baseURL')}}/search?id=3">DRT Auction</a>
+                                                <a href="{{ route('verifiedProperty', ['category' => 2]) }}">Commercial Auction</a>
                                             </li>
                                             <li>
-                                                <a href="{{config('app.baseURL')}}/search?id=4">Jewellery Auction</a>
+                                                <a href="{{ route('verifiedProperty', ['category' => 5]) }}">Jewellery Auction</a>
                                             </li>
                                                 </ul>
                                             </div>
@@ -124,38 +124,32 @@
                                                 <h4 class="widget-title text-secondary double-down-line-left position-relative">Notice</h4>
                                                 <ul>
                                                      <li>
-                                                <a href="#">IBC Notice</a>
+                                                <a href="{{ url('/notice') }}">IBC Notice</a>
                                             </li>
                                             <li>
-                                                <a href="#">Car Notice</a>
+                                                <a href="{{ url('/notice') }}">Car Notice</a>
                                             </li>
                                             <li>
-                                                <a href="#">DRT Notice</a>
+                                                <a href="{{ url('/notice') }}">DRT Notice</a>
                                             </li>
                                             <li>
-                                                <a href="#">Jewellery Notice</a>
+                                                <a href="{{ url('/notice') }}">Jewellery Notice</a>
                                             </li>
                                                 </ul>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="footer-widget">
-                                                <h4 class="widget-title text-secondary double-down-line-left position-relative">Voting</h4>
+                                                <h4 class="widget-title text-secondary double-down-line-left position-relative">Quick Links</h4>
                                                 <ul>
                                                     <li>
-                                                <a href="#">IBC Voting</a>
+                                                <a href="{{ url('/properties') }}">Properties</a>
                                             </li>
                                             <li>
-                                                <a href="#">Association Voting</a>
+                                                <a href="{{ url('/verify-auction') }}">Auction</a>
                                             </li>
                                             <li>
-                                                <a href="#">Housing Society Voting</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">NGO Voting</a>
-                                            </li>
-                                             <li>
-                                                <a href="#">AGM Voting</a>
+                                                <a href="{{ url('/contact') }}">Contact Us</a>
                                             </li>
                                             </ul>
                                             </div>
@@ -175,9 +169,9 @@
                         <div class="col"><span>© 2025 Vebsigns All right reserved</span></div>
                         <div class="col">
                             <ul class="line-menu text-ordinary float-end">
-                                <li><a href="#">Privacy & Policy</a></li>
+                                <li><a href="{{ url('/privacy') }}">Privacy & Policy</a></li>
                                 <li>|</li>
-                                <li><a href="#">Terms and Condition</a></li>
+                                <li><a href="{{ url('/terms') }}">Terms and Condition</a></li>
                                 <li>|</li>
                                 <li><a href="#">Site Map</a></li>
                             </ul>
@@ -187,4 +181,3 @@
             </div>
             <!-- Copyright End -->
         </footer>
-        <!--============== Footer Section End ==============

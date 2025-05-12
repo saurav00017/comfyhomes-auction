@@ -22,6 +22,8 @@ Route::get('/', function () {
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
 Route::get('about', [App\Http\Controllers\HomeController::class, 'aboutus']);
+Route::get('terms', [App\Http\Controllers\HomeController::class, 'terms']);
+Route::get('privacy', [App\Http\Controllers\HomeController::class, 'privacy']);
 Route::get('contact', [App\Http\Controllers\HomeController::class, 'contactus']);
 Route::post('contact', [App\Http\Controllers\HomeController::class, 'postContact'])->name('contact.submit');
 
