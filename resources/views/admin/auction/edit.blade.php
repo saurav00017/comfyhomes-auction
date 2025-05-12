@@ -318,6 +318,22 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="row mt-3">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Inspection Start Date:</label><sup class="text-danger">*</sup>
+                                                    <input class="form-control" name="inspection_start_date" required
+                                                        type="date" value="{{ $auction->inspection_start_date }}">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Auction Start Date/Time:</label><sup class="text-danger">*</sup>
+                                                    <input class="form-control" name="inspection_end_date" required
+                                                        type="date" value="{{ $auction->inspection_end_date }}">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <!-- Image Upload Section -->

@@ -74,6 +74,8 @@ class AuctionController extends Controller
         $auction->bank_contact_name = $input['bank_contact_name'];
         $auction->bank_contact_email = $input['bank_contact_email'];
         $auction->bank_contact_phone = $input['bank_contact_phone'];
+        $auction->inspection_start_date = $input['inspection_start_date'];
+        $auction->inspection_end_date = $input['inspection_end_date'];
 
 
         if (Input::hasFile('document')) {
@@ -152,6 +154,8 @@ class AuctionController extends Controller
         $auction->bank_contact_name = $input['bank_contact_name'];
         $auction->bank_contact_email = $input['bank_contact_email'];
         $auction->bank_contact_phone = $input['bank_contact_phone'];
+        $auction->inspection_start_date = $input['inspection_start_date'];
+        $auction->inspection_end_date = $input['inspection_end_date'];
 
 
         // Handle thumbnail
