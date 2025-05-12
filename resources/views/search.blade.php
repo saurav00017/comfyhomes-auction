@@ -309,8 +309,13 @@
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     <div class="position-relative h-100">
+                                        @if (!empty($item->thumbnail) && file_exists(public_path('storage/' . $item->thumbnail)))
                                         <img src="{{ $item->thumbnail ? asset('storage/' . $item->thumbnail) : 'https://via.placeholder.com/500x300?text=No+Image' }}"
                                             class="img-fluid rounded-start h-100 w-100 object-fit-cover" alt="Property">
+                                            @else
+                                            <img src="{{ asset('assets/images/default-thumbnail.jpg') }}"
+                                            class="img-fluid rounded-start h-100 w-100 object-fit-cover" alt="Property">
+                                            @endif
                                         @if ($item->featured)
                                             <div class="position-absolute top-0 start-0 m-2">
                                                 <span class="badge bg-primary">Verified</span>

@@ -276,8 +276,11 @@
             <!-- Main Image and Gallery -->
             <div class="col-lg-8">
                 <div class="mb-4">
-                    <img src="{{ asset('storage/' . $auction->thumbnail) }}" class="property-image w-100"
-                        alt="Property Image" id="mainImage">
+                    @if (!empty($auction->thumbnail) && file_exists(public_path('storage/' . $auction->thumbnail)))
+                        <img src="{{ asset('storage/' . $auction->thumbnail) }}" class="property-image w-100"
+                             alt="Property Image" id="mainImage">
+                   
+                    @endif
                 </div>
                 @if ($auction->images->count() > 0)
                     <div class="row g-3 mb-4">
@@ -360,7 +363,7 @@
                                         <p class="text-muted mb-0">{{ number_format($auction->area) }} Sq Ft</p>
                                     </div>
                                 </div>
-                            </div>
+                            </div> 
 
                         </div>
                         <div class="mb-3">
@@ -516,7 +519,14 @@
                                 {{ \Carbon\Carbon::parse($auction->auction_start_datetime)->format('d M Y, h:i A') }}</p>
                             <p class="mb-1"><i class="fas fa-calendar-alt me-2"></i> Ends:
                                 {{ \Carbon\Carbon::parse($auction->auction_end_datetime)->format('d M Y, h:i A') }}</p>
-                            <p><i class="fas fa-calendar-alt me-2"></i> Inspection: 10 Nov 2023 to 15 Nov 2023</p>
+                            <p><i class="fas fa-calendar-alt me-2"></i> Inspection:
+                                @if ($auction->inspection_start_date && $auction->inspection_end_date)
+                                {{ \Carbon\Carbon::parse($auction->inspection_start_date)->format('d M Y') }} to
+                                {{ \Carbon\Carbon::parse($auction->inspection_end_date)->format('d M Y') }}
+                            @else
+                                Not Scheduled
+                            @endif
+                        </p>
                         </div>
                     </div>
                 </div>
